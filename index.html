@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>jmm2023.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section> 
+						<h2 style="width:108%"> Vanishing of quartic twists of L-Functions of elliptic curves: </h2>
+						<h3 style="margin-bottom:3cm;"> experiments and conjectures  </h3>
+						<h4 style="color:yellow"> Special Session on Rethinking Number Theory </h4>
+						<p> January 2023</p>
+					</section>
+					<section>
+					<div>
+					<div style = "float:left; margin-left: 10%; margin-right: 10%; margin-bottom: 2em;">
+						<img src="jenphoto.jpeg" alt="Jen Berg" style="width:100%">
+						<h4 style = "font-size: 20pt"> Jen Berg </h4>
+					</div>
+					<div style = "float: left; margin-right: 10%; margin-bottom: 2 em;">
+						<img src="nathanphoto.jpeg" alt="Nathan Ryan">
+						<h4 style = "font-size: 20pt"> Nathan Ryan </h4>
+					</div>
+					</div>
+					<p style="clear: both;">
+					<div> <h4 style ="color:deepskyblue;"> Bucknell University </h4> </div>
+					</section>
+
+					<section> acknowledging stolen land from Nikki Young "I would like to respectfully acknowledge and recognize my responsibility to the original and current caretakers of this land, water and air: the Susquehannock peoples and all of their ancestors and descendants, past, present and future. Today this meeting place is home to many Indigenous peoples from all over the world, including Bucknell faculty, students, and staff.  I hope that my presence and work honors those caretakers of this homeland."
+					</section>
+				</section>
+
+	<section style = "text-align: left;"> 
+	<h2 style ="margin-bottom: 1cm;"> Rethinking Number Theory </h2>
+	<p> I participated in RNT2 in Summer 2021. Beforehand, I was feeling exhausted, isolated, and nearly ready to walk away from doing mathematics. 
+    </p>
+
+    <p> FROM CHRISTELLE This session is for allies who would like to take practical action towards making the math community more just and joyful for everyone, but who don’t know where to start or where to go from where they are now. We will discuss the role of caring, kindness, and joy in creating equitable spaces, and the work each of us has to do on ourselves before we can be of any help to each other. Then there will be time to come up with concrete actions to take towards a more just community. 
+    </p>
+	</section>				
+  <section data-markdown>
+  	<textarea data-template>
+    ## Slide 2
+    ---
+    ## Slide 3
+
+    $ \alpha $
+  	</textarea>
+</section>
+
+<section>
+	<section> 
+			<h2> Dirichlet Characters </h2>
+	</section>
+
+	<section> 
+	<p style = "text-align: left;"> A  <span style = "color:yellow"> Dirichlet character </span> is a function $\chi \colon \mathbb{Z} \to \mathbb{C}$ together with a positive integer $d$ called the modulus, such that for all integers $m$ and $n$ </p>
+	<ul class="fragment" style = "text-align: left;">
+		<li > $\chi(mn) = \chi(m) \chi(n)$ </li>
+		<li> $\chi(n + d) = \chi(n)$ </li>
+		<li> $\chi(n) = 0\,$ if $\, \gcd(n,d) >1$</li>
+		<li> $\chi(n)$ is a $d^\text{th}$ root of unity otherwise
+	</ul>
+	</section>
+
+	<section>
+ 		<iframe height = 500 width = 900 data-src="http://www.lmfdb.org/Character/Dirichlet/" data-preload></iframe>
+	</section>
+
+	<section>
+		<p style = "text-align: left; margin-bottom:3cm;"> The <span style = "color:yellow"> conductor</span> of a Dirichlet character $\chi$ of modulus $d$ is the smallest positive integer $q$ dividing $d$ such that
+		\[ \chi(m) = \chi(n)\]
+		whenever $m \equiv n \bmod{q}\,$ and $\, \gcd(mn,d) = 1$. </p>
+		<p style = "text-align: left;"> The character $\chi$ is said to be <span style = "color: yellow;"> primitive </span> if the conductor $q$ is equal to the modulus $d$ </p>
+	</section>
+</section>
+
+<section>
+	<section> <h2> Counting Dirichlet Characters </h2>
+	</section>
+	<section> more words	
+	</section>
+</section>	
+
+<section>
+	<section> <h2> L-Functions and Vanishing </h2>
+	</section>
+	<section> other words	
+	</section>
+</section>	
+
+<section>
+	<section> <h2> Experiments, Data, Conjectures </h2>
+	</section>
+	<section> even more	
+	</section>
+</section>	
+
+</div>
+</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
+		<script>
+  		Reveal.initialize({ plugins: [ RevealMath.KaTeX ] });
+		</script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
