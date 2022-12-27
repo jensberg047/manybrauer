@@ -48,12 +48,42 @@
 
 					</section>
 				</section>
+
+	<section>
+		<h2 style = "text-align: left;"> Rethinking Number Theory </h2> </section>
+	</section>
 			
   <section>
   <section> <h2> L-functions: What, why, how? </h2> </section>
-  <section style = "text-align: left;"> <p> L-functions provide a way to analytically study arithmetic objects. </p>
 
-  <p> Interesting data is encoded in the location of the zeroes and poles of L-functions, and because L-functions are analytic objects, one can use analysis to study arithmetic. </p>
+  <section style = "font-size: 90%;"> 
+  <p style = "margin-bottom: 0.5cm; text-align: left;"> Let $E$ be an elliptic curve over $\mathbb{Q}$. </p>
+
+  <p style = "text-align: left;"><span><b><u>Example</u>:  </b> </span> The curve <a href = "https://www.lmfdb.org/EllipticCurve/Q/11/a/2"> 11.a2 </a> has equation <span style = "font-size: 80%;"> $y^2=x^3-13392x-1080432$ </span> </p>
+
+  <img src= "11a2.png" style = "scale:70%" > 
+
+  <p> Often, we want to study arithmetic of $E$, in particular gain information about $E(\mathbb{Q}$.
+	</section>
+
+  <section style = "font-size: 90%;">
+  <p style = "text-align: left"> The <span style = "color:yellow"> L-function </span> associated to $E$ is the Euler product$\small ^\ast$ <br> \[ \small L(E,s) = \prod_p \frac{1}{1 - a_p p^{-s} + p^{1-2s}} = \sum_{n \ge 1} \frac{a_n}{n^s}\]
+  	<ul>
+  		<li> $a_p$ encode info about number of points of $E$ mod $p$ </li>
+  		<li> has analytic continuation to $\mathbb{C}$ </li>
+  		<li> satisfies functional equation relating $\small L(E,s)$ and $\small L(E,2-s)$</li>
+  	</ul>   </p>
+
+  	<p style = "text-align: left;font-size: 60%; margin-top: 3cm;"> $^\ast$ ignoring primes $p$ of bad reduction for simplicity </p>
+  </section>
+
+  <section style = "text-align: left; font-size: 80%;"> 
+  <p style = "margin-bottom: 2cm"> Given $E/\mathbb{Q}$ and a Dirichlet character $\chi \colon \mathbb{Z} \to \mathbb{C}$, we can form the twisted $L$-function 
+  $\enskip L(E,s,\chi) = \sum_{n \ge 1} \chi(n) a_n n^{-s} $ </p>
+
+  <p style = "margin-bottom: 2cm"> By BSD, the order of vanishing of $L(E,s,\chi)$ at $s=1$ should be related to the rank of $E(K)$ over the extension $K/\mathbb{Q}$ associated to $\chi$. </p>
+
+  <p style ="color:lightgreen;"> <span> <b> Motto: </b> </span> Interesting arithmetic data is encoded in the location of the zeroes (and poles) of L-functions; since L-functions are analytic objects, one can use analytic tools to study arithmetic. </p>
   </section>
 </section>
 
@@ -67,8 +97,6 @@
 	<ul class="fragment" style = "text-align: left;">
 		<li > $\chi(mn) = \chi(m) \chi(n)$ </li>
 		<li> $\chi(n + d) = \chi(n)$ </li>
-		<li> $\chi(n) = 0\,$ if $\, \gcd(n,d) >1$</li>
-		<li> $\chi(n)$ is a $d^\text{th}$ root of unity otherwise
 	</ul>
 	</section>
 
@@ -126,6 +154,23 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+		</script>
+		<script>
+			Reveal.initialize({
+  // The "normal" size of the presentation, aspect ratio will
+  // be preserved when the presentation is scaled to fit different
+  // resolutions. Can be specified using percentage units.
+  width: 1100,
+  height: 700,
+
+  // Factor of the display size that should remain empty around
+  // the content
+  margin: 0.04,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 2.0
+});
 		</script>
 	</body>
 </html>
