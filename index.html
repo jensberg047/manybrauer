@@ -77,9 +77,9 @@ table, th, td {
   <section style = "font-size: 75%;"> 
   <p style = "margin-bottom: 0.5cm; text-align: left;"> Let $E$ be an elliptic curve over $\mathbb{Q}$. </p>
 
-  <p style = "text-align: left;"><span><b><u>Example</u>:  </b> </span> The curve <a href = "https://www.lmfdb.org/EllipticCurve/Q/11/a/2"> 11.a2 </a> has equation <span style = "font-size: 80%;"> $y^2=x^3-13392x-1080432$ </span> </p>
+  <p style = "text-align: left;"><span><b><u>Example</u>:  </b> </span> The curve <a href = "https://www.lmfdb.org/EllipticCurve/Q/11/a/1"> 11.a1 </a> has equation <span style = "font-size: 70%;"> $y^2=x^3-10135152x-12419196912$ </span> </p>
 
-  <img src= "11a2.png" style = "width:40%; padding:0cm" > 
+  <img src= "11a1.png" style = "width:40%; padding:0cm" > 
 
   <p style = "text-align: left"> Often want to study arithmetic of $E$ and, in particular, gain info about $\small E(\mathbb{Q})$
 	</section>
@@ -142,7 +142,7 @@ table, th, td {
 
 	<section style = "text-align: left; font-size:80%;">
 	<h4 style = "color: violet;"> Example</h4>
-	<p>The character $\chi$ with LMFDB label <a href = "https://www.lmfdb.org/Character/Dirichlet/65/k"> 65.k.8</a> has modulus $d = 65$. </p> 
+	<p>The character $\chi$ with LMFDB label <a href = "https://www.lmfdb.org/Character/Dirichlet/65/k/8"> 65.k.8</a> has modulus $d = 65$. </p> 
 
 	<p >The first few values on integers $a$ with $\gcd(a,65) = 1$ are </p> 
 	<div style = "font-size: 75%;">
@@ -204,11 +204,15 @@ When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </spa
 
 
 	<section style = "text-align: left; font-size: 80%">
-	<p> Many properties of twisted L-functions (except for an Euler product) are analogous to those of characteristic polynomials of <span style = "color:yellow"> unitary$\small ^\ast$</span> matrices. </p>
+	<p> Many properties of twisted L-functions are analogous to those of characteristic polynomials of <span style = "color:yellow"> unitary$\small ^\ast$</span> matrices. </p>
 
 	<p style = "margin-top:2cm"> <a href = "https://people.maths.bris.ac.uk/~mancs/papers/RMTzeta.pdf"> Keating and Snaith </a> conjectured that the distribution of zeroes close to $\small s=1$ of a family of twisted L-functions is related to the distribution of eigenvalues close to 1 of random unitary matrices.</p>
 
-	<p style = "margin-top: 4cm; font-size: 60%"> $^\ast$A matrix $U$ is unitary if $U^{-1}$ is equal to the conjugate transpose of $U$. </p>
+
+	<p style = "margin-top:2cm"> SOMETHING INFORMATIVE HERE</p>
+
+	<p style = "margin-top: 3cm; font-size: 60%"> $^\ast$A matrix $U$ is unitary if $U^{-1}$ is equal to the conjugate transpose of $U$. </p>
+
 	</section>
 </section>	
 
@@ -232,13 +236,35 @@ When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </spa
 	<p style = "font-size:90%;margin-left: 2cm"> If $\small k = 4$ or $\small 6$, then $\small N_{E,k}(X) \sim X^{1/2}$ as $\small X \to \infty$</p>
 	</section>
 
-	<section> data
+	<section style = "text-align:left; font-size: 80%"> 
+	<p> Ingredients and distinguishing features</p>
 	</section>
 
-</section>	
+</section>
+
+<section>	
 	<section> <h2> Experiments and Data </h2>
 	</section>
 
+	<section style = "text-align: left"> To provide numerical evidence for the conjecture, we a combination of Sage and PARI/GP code on the <a href= "https://osg-htc.org/about/introduction/" > Open Science Grid </a>. The combined wall time of all computations was more than 40 years. 
+	</section>
+
+	<section> <h4 style = "font-size: 95%"> Totally quartic case </h4>
+	<p> <img src = "totallyquartice11a.png" padding=0cm width = 60% > </p>
+	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of twisted L-functions of the curve 11.a1 by totally quartic characters $\small \chi$ of conductor $\small \le 700000$</p>
+	</section>
+
+
+	<section> <h4 style = "font-size: 95%"> All quartic case </h4>
+	<p> <img src = "e11a1quartic.png" padding=0cm width = 60% > </p>
+	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of twisted L-functions of the curve 11.a1 by primitive quartic characters $\small \chi$ of conductor $\small \le 700000$</p>
+	</section>
+
+
+	<section> <h4 style = "font-size: 95%"> All sextic case </h4>
+	<p> <img src = "e11asextic.png" padding=0cm width = 60% > </p>
+	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of twisted L-functions of the curve 11.a1 by primitive sextic characters $\small \chi$ of conductor $\small \le 700000$</p>
+	</section>
 </section>
 
 <section> <h1> THANK YOU! </h1>
