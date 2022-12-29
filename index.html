@@ -12,15 +12,21 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+table, th, td {
+  border: 1px solid white;
+}
+</style>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
 					<section> 
-						<h2 style="width:108%"> Vanishing of quartic twists of L-Functions of elliptic curves: </h2>
+						<h2 style = "font-size: 155%;"> Vanishing of quartic twists of <br> L-Functions of elliptic curves: </h2>
 						<h3 style="margin-bottom:3cm;"> experiments and conjectures  </h3>
-						<h4 style="color:yellow"> Special Session on Rethinking Number Theory </h4>
+						<h4 style="color:yellow"> JMM Special Session on Rethinking Number Theory </h4>
 						<p> January 2023</p>
 					</section>
 					<section>
@@ -43,33 +49,45 @@
 					</div>
 					</section>
 
-					<section style = "text-align: left"> <p style = "margin-bottom: 3cm;"> This work was predominantly completed in Lewisburg, Pennsylvania. I would like to respectfully acknowledge and recognize my responsibility to the original and current caretakers of this land, water and air: the Susquehannock peoples and all of their ancestors and descendants, past, present and future. </p>
+					<section style = "text-align: left"> <p style = "margin-bottom: 3cm;"> This work was primarily completed in Lewisburg, PA.<br> I would like to respectfully acknowledge and recognize my responsibility to the original and current caretakers of this land, water, and air: the Susquehannock peoples and their ancestors and descendants. </p>
 					<p style = "font-size: 20pt;"> Visit <a href = "https://www.native-land.ca"> native-land.ca </a> to learn more about the native lands on which you live and work </p>
 
 					</section>
 				</section>
 
-	<section>
-		<h2 style = "text-align: left;"> Rethinking Number Theory </h2> </section>
+	<section style = "text-align: left; font-size: 80%;">
+		<h3 style = "color:yellow;"> Rethinking Number Theory </h3> 
+		<div class= "fragment semi-fade-out" data-fragment-index="1">
+		<p style="margin-bottom: 1.5cm;"> One of the goals of RNT is to have joyful, affirming research experiences — ones in which people can be their whole selves.
+		</p>
+
+		<p style="margin-bottom: 1.5cm;"> I think about this every time I engage with scholarship. <br>
+		<span style = "color:powderblue;"> <em> Am I enjoying this? &nbsp Do I belong here? &nbsp Is everyone valued? </em> </span> <br>
+		Outside of RNT, the answers are often still no. We can do better. </p>
+	</div>
+
+		<p class="fragment" data-fragment-index="1"> The math I'll discuss today was born from a desire to collaborate with Nathan on a fun, computational project that combined our interests. Along the way, our many questions led us to Matt whose insights provided a helpful and exciting narrative.</p>
 	</section>
+
 			
   <section>
-  <section> <h2> L-functions: What, why, how? </h2> </section>
 
-  <section style = "font-size: 90%;"> 
+  <section> <h2> L-functions: What and why? </h2> </section>
+
+  <section style = "font-size: 75%;"> 
   <p style = "margin-bottom: 0.5cm; text-align: left;"> Let $E$ be an elliptic curve over $\mathbb{Q}$. </p>
 
   <p style = "text-align: left;"><span><b><u>Example</u>:  </b> </span> The curve <a href = "https://www.lmfdb.org/EllipticCurve/Q/11/a/2"> 11.a2 </a> has equation <span style = "font-size: 80%;"> $y^2=x^3-13392x-1080432$ </span> </p>
 
-  <img src= "11a2.png" style = "scale:70%" > 
+  <img src= "11a2.png" style = "width:40%; padding:0cm" > 
 
-  <p> Often, we want to study arithmetic of $E$, in particular gain information about $E(\mathbb{Q}$.
+  <p style = "text-align: left"> Often want to study arithmetic of $E$ and, in particular, gain info about $\small E(\mathbb{Q})$
 	</section>
 
-  <section style = "font-size: 90%;">
+  <section style = "font-size: 80%;">
   <p style = "text-align: left"> The <span style = "color:yellow"> L-function </span> associated to $E$ is the Euler product$\small ^\ast$ <br> \[ \small L(E,s) = \prod_p \frac{1}{1 - a_p p^{-s} + p^{1-2s}} = \sum_{n \ge 1} \frac{a_n}{n^s}\]
   	<ul>
-  		<li> $a_p$ encode info about number of points of $E$ mod $p$ </li>
+  		<li> $a_p$ encode info about $\#E(\mathbb{F}_p)$, the number of points of $E$ mod $p$ </li>
   		<li> has analytic continuation to $\mathbb{C}$ </li>
   		<li> satisfies functional equation relating $\small L(E,s)$ and $\small L(E,2-s)$</li>
   	</ul>   </p>
@@ -78,12 +96,23 @@
   </section>
 
   <section style = "text-align: left; font-size: 80%;"> 
-  <p style = "margin-bottom: 2cm"> Given $E/\mathbb{Q}$ and a Dirichlet character $\chi \colon \mathbb{Z} \to \mathbb{C}$, we can form the twisted $L$-function 
-  $\enskip L(E,s,\chi) = \sum_{n \ge 1} \chi(n) a_n n^{-s} $ </p>
+  <p> So the $L$-function $L(E,s)$ of an elliptic curve $E/\mathbb{Q}$ packages local information about $E$ into a global object. </p>
 
-  <p style = "margin-bottom: 2cm"> By BSD, the order of vanishing of $L(E,s,\chi)$ at $s=1$ should be related to the rank of $E(K)$ over the extension $K/\mathbb{Q}$ associated to $\chi$. </p>
+  <p style = "margin-top: 2cm;"> The <span style = "color:powderblue;"> Birch and Swinnerton Dyer Conjecture (BSD) </span> predicts that vanishing of $L(E,s)$ at $s=1$ implies $E$ has infinitely many $\mathbb{Q}$-rational points.</p>
+  </section>
 
-  <p style ="color:lightgreen;"> <span> <b> Motto: </b> </span> Interesting arithmetic data is encoded in the location of the zeroes (and poles) of L-functions; since L-functions are analytic objects, one can use analytic tools to study arithmetic. </p>
+  <section style = "text-align: left; font-size: 75%;"> 
+  <h4 style = "color: violet;"> Generalizations: Points over number fields</h4>
+  <p> Given $E/\mathbb{Q}$ and a Dirichlet character $\chi \colon \mathbb{Z} \to \mathbb{C}$, we can form the <span style = "color:yellow;"> twisted $L$-function </span> </p>
+  <p style = "margin-top: -1.5cm"> \[ \small L(E,s,\chi) = \sum_{n \ge 1} \frac{\chi(n) a_n}{ n^{s}} \] </p>
+
+  <p style = "margin-bottom: 3cm"> $L(E,s,\chi)$ also has an analytic continuation to $\mathbb{C}$ and satisfies a functional equation relating $L(E,s,\chi)$ and $L(E,2-s, \overline{\chi})$. </p>
+
+  <p style = "margin-top:2cm; margin-bottom:2cm"> BSD predicts (order of) vanishing of $\small L(E,s,\chi)$ at $s=1$ is related to the rank of $\small E(K)$ over the abelian extension $\small K/\mathbb{Q}$ associated to $\small \chi$. </p>
+</section>
+
+	<section style = 'text-align: left;'>
+  <p style =" border-width:3px; border-style:solid; border-color:lightslategray; padding: 0.5em;"> <span> <b><u>Theme</u>: </b> </span> Interesting arithmetic data is encoded in the location of the zeroes (and poles) of L-functions. Since L-functions are analytic objects, one can use analytic tools to study arithmetic. </p>
   </section>
 </section>
 
@@ -92,46 +121,107 @@
 			<h2> Dirichlet Characters </h2>
 	</section>
 
-	<section> 
-	<p style = "text-align: left;"> A  <span style = "color:yellow"> Dirichlet character </span> is a function $\chi \colon \mathbb{Z} \to \mathbb{C}$ together with a positive integer $d$ called the modulus, such that for all integers $m$ and $n$ </p>
-	<ul class="fragment" style = "text-align: left;">
-		<li > $\chi(mn) = \chi(m) \chi(n)$ </li>
-		<li> $\chi(n + d) = \chi(n)$ </li>
+	<section style = "font-size: 80%;"> 
+	<p style = "text-align: left;"> A  <span style = "color:yellow"> Dirichlet character </span> is a function $\chi \colon \mathbb{Z} \to \mathbb{C}$ together with a positive integer $d$ called the modulus, such that for all integers $a,b$
+	<div>
+	<ul style = "text-align: left;">
+		<li > $\chi(ab) = \chi(a) \chi(b)$ &nbsp &nbsp<span style = "color:lightskyblue;"> <em> completely multiplicative </em> </span></li>
+		<li> $\chi(a + d) = \chi(a)$ &nbsp &nbsp &nbsp &nbsp <span style = "color:lightskyblue;"> <em> periodic </em> </span></li>
+		<li> $\chi(a) \ne 0$ &nbsp iff &nbsp $\gcd(a,d) = 1$</li>
 	</ul>
+	</div>
+
+	<p class = "fragment" data-fragment-index="1"; style = "text-align: left;"> These imply $\chi(a)$ is a root of unity if $\gcd(a,d) = 1$. </p>
 	</section>
 
 	<section>
- 		<iframe height = 500 width = 900 data-src="https://www.lmfdb.org/Character/Dirichlet/" data-preload></iframe>
+		<p style = "text-align: left;"> <span style ="color: violet;"> <a href = "https://www.lmfdb.org/Character/Dirichlet/">LMFDB</a> </span> Dirichlet characters database</p>
+
+		<img src="LMFDBDirichlet.png" width= 70% />
 	</section>
 
-	<section>
-		<p style = "text-align: left; margin-bottom:3cm;"> The <span style = "color:yellow"> conductor</span> of a Dirichlet character $\chi$ of modulus $d$ is the smallest positive integer $q$ dividing $d$ such that
-		\[ \chi(m) = \chi(n)\]
-		whenever $m \equiv n \bmod{q}\,$ and $\, \gcd(mn,d) = 1$. </p>
-		<p style = "text-align: left;"> The character $\chi$ is said to be <span style = "color: yellow;"> primitive </span> if the conductor $q$ is equal to the modulus $d$ </p>
+	<section style = "text-align: left; font-size:80%;">
+	<h4 style = "color: violet;"> Example</h4>
+	<p>The character $\chi$ with LMFDB label <a href = "https://www.lmfdb.org/Character/Dirichlet/65/k"> 65.k.8</a> has modulus $d = 65$. </p> 
+
+	<p >The first few values on integers $a$ with $\gcd(a,65) = 1$ are </p> 
+	<div style = "font-size: 75%;">
+  <table>
+    <thead>
+      <tr>
+        <td style="text-align:center">\(a\)</td>
+        <td style="text-align:center">\(-1\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(2\)</td><td style="text-align:center">\(3\)</td><td style="text-align:center">\(4\)</td><td style="text-align:center">\(6\)</td><td style="text-align:center">\(7\)</td><td style="text-align:center">\(8\)</td><td style="text-align:center">\(9\)</td><td style="text-align:center">\(11\)</td><td style="text-align:center">\(12\)</td><td style="text-align:center">\(14\)</td>      </tr>
+    </thead>
+    <tr>
+      <td style="text-align:center;">\( \chi(a) \)</td>
+      <td style="text-align:center">\(1\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(i\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(i\)</td><td style="text-align:center">\(-1\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(-1\)</td><td style="text-align:center">\(-i\)</td><td style="text-align:center">\(i\)</td><td style="text-align:center">\(-1\)</td>    </tr>
+  </table>
+	</div>
+
+	<p style = "margin-top: 2cm;"> The <span style ="color:yellow"> order </span> of $\chi$ is $4$ and we say $\chi$ is a <span style ="color:yellow"> quartic</span> character. </p>
 	</section>
+
+
 </section>
 
+
 <section>
-	<section> <h2> Counting Dirichlet Characters </h2>
+	<section> <h2> Vanishing of twisted L-functions </h2> 
+
+	<p class = "fragment"; style = "margin-top: 2cm; font-size: 85%; text-align: left;"> <span style = "color: violet;"> <b> GOAL:</b> </span> Given an elliptic curve $\small E/\mathbb{Q}$, study the vanishing of twisted L-functions for families of Dirichlet characters $\chi$ to gain arithmetic info about $E$. </p>
+</section>
+
+
+	<section style = "text-align: left; font-size: 80%">
+	
+	<h4 style = "color: violet;"> Quadratic Characters</h4>
+	<p> When $\chi$ is a quadratic character (order 2), $\chi = \overline{\chi}$, in which case the twisted L-function satisfies the functional equation \[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\chi),\] 
+	where $\varepsilon = \pm{1}$ is called the <span style = "color:yellow"> sign</span> of the functional equation and depends on $E$ and $\chi$. </p>
+
+	<p style = "margin-top: 2cm"> <span style = "color:lightgreen;"> 
+When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </span></p> 
 	</section>
-	<section> more words	
+
+	<section style = "text-align: left; font-size: 80%">
+		<h4 style = "color: violet;"> Higher order characters </h4>
+			<p > For characters $\chi$ with order $\small \ge 3$, it need not be the case that $\chi = \overline{\chi}$. The functional equation for the twisted L-function is 
+	\[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\overline{\chi}),\]
+	where the sign $\varepsilon$ is a complex number depending on $E$ and $\chi$. 
+	</p>
+
+	<p style = "margin-top: 2cm;"> <span style = "color:lightgreen;"> Now, when $\varepsilon \ne 1$ it is not enough to guarantee vanishing of $L(E,s,\chi)$ at $s=1$. </span> Need additional insight.  </p>
+
+	</section>
+
+	<section style = "text-align: left; font-size: 80%">
+		<h4 style = "color: violet;"> Random Matrix Theory</h4>
+
+		<p> One fruitful approach via <a href = "https://web.math.princeton.edu/~nmk/RMFEM.pdf"> Katz and Sarnak </a> is to model such L-functions by a suitable classical (compact) matrix/symmetry group (<span style = "color:lightgray"> <em> unitary, orthogonal, symplectic, ...</em> </span> ) </p>
+
+		<p style = "margin-top:2cm"> In this context, the symmetries of the family of L-functions determine the appropriate group of matrices, often by the distribution properties of the sign of the functional equation $\small \varepsilon$ on the unit circle. </p>
+		
+	</section>
+	<section> Keating and Snaith 
 	</section>
 </section>	
 
+
+
+
+
 <section>
-	<section> <h2> L-Functions and Vanishing </h2>
+	<section> <h2> Conjectures, Experiments, Data </h2>
 	</section>
-	<section> other words	
+
+	<section> conjectures
+	</section>
+
+	<section> data
 	</section>
 </section>	
 
-<section>
-	<section> <h2> Experiments, Data, Conjectures </h2>
-	</section>
-	<section> even more	
-	</section>
-</section>	
+<section> <h1> THANK YOU! </h1>
+</section>
 
 </div>
 </div>
@@ -160,7 +250,7 @@
   // The "normal" size of the presentation, aspect ratio will
   // be preserved when the presentation is scaled to fit different
   // resolutions. Can be specified using percentage units.
-  width: 1100,
+  width: 1000,
   height: 700,
 
   // Factor of the display size that should remain empty around
@@ -174,3 +264,38 @@
 		</script>
 	</body>
 </html>
+
+
+
+
+	<section>
+		<p style = "text-align: left; margin-bottom:3cm;"> The <span style = "color:yellow"> conductor</span> of a Dirichlet character $\chi$ of modulus $d$ is the smallest positive integer $q$ dividing $d$ such that
+		\[ \chi(m) = \chi(n)\]
+		whenever $m \equiv n \bmod{q}\,$ and $\, \gcd(mn,d) = 1$. </p>
+		<p style = "text-align: left;"> The character $\chi$ is said to be <span style = "color: yellow;"> primitive </span> if the conductor $q$ is equal to the modulus $d$ </p>
+	</section>
+
+	<p style = "margin-top: 2cm;"> To study $E(K)$ where $K$ is a finite extension of $\mathbb{Q}$, we can consider related objects and conjectures. </p>
+
+
+		<section style = "font-size: 80%;"> 
+	<p style = "text-align: left;"> A  <span style = "color:yellow"> Dirichlet character </span> is a function $\chi \colon \mathbb{Z} \to \mathbb{C}$ together with a positive integer $d$ called the modulus, such that for all integers $a,b$
+	<div class="fragment semi-fade-out" data-fragment-index="2">
+	<ul style = "text-align: left;">
+		<li > $\chi(ab) = \chi(a) \chi(b)$ &nbsp &nbsp<span style = "color:lightskyblue;"> <em> completely multiplicative </em> </span></li>
+		<li> $\chi(a + d) = \chi(a)$ &nbsp &nbsp &nbsp &nbsp <span style = "color:lightskyblue;"> <em> periodic </em> </span></li>
+		<li> $\chi(a) \ne 0$ &nbsp iff &nbsp $\gcd(a,d) = 1$</li>
+	</ul>
+	</div>
+
+	<p class = "fragment" data-fragment-index="1"; style = "text-align: left;"> These imply $\chi(a)$ is a root of unity if $\gcd(a,d) = 1$. </p>
+
+	<p class ="fragment" data-fragment-index="2"; style = "margin-top: 2cm; text-align: left;"> The <span style ="color:yellow"> conductor </span> of $\chi$ is an integer dividing the modulus $d$. When the conductor equals the modulus, we say $\chi$ is <span style ="color:yellow"> primitive</span>. </p>
+	</section>
+
+	<section style = "text-align: left;"> <h2> Totally Quartic Characters </h2>
+	</section>
+
+	to relate the distribution of zeroes close to $\small s=1$ of such L-functions to the distribution of eigenvalues close to $1$ of random matrices from a suitable classical compact group (<span style = "color:lightgray"> <em> unitary, orthogonal, symplectic, ...</em> </span> )</p> 
+
+	 		<iframe height = 500 width = 900 data-src="https://www.lmfdb.org/Character/Dirichlet/" data-preload></iframe>
