@@ -124,14 +124,14 @@ table, th, td {
 	<section style = "font-size: 80%;"> 
 	<p style = "text-align: left;"> A  <span style = "color:yellow"> Dirichlet character </span> is a function $\chi \colon \mathbb{Z} \to \mathbb{C}$ together with a positive integer $d$ called the modulus, such that for all integers $a,b$
 	<div>
-	<ul style = "text-align: left;">
+	<ul style = "text-align: left; margin-top:.5cm">
 		<li > $\chi(ab) = \chi(a) \chi(b)$ &nbsp &nbsp<span style = "color:lightskyblue;"> <em> completely multiplicative </em> </span></li>
 		<li> $\chi(a + d) = \chi(a)$ &nbsp &nbsp &nbsp &nbsp <span style = "color:lightskyblue;"> <em> periodic </em> </span></li>
 		<li> $\chi(a) \ne 0$ &nbsp iff &nbsp $\gcd(a,d) = 1$</li>
 	</ul>
 	</div>
 
-	<p class = "fragment" data-fragment-index="1"; style = "text-align: left;"> These imply $\chi(a)$ is a root of unity if $\gcd(a,d) = 1$. </p>
+	<p style = "text-align: left; margin-top:1cm"> These imply $\chi(a)$ is a root of unity if $\gcd(a,d) = 1$. </p>
 	</section>
 
 	<section>
@@ -171,27 +171,33 @@ table, th, td {
 	<p class = "fragment"; style = "margin-top: 2cm; font-size: 85%; text-align: left;"> <span style = "color: violet;"> <b> GOAL:</b> </span> Given an elliptic curve $\small E/\mathbb{Q}$, study the vanishing of twisted L-functions for families of Dirichlet characters $\chi$ to gain arithmetic info about $E$. </p>
 </section>
 
-
-	<section style = "text-align: left; font-size: 80%">
-	
-	<h4 style = "color: violet;"> Quadratic Characters</h4>
-	<p> When $\chi$ is a quadratic character (order 2), $\chi = \overline{\chi}$, in which case the twisted L-function satisfies the functional equation \[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\chi),\] 
-	where $\varepsilon = \pm{1}$ is called the <span style = "color:yellow"> sign</span> of the functional equation and depends on $E$ and $\chi$. </p>
-
-	<p style = "margin-top: 2cm"> <span style = "color:lightgreen;"> 
-When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </span></p> 
+	<section style = "text-align: left;font-size: 80%"> 
+	<h3 style = "text-align: left">Conjectures</h3>
+	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (David, Fearnley, Kisilevsky; 2007) </h4>
+	<p style = "margin-left:1cm"> Let $\small E/\mathbb{Q}$ be an elliptic curve. There are infinitely many primitive Dirichlet characters $\small \chi$ of order $\small 3$ and $\small 5$ (ordered by conductor) such that $\small L(E,1,\chi) = 0$. However, if $\small k \ge 7$ is prime, there are only finitely many $\small \chi$ of order $k$ such that $\small L(E,1,\chi) = 0$.</p>
+	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (Berg, Ryan, Young; 2022) </h4>
+	<p style = "margin-left: 1cm"> Let $\small E/\mathbb{Q}$ be an elliptic curve. There are infinitely many primitive Dirichlet characters $\chi$ of order $\small 4$ or $\small 6$ such that $\small L(E,1,\chi) = 0$.</p>
 	</section>
 
-	<section style = "text-align: left; font-size: 80%">
-		<h4 style = "color: violet;"> Higher order characters </h4>
-			<p > For characters $\chi$ with order $\small \ge 3$, it may be that $\chi \ne \overline{\chi}$. The functional equation for the twisted L-function is 
+	<section style = "text-align: left; font-size:80%"> 
+	<p> The functional equation for the twisted L-function by a character $\small \chi$ is 
 	\[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\overline{\chi}),\]
-	where the sign $\varepsilon$ is a complex number depending on $E$ and $\chi$. 
+	where the <span style = "color:yellow"> sign </span> $\varepsilon$ is a complex number depending on $E$ and $\chi$. 
 	</p>
 
-	<p style = "margin-top: 2cm;"> <span style = "color:lightgreen;"> Now, when $\varepsilon \ne 1$ it is not enough to guarantee vanishing of $L(E,s,\chi)$ at $s=1$. </span> Need additional insight.  </p>
+	<div class ="fragment" data-fragment-index="1">
+	<div class = "fragment highlight-current-green" data-fragment-index="1">
+	<p style = "margin-top:3cm"> When $\chi$ is a quadratic character (order 2), $\chi = \overline{\chi}$ and moreover the sign $\varepsilon = \pm{1}$. In that case, $\small \varepsilon \ne 1$ forces $L(E,1,\chi) = 0$.</p>
+	</div>
+	</div>
 
+	<div class = "fragment" data-fragment-index="2">
+	<div class = "fragment highlight-current-green" data-fragment-index="2">
+	<p style = "margin-top:1.5cm"> When $\chi$ has order $\small \ge 3$, it may be that $\chi \ne \overline{\chi}$. Now, when $\varepsilon \ne 1$ it is not enough to guarantee vanishing of $L(E,1,\chi)$.</p>
+	</div>
+	</div>
 	</section>
+
 
 	<section style = "text-align: left; font-size: 80%">
 		<h4 style = "color: violet;"> Random Matrix Theory</h4>
@@ -214,9 +220,11 @@ When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </spa
 
 	<section style = "text-align: left; font-size: 80%">
 
-	<p> We consider families of twisted L-functions $\small L(E,s,\chi)$ by Dirichlet characters $\small \chi$ of a fixed order $\small k$. Work of David, Fearnley and Kisilevsky considered $\small k$ an odd prime. We'll focus mainly on $\small k=4$ for rest of talk. </p>
-
-	<p  style = "margin-top:2cm"> To use random matrix theory model to predict number of vanishings, we need </p>
+	<p  style = "margin-top:0cm"> To use random matrix theory model to predict number of vanishings, we need to know </p>
+	<ul>
+		<li> the symmetry type is unitary </li>
+		<li> a discretization of the central values $\small L(E,1,\chi)$ </li>
+	</ul>
 	</section>
 </section>	
 
@@ -226,18 +234,11 @@ When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </spa
 	</section>
 
 	<section style = "text-align: left;font-size: 80%"> 
-	<h4 style = "color: violet;text-align: left">Conjectures</h4>
-	<p style = "text-align: left"> Let $\small E/\mathbb{Q}$ be an elliptic curve, let $\small k$ be a positive integer, and let
-	<div style = "margin-top: -0.5cm"> \[ \footnotesize N_{E,k}(X) = \# \{ \chi \text{ of order } k \mid \text{cond}(\chi) \le X \, \, \text{and} \, \, L(E,1, \chi) = 0 \}\] </div> </p>
-	<h4 style = "color: orange; font-size:70%"> David, Fearnley, Kisilevsky (2007) </h4>
-	<ul style = "margin-left: 2cm">
-		<li style = "font-size:90%"> If $\small k=3$, then $\small N_{E,3}(X) \sim X^{1/2}\,$ as  $\, \small X \to \infty$ </li>
-		<li style = "font-size:90%"> If $\small k=5$, then $\small N_{E,5}(X)$ is unbounded but $\small \ll X^{\alpha}$ for $\small \alpha >0$ as $\small X \to \infty$ </li>
-		<li style = "font-size:90%"> If $\small k \ge 7$ is prime, then $N_{E,k}(X)$ is bounded. </li>
-	</ul>
-
-	<h4 style = "color: orange; font-size:70%; margin-top:1cm"> B., Ryan, Young (2022) </h4>
-	<p style = "font-size:90%;margin-left: 2cm"> If $\small k = 4$ or $\small 6$, then $\small N_{E,k}(X) \sim X^{1/2}$ as $\small X \to \infty$</p>
+	<h3 style = "text-align: center">Conjectures</h3>
+	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (David, Fearnley, Kisilevsky; 2007) </h4>
+	<p style = "margin-left:1cm"> Let $\small E/\mathbb{Q}$ be an elliptic curve. There are infinitely many primitive Dirichlet characters $\small \chi$ of order $\small 3$ and $\small 5$ (ordered by conductor) such that $\small L(E,1,\chi) = 0$. However, if $\small k \ge 7$ is prime, there are only finitely many $\small \chi$ of order $k$ such that $\small L(E,1,\chi) = 0$.</p>
+	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (Berg, Ryan, Young; 2022) </h4>
+	<p style = "margin-left: 1cm"> Let $\small E/\mathbb{Q}$ be an elliptic curve. There are infinitely many primitive Dirichlet characters $\chi$ of order $\small 4$ or $\small 6$ such that $\small L(E,1,\chi) = 0$.</p>
 	</section>
 
 	<section style = "text-align:left; font-size: 80%"> 
@@ -349,4 +350,41 @@ When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </spa
 
 	to relate the distribution of zeroes close to $\small s=1$ of such L-functions to the distribution of eigenvalues close to $1$ of random matrices from a suitable classical compact group (<span style = "color:silver;"> <em> unitary, orthogonal, symplectic, ...</em> </span> )</p> 
 
-	 		<iframe height = 500 width = 900 data-src="https://www.lmfdb.org/Character/Dirichlet/" data-preload></iframe>
+	<iframe height = 500 width = 900 data-src="https://www.lmfdb.org/Character/Dirichlet/" data-preload></iframe>
+
+	<section style = "text-align: left;font-size: 80%"> 
+	<h4 style = "color: violet;text-align: left">Conjectures</h4>
+	<p style = "text-align: left"> Let $\small E/\mathbb{Q}$ be an elliptic curve, let $\small k$ be a positive integer, and let
+	<div style = "margin-top: -0.5cm"> \[ \footnotesize N_{E,k}(X) = \# \{ \chi \text{ of order } k \mid \text{cond}(\chi) \le X \, \, \text{and} \, \, L(E,1, \chi) = 0 \}\] </div> </p>
+	<h4 style = "color: orange; font-size:70%"> David, Fearnley, Kisilevsky (2007) </h4>
+	<ul style = "margin-left: 2cm">
+		<li style = "font-size:90%"> If $\small k=3$, then $\small N_{E,3}(X) \sim X^{1/2}\,$ as  $\, \small X \to \infty$ </li>
+		<li style = "font-size:90%"> If $\small k=5$, then $\small N_{E,5}(X)$ is unbounded but $\small \ll X^{\alpha}$ for $\small \alpha >0$ as $\small X \to \infty$ </li>
+		<li style = "font-size:90%"> If $\small k \ge 7$ is prime, then $N_{E,k}(X)$ is bounded. </li>
+	</ul>
+
+	<h4 style = "color: orange; font-size:70%; margin-top:1cm"> B., Ryan, Young (2022) </h4>
+	<p style = "font-size:90%;margin-left: 2cm"> If $\small k = 4$ or $\small 6$, then $\small N_{E,k}(X) \sim X^{1/2}$ as $\small X \to \infty$</p>
+	</section>
+
+
+	<section style = "text-align: left; font-size: 80%">
+	
+	<h4 style = "color: violet;"> Quadratic Characters</h4>
+	<p> When $\chi$ is a quadratic character (order 2), $\chi = \overline{\chi}$, in which case the twisted L-function satisfies the functional equation \[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\chi),\] 
+	where $\small varepsilon = \pm{1}$ is called the <span style = "color:yellow"> sign</span> of the functional equation and depends on $E$ and $\chi$. </p>
+
+	<p style = "margin-top: 2cm"> <span style = "color:lightgreen;"> 
+When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </span></p> 
+	</section>
+
+	<section style = "text-align: left; font-size: 80%">
+		<h4 style = "color: violet;"> Higher order characters </h4>
+			<p > For characters $\chi$ with order $\small \ge 3$, it may be that $\chi \ne \overline{\chi}$. The functional equation for the twisted L-function is 
+	\[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\overline{\chi}),\]
+	where the sign $\varepsilon$ is a complex number depending on $E$ and $\chi$. 
+	</p>
+
+	<p style = "margin-top: 2cm;"> <span style = "color:lightgreen;"> Now, when $\varepsilon \ne 1$ it is not enough to guarantee vanishing of $L(E,s,\chi)$ at $s=1$. </span> Need additional insight.  </p>
+
+	</section>
