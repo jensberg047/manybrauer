@@ -13,11 +13,27 @@
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
-		<style>
+<style>
 table, th, td {
   border: 1px solid white;
 }
 </style>
+<style>
+	.reveal .slides section .fragment.semi-fade-in{
+	opacity: 0.3;
+	visibility: inherit;}
+</style>
+<style>
+	.reveal .slides section .fragment.semi-fade-in.visible{
+		opacity: 1;
+		visibility: inherit;}
+</style>
+<style>
+	figure{
+    display: inline-block;
+}
+</style>
+
 	</head>
 	<body>
 		<div class="reveal">
@@ -62,8 +78,8 @@ table, th, td {
 		</p>
 
 		<p style="margin-bottom: 1.5cm;"> I think about this every time I engage with scholarship. <br>
-		<span style = "color:powderblue;"> <em> Am I enjoying this? &nbsp Do I belong here? &nbsp Is everyone valued? </em> </span> <br>
-		Outside of RNT, the answers are often still no. We can do better. </p>
+		<span style = "color:powderblue;"> <em> Do I belong here? &nbsp Is everyone valued? </em> </span> <br>
+		Outside of RNT, answers are no too often. We can do better. </p>
 	</div>
 
 		<p class="fragment" data-fragment-index="1"> The math I'll discuss today was born from a desire to collaborate with Nathan on a fun, computational project that combined our interests. Along the way, our many questions led us to Matt whose insights provided a helpful and exciting narrative.</p>
@@ -168,33 +184,23 @@ table, th, td {
 <section>
 	<section> <h2> Vanishing of twisted L-functions </h2> 
 
-	<p class = "fragment"; style = "margin-top: 2cm; font-size: 85%; text-align: left;"> <span style = "color: violet;"> <b> GOAL:</b> </span> Given an elliptic curve $\small E/\mathbb{Q}$, study the vanishing of twisted L-functions for families of Dirichlet characters $\chi$ to gain arithmetic info about $E$. </p>
+	<p style = "margin-top: 2cm; font-size: 85%; text-align: left;"> <span style = "color: violet;"> <b> GOAL:</b> </span> Given an elliptic curve $\small E/\mathbb{Q}$, describe how likely it is that $\small L(E,1,\chi) = 0$ for families of twisted $L$-functions by Dirichlet characters $\chi$ to gain arithmetic info about $\small E$. </p>
 </section>
 
-	<section style = "text-align: left;font-size: 80%"> 
-	<h3 style = "text-align: left">Conjectures</h3>
-	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (David, Fearnley, Kisilevsky; 2007) </h4>
-	<p style = "margin-left:1cm"> Let $\small E/\mathbb{Q}$ be an elliptic curve. There are infinitely many primitive Dirichlet characters $\small \chi$ of order $\small 3$ and $\small 5$ (ordered by conductor) such that $\small L(E,1,\chi) = 0$. However, if $\small k \ge 7$ is prime, there are only finitely many $\small \chi$ of order $k$ such that $\small L(E,1,\chi) = 0$.</p>
-	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (Berg, Ryan, Young; 2022) </h4>
-	<p style = "margin-left: 1cm"> Let $\small E/\mathbb{Q}$ be an elliptic curve. There are infinitely many primitive Dirichlet characters $\chi$ of order $\small 4$ or $\small 6$ such that $\small L(E,1,\chi) = 0$.</p>
-	</section>
-
-	<section style = "text-align: left; font-size:80%"> 
+	<section style = "text-align: left; font-size:75%"> 
+	<h4 style = "color: violet;"> The Functional Equation </h4>
 	<p> The functional equation for the twisted L-function by a character $\small \chi$ is 
-	\[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\overline{\chi}),\]
-	where the <span style = "color:yellow"> sign </span> $\varepsilon$ is a complex number depending on $E$ and $\chi$. 
+		<div style = "margin-top:-0.5cm; margin-bottom: -0.5cm;">
+	\[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\overline{\chi}),\]</div>
+	where the <span style = "color:yellow"> sign </span> $\varepsilon$ is a complex number with $\small |\varepsilon|=1$ depending $\small E$ and $\small \chi$ 
 	</p>
 
-	<div class ="fragment" data-fragment-index="1">
-	<div class = "fragment highlight-current-green" data-fragment-index="1">
+	<div class = "fragment semi-fade-in">
 	<p style = "margin-top:3cm"> When $\chi$ is a quadratic character (order 2), $\chi = \overline{\chi}$ and moreover the sign $\varepsilon = \pm{1}$. In that case, $\small \varepsilon \ne 1$ forces $L(E,1,\chi) = 0$.</p>
 	</div>
-	</div>
 
-	<div class = "fragment" data-fragment-index="2">
-	<div class = "fragment highlight-current-green" data-fragment-index="2">
+	<div class = "fragment semi-fade-in">
 	<p style = "margin-top:1.5cm"> When $\chi$ has order $\small \ge 3$, it may be that $\chi \ne \overline{\chi}$. Now, when $\varepsilon \ne 1$ it is not enough to guarantee vanishing of $L(E,1,\chi)$.</p>
-	</div>
 	</div>
 	</section>
 
@@ -204,64 +210,63 @@ table, th, td {
 
 		<p> One fruitful approach via <a href = "https://web.math.princeton.edu/~nmk/RMFEM.pdf"> Katz and Sarnak </a> is to model such L-functions by a suitable classical (compact) matrix/symmetry group <span style = "color:silver"> <em> (unitary, orthogonal, symplectic,...)</em> </span>  </p>
 
-		<p style = "margin-top:2cm"> In this context, the symmetries of the family of L-functions determine the appropriate group of matrices; the sign $\varepsilon$ of the functional equation is analogous to the determinant of the matrix <br> <span style = "color:silver; font-size:75%;"> (unitary: $\small |\det| = 1$, orthogonal: $\small \det = \pm 1$, symplectic: $\small \det = 1$) </span> </p>
+		<p style = "margin-top:2cm"> In this context, the symmetries of the family of L-functions determine the appropriate group of matrices; the sign $\varepsilon$ of the functional equation is analogous to the determinant of the matrix <br> <span style = "color:silver;"> (unitary: $\small |\det| = 1$, orthogonal: $\small \det = \pm 1$, symplectic: $\small \det = 1$) </span> </p>
 		
 	</section>
 
 
-	<section style = "text-align: left; font-size: 80%">
-	<p> Many properties of twisted L-functions are analogous to those of characteristic polynomials of <span style = "color:yellow"> unitary$\small ^\ast$</span> matrices. </p>
+	<section style = "text-align: left; font-size: 77%">
+	<p> Many properties of twisted L-functions are analogous to those of characteristic polynomials $\small p_A(\lambda) = \det(A - \lambda I)$ of <span style = "color:yellow"> unitary$\small ^\ast$</span> matrices $\small A$. </p>
 
-	<p style = "margin-top:2cm"> <a href = "https://people.maths.bris.ac.uk/~mancs/papers/RMTzeta.pdf"> Keating and Snaith </a> conjectured that the distribution of zeroes close to $\small s=1$ of a family of twisted L-functions is related to the distribution of eigenvalues close to 1 of random unitary matrices.</p>
+	<p style = "margin-top:1.5cm"> <a href = "https://people.maths.bris.ac.uk/~mancs/papers/RMTzeta.pdf"> Keating and Snaith </a> conjectured that the distribution of the values $\small |L(E,1,\chi)|$ is related to the distribution of the values of the characteristic polynomials $\small |p_A(1)|$ (with respect to the Haar measure) </p>
 
-	<p style = "margin-top: 4cm; font-size: 60%"> $^\ast$A matrix $U$ is unitary if $U^{-1}$ is equal to the conjugate transpose of $U$. </p>
+	<p class = "fragment semi-fade-in" style = "margin-top: 1.5cm"> Thus to make conjectures about vanishing of $\small L(E,1,\chi)$, one can determine the probability distribution of $\small |p_A(1)|$ and relate it to that of the values of the twisted L-functions </p>
 
+	<p style = "margin-top: 2.5cm; font-size: 60%"> $^\ast$A matrix $U$ is unitary if $U^{-1}$ is equal to the conjugate transpose of $U$. </p>
 	</section>
 
-	<section style = "text-align: left; font-size: 80%">
+	<section style = "font-size:80%">
+	<h4 style = "text-align: left;"> Comparisons</h4>
+		<figure>
+	 <img src = "histogram_e11aquartic_primecond.png" style = "width:12cm; margin-bottom: -0.2cm; padding:.35cm"/> 
+	 <figcaption style = "font-size: 60%;">  Histogram of relative frequencies of $\footnotesize |L(E,1,\chi)|$ <br> for primitive quartic $\footnotesize \chi$ of prime conductor $\footnotesize \le 20000$ <br>
+	 and curve $\footnotesize E$ with label 11.a1 </figcaption>
+	</figure>
 
-	<p  style = "margin-top:0cm"> To use random matrix theory model to predict number of vanishings, we need to know </p>
-	<ul>
-		<li> the symmetry type is unitary </li>
-		<li> a discretization of the central values $\small L(E,1,\chi)$ </li>
-	</ul>
+	<figure>
+	<img src = "histogram_rmtcharpoly_Nis20.png" style = "width:12cm;margin-bottom: -0.2cm; padding:.35cm"/> 
+	<figcaption style = "font-size: 60%;">  Histogram of relative frequencies of $\footnotesize |p_A(1)|$ for <br> random unitary matrices $A$ of size $\footnotesize 20 \times 20$ <br> $\qquad$ </figcaption>
+	</figure>
 	</section>
+
+
+
 </section>	
 
 
-<section>
-	<section> <h2> Conjectures </h2>
-	</section>
-
-	<section style = "text-align: left;font-size: 80%"> 
-	<h3 style = "text-align: center">Conjectures</h3>
-	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (David, Fearnley, Kisilevsky; 2007) </h4>
-	<p style = "margin-left:1cm"> Let $\small E/\mathbb{Q}$ be an elliptic curve. There are infinitely many primitive Dirichlet characters $\small \chi$ of order $\small 3$ and $\small 5$ (ordered by conductor) such that $\small L(E,1,\chi) = 0$. However, if $\small k \ge 7$ is prime, there are only finitely many $\small \chi$ of order $k$ such that $\small L(E,1,\chi) = 0$.</p>
-	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (Berg, Ryan, Young; 2022) </h4>
-	<p style = "margin-left: 1cm"> Let $\small E/\mathbb{Q}$ be an elliptic curve. There are infinitely many primitive Dirichlet characters $\chi$ of order $\small 4$ or $\small 6$ such that $\small L(E,1,\chi) = 0$.</p>
-	</section>
-
-	<section style = "text-align:left; font-size: 80%"> 
-	<p> Ingredients and distinguishing features</p>
-	</section>
-
-</section>
-
 <section>	
-	<section> <h2> Experiments and Data </h2>
+	<section> <h2> Conjectures and evidence </h2>
 	</section>
 
-	<section style = "text-align: left"> To provide numerical evidence for the conjecture, we a combination of Sage and PARI/GP code on the <a href= "https://osg-htc.org/about/introduction/" > Open Science Grid </a>. The combined wall time of all computations was more than 40 years. 
+	<section style = "text-align: left;font-size: 70%"> 
+	Let $\small E/\mathbb{Q}$ be an elliptic curve.
+	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (David, Fearnley, Kisilevsky; 2007) </h4>
+	<p style = "margin-left:1cm;margin-top:-0.4cm"> There are infinitely many primitive Dirichlet characters $\small \chi$ of order $\small 3$ and $\small 5$ (ordered by conductor) such that $\small L(E,1,\chi) = 0$. However, if $\small k \ge 7$ is prime, there are only finitely many $\small \chi$ of order $k$ such that $\small L(E,1,\chi) = 0$.</p>
+	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (Berg, Ryan, Young; 2022) </h4>
+	<p style = "margin-left: 1cm;margin-top:-0.4cm"> There are infinitely many primitive Dirichlet characters $\chi$ of order $\small 4$ or $\small 6$ such that $\small L(E,1,\chi) = 0$.</p>
+
+	<div class="fragment semi-fade-in">
+	<h4 style = "color: orange; font-size:80%; margin-top:2cm"> Conjecture (Mazur, Rubin; 2019) </h4>
+	<p style = "margin-left: 1cm; margin-top:-0.4cm"> There are only finitely many primitive Dirichlet characters $\small \chi$ with $\small \varphi(\text{ord}(\chi))>4$ such that $\small L(E,1,\chi) = 0$.</p>
+	</div>
+
 	</section>
 
-	<section> <h4 style = "font-size: 95%"> Totally quartic case </h4>
-	<p> <img src = "totallyquartice11a.png" padding=0cm width = 60% > </p>
-	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of twisted L-functions of the curve 11.a1 by totally quartic characters $\small \chi$ of conductor $\small \le 700000$</p>
+	<section style = "text-align: left"> To provide numerical evidence for the conjecture, we a combination of Sage and PARI/GP code on the <a href= "https://osg-htc.org/about/introduction/" > Open Science Grid</a>. The combined wall time of all computations was more than 40 years. 
 	</section>
-
 
 	<section> <h4 style = "font-size: 95%"> All quartic case </h4>
-	<p> <img src = "e11a1quartic.png" padding=0cm width = 60% > </p>
+	<p> <img src = "e11aquartic.png" padding=0cm width = 60% > </p>
 	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of twisted L-functions of the curve 11.a1 by primitive quartic characters $\small \chi$ of conductor $\small \le 700000$</p>
 	</section>
 
@@ -269,6 +274,54 @@ table, th, td {
 	<section> <h4 style = "font-size: 95%"> All sextic case </h4>
 	<p> <img src = "e11asextic.png" padding=0cm width = 60% > </p>
 	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of twisted L-functions of the curve 11.a1 by primitive sextic characters $\small \chi$ of conductor $\small \le 200000$</p>
+	</section>
+</section>
+
+<section>
+	<section> <h2> Insights and distinguishing features </h2> </section>
+
+	<section style = "text-align: left; font-size: 80%">
+	<p  style = "margin-top:0cm"> To use the random matrix theory model to predict number of vanishings, we need to know </p>
+	<ul style = "margin-left:2cm;font-size:90%">
+		<li> <span style = "color:lightgreen;">$\small \#$ of primitive characters </span> $\chi$ of order $k$ with $\small \text{cond}(\chi) \le X$</li>
+		<li style = "margin-top:1cm"> the <span style = "color:lightgreen;">symmetry type  of the family </span>of twisted L-functions, in particular, the distribution of (normalized) Gauss sums 
+	 <div style ="margin-top:-0.5cm; margin-bottom:-1cm"> \[ \footnotesize \tau(\chi) = \sum \limits_{1 \le a \le d} \chi(a) e^{2 \pi i a/d}\] </div>
+	 on the unit circle </li>
+		<li style = "margin-top:1cm"> a <span style = "color:lightgreen;"> discretization </span> of the central values $\small L(E,1,\chi)$ </li>
+	</ul>
+	</section>
+
+ <section style = "font-size:80%;">
+ 	<div>
+ 	<p style = "text-align:left"> To confirm a family of twisted L-functions by primitive order $k$ characters has unitary symmetry, we must prove that the normalized Gauss sums $\small \frac{\tau(\chi)}{\sqrt{\text{cond}(\chi)}}$ are equidistributed on the unit circle. </p>
+ </div>
+
+ <div class = "fragment"; style = "margin-top:2cm"> <img src = "cubicgausssums.png" style = "width: 30%; float:left"> 
+<img src = "quarticgausssums.png" style = "width: 30%">
+<img src = "quinticgausssums.png" style = "width: 30%; float:right">
+<p style ="text-align: left; font-size: 60%; margin-top: -0.3cm"> Histograms of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ of cubic, quartic, and quintic characters of conductor $\footnotesize \le 200000$, from left to right</p>
+</div>
+ </section>
+
+
+	<section style = "font-size:80%;">
+	<p style = "text-align:left"> Quartic characters differ from those of prime order since they may decompose into a product of characters of strictly smaller order. </p>
+
+	<p style = "margin-top:.8cm;text-align:left"> We say that $\small \chi$ is a <span style = "color:yellow"> totally quartic</span> character if it decomposes into a product of characters of exact order 4.</p>
+
+	<p style= "text-align:left;margin-top:.02cm; font-size:60%; opacity:50%"> <b> Non-example: </b> The primitive quartic character with label <a href = "http://www.lmfdb.org/Character/Dirichlet/65/12" > 65.h.12 </a> decomposes as the product of a quartic character <a href = "http://www.lmfdb.org/Character/Dirichlet/65/27"> 65.i.27 </a>  and a quadratic character <a href = "http://www.lmfdb.org/Character/Dirichlet/65/51"> 65.c.51</a>. </p>
+
+	<div class = "fragment">
+	<div style ="margin-top: 1.5cm;"> <img src = "totallyquarticgausssums.png" style = "width:30%; padding:0cm"></div>
+	<p style ="text-align: center; font-size: 60%; margin-top: -0.3cm"> Histogram of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ <br> of totally quartic characters of conductor $\footnotesize \le 200000$</p>
+	</div>
+
+	</section>
+
+
+	<section> <h4 style = "font-size: 95%"> Totally quartic case </h4>
+	<p> <img src = "e11atotallyquartic.png" padding=0cm width = 60% > </p>
+	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of twisted L-functions of the curve 11.a1 by totally quartic characters $\small \chi$ of conductor $\small \le 700000$</p>
 	</section>
 </section>
 
@@ -316,6 +369,24 @@ table, th, td {
 		</script>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
