@@ -281,20 +281,19 @@ table, th, td {
 	<section> <h2> Insights and distinguishing features </h2> </section>
 
 	<section style = "text-align: left; font-size: 80%">
-	<p  style = "margin-top:0cm"> To use the random matrix theory model to predict number of vanishings, we need to know </p>
+	<p  style = "margin-top:0cm"> To apply the random matrix theory model to our family of twisted L-functions, we need to know </p>
 	<ul style = "margin-left:2cm;font-size:90%">
 		<li style = "margin-top:.5cm"> the <span style = "color:lightgreen;">symmetry type  of the family </span>of twisted L-functions, in particular, the distribution of (normalized) Gauss sums 
 	 <div style ="margin-top:-0.5cm; margin-bottom:-1cm"> \[ \footnotesize \tau(\chi) = \sum \limits_{1 \le a \le d} \chi(a) e^{2 \pi i a/d}\] </div>
 	 on the unit circle </li>
 	 <li style = "margin-top:1.2cm"> <span style = "color:lightgreen;">$\small \#$ of primitive characters </span> $\chi$ of order $k$ with $\small \text{cond}(\chi) \le X$</li>
-		<li style = "margin-top:1.2cm"> a <span style = "color:lightgreen;"> discretization </span> of the central values $\small L(E,1,\chi)$ </li>
 	</ul>
 	</section>
 
- <section style = "font-size:70%;">
+ <section style = "font-size:80%;">
  	<h4 style = "font-size: 95%; text-align:left; color:violet"> Distribution of Gauss sums </h4>
  	<div>
- 	<p style = "text-align:left"> To confirm a family of twisted L-functions has unitary symmetry, we must prove that the normalized Gauss sums $\small \frac{\tau(\chi)^2}{\text{cond}(\chi)}$ are equidistributed on the unit circle. </p>
+ 	<p style = "text-align:left"> To confirm a family of twisted L-functions has unitary symmetry, we must study the equidistribution properties of the normalized Gauss sums $\small \frac{\tau(\chi)^2}{\text{cond}(\chi)}$ on the unit circle. </p>
  </div>
 
  <div class = "fragment"; style = "margin-top:1cm"> <img src = "cubicgausssums.png" style = "width: 30%; float:left"> 
@@ -302,9 +301,7 @@ table, th, td {
 <img src = "quinticgausssums.png" style = "width: 30%; float:right">
 <p style ="text-align: left; font-size: 60%; margin-top: -0.3cm"> Histograms of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ of cubic, quartic, and quintic characters of conductor $\footnotesize \le 200000$, from left to right</p>
 </div>
-
-<p class = "fragment" style = "text-align: left; margin-top:2cm"> <span style = "color:orange"> <b> PROPOSITION (BRY, 2022) </b></span> The (normalized) Gauss sums of quartic Dirichlet characters $\small \chi$ equidistribute on the unit circle <em> slowly</em>. For characters $\footnotesize \chi$ of conductor $\footnotesize \le X$ the rate of equidistribution is $\footnotesize O(\log(X)^{-1})$.</p>
- </section>
+</section>
 
 
 	<section style = "font-size:80%;">
@@ -315,30 +312,31 @@ table, th, td {
 	<p style= "text-align:left;margin-top:.02cm; font-size:60%; opacity:50%"> <b> Non-example: </b> The primitive quartic character with label <a href = "http://www.lmfdb.org/Character/Dirichlet/65/12" > 65.h.12 </a> decomposes as the product of a quartic character <a href = "http://www.lmfdb.org/Character/Dirichlet/65/27"> 65.i.27 </a>  and a quadratic character <a href = "http://www.lmfdb.org/Character/Dirichlet/65/51"> 65.c.51</a>. </p>
 
 	<div class = "fragment">
-	<div style ="margin-top: 1.5cm;"> <img src = "totallyquarticgausssums.png" style = "width:30%; padding:0cm"></div>
+	<div style ="margin-top: 0.5cm;"> <img src = "totallyquarticgausssums.png" style = "width:30%; padding:0cm"></div>
 	<p style ="text-align: center; font-size: 60%; margin-top: -0.3cm"> Histogram of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ <br> of totally quartic characters of conductor $\footnotesize \le 200000$</p>
 	</div>
 </section>
 
-	<section style = "font-size:75%; text-align: left;">
-	<h4 style = "font-size: 95%; color:violet;"> Counting Characters </h4>
+<section style = "font-size: 80%; text-align: left;">
+<p> Work of Heath-Brown and Patterson showed that for the family of characters of order $\small k$, the normalized Gauss sums are equidistributed when  <span style = "color:lightgreen;"> $\small k$ is prime </span> or when we restrict to characters of <span style = "color:lightgreen;"> prime modulus. </span> </p>
 
-	<p style = "margin-top: .2cm;"> <span style ="color:orange; font-size:80%"> <b> THEOREM (FINCH, MARTIN, SEBAH; 2010) </b> </span></p>
-	<p> Let $\small S_k(X) := \{ \text{primitive} \, \chi \mid \text{ord}(\chi) = k, \, \text{cond}(\chi) \le X\}$. Then </p>
-	<ul style ="margin-left:2cm">
-		<li style = "margin-top: .2cm;"> $\small \# S_k(X) \sim c_k X \, \,$ for $\small k$ prime</li>
-		<li style = "margin-top: .5cm;"> $\small \#S_4(X) \sim  c_4 \,X \log X$</li>
-		<li style = "margin-top: .5cm;"> $\small \#S_6(x) \sim  c_6\,X(\log X)^2$</li>
-	</ul>
 
+<p  class="fragment semi-fade-in" style = "text-align: left; margin-top:2cm"> <span style = "color:orange"> <b> PROPOSITION (B., RYAN, YOUNG) </b></span> The normalized Gauss sums of the family of totally quartic and of all quartic Dirichlet characters $\small \chi$ equidistribute on the unit circle. The latter does so <em> slowly</em>; for such characters $\footnotesize \chi$ of conductor $\footnotesize \le X$ the rate of equidistribution is $\footnotesize O(\log(X)^{-1})$.</p>
+</section>
+
+<section style = "font-size:80%"> 
+
+	<h4> Totally quartic case </h4>
+
+	<p style = "text-align: left; font-size: 73%;"> The family of totally quartic characters has unitary symmetry. Applying the random matrix model, we also conjecture that there are infinitely many totally quartic characters with $\footnotesize L(E,1,\chi) = 0$ </p>
+
+
+	<figure> 
+		<img src = "e11atotallyquartic.png" padding=0cm width = 50%> 
+		<figcaption style = "font-size:60%;"> Ratio of predicted vanishings to emperical vanishings of twisted L-functions <br>  of the curve 11.a1 by totally quartic characters $\small \chi$ of conductor $\small \le 700000$ </figcaption>
+	</figure>
+	
 	</section>
-
-
-	<section> <h4 style = "font-size: 95%"> Totally quartic case </h4>
-	<p> <img src = "e11atotallyquartic.png" padding=0cm width = 60% > </p>
-	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of twisted L-functions of the curve 11.a1 by totally quartic characters $\small \chi$ of conductor $\small \le 700000$</p>
-	</section>
-
 
 </section>
 
@@ -477,6 +475,18 @@ When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </spa
 
 	<p style = "margin-top: 2cm;"> <span style ="color:orange; font-size:80%"> <b> PROPOSITION (BRY, 2022) </b> </span></p>
 	<p> The average growth rate for totally quartic $\small \chi$ with $\text{cond}(\chi) \small \le X$ is $\small \sim b_4 X$</p>
+</section>
 
+
+	<section style = "font-size:75%; text-align: left;">
+	<h4 style = "font-size: 95%; color:violet;"> Counting Characters </h4>
+
+	<p style = "margin-top: .2cm;"> <span style ="color:orange; font-size:80%"> <b> THEOREM (FINCH, MARTIN, SEBAH; 2010) </b> </span></p>
+	<p> Let $\small S_k(X) := \{ \text{primitive} \, \chi \mid \text{ord}(\chi) = k, \, \text{cond}(\chi) \le X\}$. Then </p>
+	<ul style ="margin-left:2cm">
+		<li style = "margin-top: .2cm;"> $\small \# S_k(X) \sim c_k X \, \,$ for $\small k$ prime</li>
+		<li style = "margin-top: .5cm;"> $\small \#S_4(X) \sim  c_4 \,X \log X$</li>
+		<li style = "margin-top: .5cm;"> $\small \#S_6(x) \sim  c_6\,X(\log X)^2$</li>
+	</ul>
 
 	</section>
