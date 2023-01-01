@@ -175,8 +175,10 @@ table, th, td {
 	</div>
 
 	<p style = "margin-top: 2cm;"> The <span style ="color:yellow"> order </span> of $\chi$ is $4$ and we say $\chi$ is a <span style ="color:yellow"> quartic</span> character. </p>
-	</section>
 
+	<p class = "fragment semi-fade-in"style = "margin-top: 2cm;"> Moreover, $\chi$ is <span style = "color: yellow"> primitive </span> since there is no character of smaller modulus whose values agree with $\small \chi$ on integers coprime to $\small d$.
+	</p>
+	</section>
 
 </section>
 
@@ -184,7 +186,7 @@ table, th, td {
 <section>
 	<section> <h2> Vanishing of twisted L-functions </h2> 
 
-	<p style = "margin-top: 2cm; font-size: 85%; text-align: left;"> <span style = "color: violet;"> <b> GOAL:</b> </span> Given an elliptic curve $\small E/\mathbb{Q}$, describe how likely it is that $\small L(E,1,\chi) = 0$ for families of twisted $L$-functions by Dirichlet characters $\chi$ to gain arithmetic info about $\small E$. </p>
+	<p style = "margin-top: 2cm; font-size: 85%; text-align: left;"> <span style = "color: violet;"> <b> GOAL:</b> </span> Given an elliptic curve $\small E/\mathbb{Q}$ and a family of twisted $L$-functions by Dirichlet characters $\chi$, describe how likely it is that $\small L(E,1,\chi) = 0$ to gain arithmetic info about $\small E$. </p>
 </section>
 
 	<section style = "text-align: left; font-size:75%"> 
@@ -253,7 +255,7 @@ table, th, td {
 	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (David, Fearnley, Kisilevsky; 2007) </h4>
 	<p style = "margin-left:1cm;margin-top:-0.4cm"> There are infinitely many primitive Dirichlet characters $\small \chi$ of order $\small 3$ and $\small 5$ (ordered by conductor) such that $\small L(E,1,\chi) = 0$. However, if $\small k \ge 7$ is prime, there are only finitely many $\small \chi$ of order $k$ such that $\small L(E,1,\chi) = 0$.</p>
 	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (Berg, Ryan, Young; 2022) </h4>
-	<p style = "margin-left: 1cm;margin-top:-0.4cm"> There are infinitely many primitive Dirichlet characters $\chi$ of order $\small 4$ or $\small 6$ such that $\small L(E,1,\chi) = 0$.</p>
+	<p style = "margin-left: 1cm;margin-top:-0.4cm"> There are infinitely many primitive Dirichlet characters $\chi$ of order $\small 4$ and $\small 6$ such that $\small L(E,1,\chi) = 0$.</p>
 
 	<div class="fragment semi-fade-in">
 	<h4 style = "color: orange; font-size:80%; margin-top:2cm"> Conjecture (Mazur, Rubin; 2019) </h4>
@@ -262,7 +264,9 @@ table, th, td {
 
 	</section>
 
-	<section style = "text-align: left"> To provide numerical evidence for the conjecture, we a combination of Sage and PARI/GP code on the <a href= "https://osg-htc.org/about/introduction/" > Open Science Grid</a>. The combined wall time of all computations was more than 40 years. 
+	<section style = "text-align: left"> To provide numerical evidence for the conjecture, we ran a combination of Sage and PARI/GP code on the <a href= "https://osg-htc.org/about/introduction/" > Open Science Grid</a>. 
+
+	<p style = "font-size: 60%;"> The combined wall time of all computations was more than 40 years. </p>
 	</section>
 
 	<section> <h4 style = "font-size: 95%"> Quartic case </h4>
@@ -491,3 +495,4 @@ When $\varepsilon \ne 1$, this forces vanishing of $L(E,s,\chi)$ at $s=1$. </spa
 	</ul>
 
 	</section>
+
