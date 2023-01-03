@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>jmm2023.js</title>
+		<title>jmm2023</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
 <style>
-table, th, td {
+table, th, td{
   border: 1px solid white;
 }
 </style>
@@ -39,36 +39,42 @@ table, th, td {
 		<div class="reveal">
 			<div class="slides">
 				<section>
+
 					<section> 
 						<h2 style = "font-size: 155%;"> Vanishing of quartic twists of <br> L-Functions of elliptic curves: </h2>
 						<h3 style="margin-bottom:3cm;"> experiments and conjectures  </h3>
-						<h4 style="color:yellow"> JMM Special Session on Rethinking Number Theory </h4>
+						<h4> <span style="color:yellow"> JMM Special Session on Rethinking Number Theory </span> </h4>
 						<p> January 2023</p>
 					</section>
+
 					<section>
 					<div>
 					<div style = "float: left; margin-left: 0%; margin-right: 5%; margin-bottom: 2 em;">
-						<img src="jenphoto.jpeg" alt="Jen Berg" style="width: 70%">
+						<img src="jenphoto.jpeg" alt="Jen Berg" style="width: 70%"/>
 						<h4 style = "font-size: 25pt; color: skyblue;"> Jen Berg </h4>
 						<p style = "font-size: 15pt;"> Bucknell University </p>
 					</div>
 					<div style = "float: left; margin-right: 5%; margin-bottom: 2 em;">
-						<img src="nathanphoto.jpeg" alt="Nathan Ryan" style="width:70%">
+						<img src="nathanphoto.jpeg" alt="Nathan Ryan" style="width:70%"/>
 						<h4 style = "font-size: 25pt"> Nathan Ryan </h4>
 						<p style = "font-size: 15pt;"> Bucknell University </p>
 					</div>
 						<div style = "float:left; margin-right: 0%; margin-bottom: 2 em;">
-						<img src="mattyoung.png" alt="Matt Young" style="width:75%">
+						<img src="mattyoung.png" alt="Matt Young" style="width:75%"/>
 						<h4 style = "font-size: 25pt"> Matt Young </h4>
 						<p style = "font-size: 15pt;"> Texas A&M University </p>
 					</div>
 					</div>
 					</section>
 
-					<section style = "text-align: left"> <p style = "margin-bottom: 3cm;"> This work was primarily completed in Lewisburg, PA.<br> I would like to respectfully acknowledge and recognize my responsibility to the original and current caretakers of this land, water, and air: the Susquehannock peoples and their ancestors and descendants. </p>
-					<p style = "font-size: 20pt;"> Visit <a href = "https://www.native-land.ca"> native-land.ca </a> to learn more about the native lands on which you live and work </p>
+					<section style = "text-align: left"> 
+						<p style = "margin-bottom: 3cm;"> This work was primarily completed in Lewisburg, PA.<br> I would like to respectfully acknowledge and recognize my responsibility to the original and current caretakers of this land, water, and air: the Susquehannock peoples and their ancestors and descendants. 
+						</p>
 
-					</section>
+						<p style = "font-size: 20pt;"> Visit <a href = "https://www.native-land.ca"> native-land.ca </a> to learn more about the native lands on which you live and work 
+						</p>
+				</section>
+
 				</section>
 
 	<section style = "text-align: left; font-size: 80%;">
@@ -80,14 +86,14 @@ table, th, td {
 		<p style="margin-bottom: 1.5cm;"> I think about this every time I engage with scholarship. <br>
 		<span style = "color:powderblue;"> <em> Do I belong here? &nbsp Is everyone valued? </em> </span> <br>
 		Outside of RNT, the answers are too often no. We can do better. </p>
-	</div>
+		</div>
 
-		<p class="fragment" data-fragment-index="1"> The work I'll discuss today came from a desire to collaborate with Nathan on a fun, computational project that combined our interests. Along the way, our many questions led us to Matt who provided invaluable insights.</p>
+	<p class="fragment" data-fragment-index="1"> The work I'll discuss today came from a desire to collaborate with Nathan on a fun, computational project that combined our interests. Along the way, our many questions led us to Matt who provided invaluable insights.
+	</p>
 	</section>
 
 			
-  <section>
-
+<section>
   <section> <h2> L-functions: What and why? </h2> </section>
 
   <section style = "font-size: 75%;"> 
@@ -95,9 +101,9 @@ table, th, td {
 
   <p style = "text-align: left;"><span><b><u>Example</u>:  </b> </span> The curve <a href = "https://www.lmfdb.org/EllipticCurve/Q/11/a/1"> 11.a1 </a> has equation <span style = "font-size: 70%;"> $y^2=x^3-10135152x-12419196912$ </span> </p>
 
-  <img src= "11a1.png" style = "width:40%; padding:0cm" > 
+  <img src= "11a1.png" style = "width:40%; padding:0cm"/> 
 
-  <p style = "text-align: left"> Often want to study arithmetic of $E$ and, in particular, gain info about $\small E(\mathbb{Q})$
+  <p style = "text-align: left"> Often want to study arithmetic of $E$ and, in particular, gain info about $\small E(\mathbb{Q})$ </p>
 	</section>
 
   <section style = "font-size: 80%;">
@@ -106,7 +112,8 @@ table, th, td {
   		<li> $a_p$ encode info about $\#E(\mathbb{F}_p)$, the number of points of $E$ mod $p$ </li>
   		<li> has analytic continuation to $\mathbb{C}$ </li>
   		<li> satisfies functional equation relating $\small L(E,s)$ and $\small L(E,2-s)$</li>
-  	</ul>   </p>
+  	</ul>   
+  </p>
 
   	<p style = "text-align: left;font-size: 60%; margin-top: 3cm;"> $^\ast$ ignoring primes $p$ of bad reduction for simplicity </p>
   </section>
@@ -125,11 +132,12 @@ table, th, td {
   <p style = "margin-bottom: 3cm"> $L(E,s,\chi)$ also has an analytic continuation to $\mathbb{C}$ and satisfies a functional equation relating $L(E,s,\chi)$ and $L(E,2-s, \overline{\chi})$. </p>
 
   <p style = "margin-top:2cm; margin-bottom:2cm"> BSD predicts vanishing of $\small L(E,s,\chi)$ at $s=1$ is related to the existence of rational points $E(K)$ over the abelian extension $\small K/\mathbb{Q}$ associated to $\small \chi$. </p>
-</section>
+	</section>
 
-	<section style = 'text-align: left;'>
+	<section style = "text-align: left;">
   <p style =" border-width:3px; border-style:solid; border-color:lightslategray; padding: 0.5em;"> <span> <b><u>Theme</u>: </b> </span> Interesting arithmetic data is encoded in the location of the zeroes (and poles) of L-functions. Since L-functions are analytic objects, one can use analytic tools to study arithmetic. </p>
   </section>
+
 </section>
 
 <section>
@@ -187,13 +195,14 @@ table, th, td {
 	<section> <h2> Vanishing of twisted L-functions </h2> 
 
 	<p style = "margin-top: 2cm; font-size: 85%; text-align: left;"> <span style = "color: violet;"> <b> GOAL:</b> </span> Given an elliptic curve $\small E/\mathbb{Q}$ and a family of twisted $L$-functions by Dirichlet characters $\chi$, describe how likely it is that $\small L(E,1,\chi) = 0$ to gain arithmetic info about $\small E$. </p>
-</section>
+	</section>
 
 	<section style = "text-align: left; font-size:75%"> 
 	<h4 style = "color: violet;"> The Functional Equation </h4>
 	<p> The functional equation for the twisted L-function by a character $\small \chi$ is 
-		<div style = "margin-top:-0.5cm; margin-bottom: -0.5cm;">
-	\[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\overline{\chi}),\]</div>
+	<span style = "margin-top:-0.5cm; margin-bottom: -0.5cm;">
+	\[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\overline{\chi}),\]
+	</span>
 	where the <span style = "color:yellow"> sign </span> $\varepsilon$ is a complex number with $\small |\varepsilon|=1$ depending $\small E$ and $\small \chi$ 
 	</p>
 
@@ -231,13 +240,13 @@ table, th, td {
 	<h4 style = "text-align: left;"> Comparisons</h4>
 		<figure>
 	 <img src = "histogram_e11aquartic_primecond.png" style = "width:12cm; margin-bottom: -0.2cm; padding:.35cm"/> 
-	 <figcaption style = "font-size: 60%;">  Histogram of relative frequencies of $\footnotesize |L(E,1,\chi)|$ <br> for primitive quartic $\footnotesize \chi$ of prime modulus $\footnotesize \le 20000$ <br>
-	 and curve $\footnotesize E$ with label 11.a1 </figcaption>
+	 <figcaption> <p style = "font-size: 60%;">  Histogram of relative frequencies of $\footnotesize |L(E,1,\chi)|$ <br> for primitive quartic $\footnotesize \chi$ of prime modulus $\footnotesize \le 20000$ <br>
+	 and curve $\footnotesize E$ with label 11.a1 </p> </figcaption>
 	</figure>
 
 	<figure>
 	<img src = "histogram_rmtcharpoly_Nis20.png" style = "width:12cm;margin-bottom: -0.2cm; padding:.35cm"/> 
-	<figcaption style = "font-size: 60%;">  Histogram of relative frequencies of $\footnotesize |p_A(1)|$ for <br> random unitary matrices $A$ of size $\footnotesize 20 \times 20$ <br> $\qquad$ </figcaption>
+	<figcaption> <p style = "font-size: 60%;">  Histogram of relative frequencies of $\footnotesize |p_A(1)|$ for <br> random unitary matrices $A$ of size $\footnotesize 20 \times 20$ <br> $\qquad$ </p> </figcaption>
 	</figure>
 	</section>
 
@@ -251,32 +260,32 @@ table, th, td {
 	</section>
 
 	<section style = "text-align: left;font-size: 70%"> 
-	Let $\small E/\mathbb{Q}$ be an elliptic curve.
-	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (David, Fearnley, Kisilevsky; 2007) </h4>
+	<p> Let $\small E/\mathbb{Q}$ be an elliptic curve. </p>
+	<h4 style = "margin-top:.5cm;font-size:80%"> <span style = "color: orange;"> Conjecture (David, Fearnley, Kisilevsky; 2007) </span> </h4>
 	<p style = "margin-left:1cm;margin-top:-0.4cm"> There are infinitely many primitive Dirichlet characters $\small \chi$ of order $\small 3$ and $\small 5$ (ordered by conductor) such that $\small L(E,1,\chi) = 0$. However, for any fixed prime $\small k \ge 7$, there are only finitely many $\small \chi$ of order $k$ such that $\small L(E,1,\chi) = 0$.</p>
-	<h4 style = "color: orange; font-size:80%; margin-top:1cm"> Conjecture (Berg, Ryan, Young; 2022) </h4>
+	<h4 style = "font-size:80%; margin-top:1cm"> <span style = "color: orange;"> Conjecture (Berg, Ryan, Young; 2022) </span> </h4>
 	<p style = "margin-left: 1cm;margin-top:-0.4cm"> There are infinitely many primitive Dirichlet characters $\chi$ of order $\small 4$ and $\small 6$ such that $\small L(E,1,\chi) = 0$.</p>
 
 	<div class="fragment semi-fade-in">
-	<h4 style = "color: orange; font-size:80%; margin-top:2cm"> Conjecture (Mazur, Rubin; 2019) </h4>
+	<h4 style = "font-size:80%; margin-top:2cm"> <span style = "color: orange;"> Conjecture (Mazur, Rubin; 2019) </span> </h4>
 	<p style = "margin-left: 1cm; margin-top:-0.4cm"> There are only finitely many primitive Dirichlet characters $\small \chi$ with $\small \varphi(\text{ord}(\chi))>4$ such that $\small L(E,1,\chi) = 0$.</p>
 	</div>
-
 	</section>
 
-	<section style = "text-align: left"> To provide numerical evidence for the conjecture, we ran a combination of Sage and PARI/GP code on the <a href= "https://osg-htc.org/about/introduction/" > Open Science Grid</a>. 
+	<section style = "text-align: left"> 
+	<p>To provide numerical evidence for the conjecture, we ran a combination of Sage and PARI/GP code on the <a href= "https://osg-htc.org/about/introduction/" > Open Science Grid</a>. </p>
 
 	<p style = "font-size: 60%;"> The combined wall time of all computations was more than 70 years. </p>
 	</section>
 
 	<section> <h4 style = "font-size: 95%"> Quartic case </h4>
-	<p> <img src = "e11aquartic.png" padding=0cm width = 60% > </p>
+	<p> <img src = "e11aquartic.png" padding=0cm width = 60%/> </p>
 	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of $\small |L(E,1,\chi)|$ by primitive quartic characters $\small \chi$ of modulus $\small \le 700000$ for the curve $\small E$ with label 11.a1</p>
 	</section>
 
 
 	<section> <h4 style = "font-size: 95%"> Sextic case </h4>
-	<p> <img src = "e11asextic.png" padding=0cm width = 60% > </p>
+	<p> <img src = "e11asextic.png" padding=0cm width = 60%/> </p>
 	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of $\small |L(E,1,\chi)|$ by primitive sextic characters $\small \chi$ of modulus $\small \le 200000$ for the curve $\small E$ with label 11.a1</p>
 	</section>
 </section>
@@ -285,7 +294,7 @@ table, th, td {
 	<section> <h2> Insights and distinguishing features </h2> </section>
 
 	<section style = "text-align: left; font-size: 80%">
-	<p  style = "margin-top:0cm"> To apply the random matrix theory model to our family of twisted L-functions, we need to know </p>
+	<p style = "margin-top:0cm"> To apply the random matrix theory model to our family of twisted L-functions, we need to know </p>
 	<ul style = "margin-left:2cm;font-size:90%">
 		<li style = "margin-top:.5cm"> the <span style = "color:lightgreen;">symmetry type  of the family </span>of twisted L-functions, in particular, the distribution of (normalized) Gauss sums 
 	 <div style ="margin-top:-0.5cm; margin-bottom:-1cm"> \[ \footnotesize \tau(\chi) = \sum \limits_{1 \le a \le d} \chi(a) e^{2 \pi i a/d}\] </div>
@@ -301,12 +310,12 @@ table, th, td {
  	<p style = "text-align:left"> To confirm a family of twisted L-functions has unitary symmetry, we must study the equidistribution properties of the normalized Gauss sums $\small \frac{\tau(\chi)^2}{\text{cond}(\chi)}$ on the unit circle. </p>
  </div>
 
- <div class = "fragment"; style = "margin-top:1cm"> <img src = "cubicgausssums.png" style = "width: 30%; float:left"> 
-<img src = "quarticgausssums.png" style = "width: 30%">
-<img src = "quinticgausssums.png" style = "width: 30%; float:right">
-<p style ="text-align: left; font-size: 60%; margin-top: -0.3cm"> From left to right: Histograms of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ of cubic, quartic, and quintic characters of modulus $\footnotesize \le 200000$</p>
-</div>
-</section>
+	<div class = "fragment"; style = "margin-top:1cm"> <img src = "cubicgausssums.png" style = "width: 30%; float:left"/> 
+	<img src = "quarticgausssums.png" style = "width: 30%"/>
+	<img src = "quinticgausssums.png" style = "width: 30%; float:right"/>
+	<p style ="text-align: left; font-size: 60%; margin-top: -0.3cm"> From left to right: Histograms of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ of cubic, quartic, and quintic characters of modulus $\footnotesize \le 200000$</p>
+	</div>
+	</section>
 
 
 	<section style = "font-size:80%;">
@@ -322,27 +331,26 @@ table, th, td {
 
 <div class = "fragment semi-fade-in" style = "margin-top:1cm">
 	<figure>
-		<img src = "totallyquarticgausssums.png" style = "width:10cm; padding:0cm; margin-right:2cm">
-		<figcaption style = "font-size: 60%; margin-top: -0.3cm; margin-right:2cm"> Histogram of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$  <br>of <span style = "color:violet;"> <b> totally quartic </b></span> characters of modulus $\footnotesize \le 200000$ </figcaption>
-			</figure>
-			<figure>
-		<img src = "quarticgausssums.png" style = "width:10cm; padding:0cm">
-		<figcaption style = "font-size: 60%; margin-top: -0.3cm"> Histogram of the argument (angle) of  $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ <br> of primitive quartic characters of modulus $\footnotesize \le 200000$ </figcaption>
-			</figure>
-
+		<img src = "totallyquarticgausssums.png" style = "width:10cm; padding:0cm; margin-right:2cm"/>
+		<figcaption> <p style = "font-size: 60%; margin-top: -0.3cm; margin-right:2cm"> Histogram of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$  <br>of <span style = "color:violet;"> <b> totally quartic </b></span> characters of modulus $\footnotesize \le 200000$ </p> </figcaption>
+		</figure>
+		<figure>
+		<img src = "quarticgausssums.png" style = "width:10cm; padding:0cm"/>
+		<figcaption> <p style = "font-size: 60%; margin-top: -0.3cm"> Histogram of the argument (angle) of  $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ <br> of primitive quartic characters of modulus $\footnotesize \le 200000$ </p> </figcaption>
+		</figure>
 </div>
 </section>
 
 <section style = "font-size:80%"> 
 
-	<h4> Totally quartic case </h4>
+<h4> Totally quartic case </h4>
 
-	<p style = "text-align: left; font-size: 73%;"> The family of totally quartic characters has unitary symmetry. Applying the random matrix model, we also conjecture that there are infinitely many totally quartic characters with $\footnotesize |L(E,1,\chi)| = 0$ </p>
+<p style = "text-align: left; font-size: 73%;"> The family of totally quartic characters has unitary symmetry. Applying the random matrix model, we also conjecture that there are infinitely many totally quartic characters with $\footnotesize |L(E,1,\chi)| = 0$ </p>
 
 
 	<figure> 
-		<img src = "e11atotallyquartic.png" padding=0cm width = 50%> 
-		<figcaption style = "font-size:60%;"> Ratio of predicted vanishings to emperical vanishings of $\small L(E,1,\chi)$ by <br> totally quartic characters $\small \chi$ of modulus $\small \le 700000$ for the curve $\small E$ with label 11.a1 </figcaption>
+		<img src = "e11atotallyquartic.png" style = "padding:0cm; width:50%"/> 
+		<figcaption> <p style = "font-size:60%;"> Ratio of predicted vanishings to emperical vanishings of $\small L(E,1,\chi)$ by <br> totally quartic characters $\small \chi$ of modulus $\small \le 700000$ for the curve $\small E$ with label 11.a1 </p> </figcaption>
 	</figure>
 	
 	</section>
@@ -351,6 +359,7 @@ table, th, td {
 
 <section> <h1> THANK YOU! </h1>
 </section>
+
 
 </div>
 </div>

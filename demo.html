@@ -46,6 +46,53 @@
 				</section>
 
 				<!-- Example of nested vertical slides -->
+
+<section>
+  <section> <h2> L-functions: What and why? </h2> </section>
+
+  <section style = "font-size: 75%;"> 
+  <p style = "margin-bottom: 0.5cm; text-align: left;"> Let $E$ be an elliptic curve over $\mathbb{Q}$. </p>
+
+  <p style = "text-align: left;"><span><b><u>Example</u>:  </b> </span> The curve <a href = "https://www.lmfdb.org/EllipticCurve/Q/11/a/1"> 11.a1 </a> has equation <span style = "font-size: 70%;"> $y^2=x^3-10135152x-12419196912$ </span> </p>
+
+  <img src= "11a1.png" style = "width:40%; padding:0cm"/> 
+
+  <p style = "text-align: left"> Often want to study arithmetic of $E$ and, in particular, gain info about $\small E(\mathbb{Q})$ </p>
+	</section>
+
+  <section style = "font-size: 80%;">
+  <p style = "text-align: left"> The <span style = "color:yellow"> L-function </span> associated to $E$ is the Euler product$\small ^\ast$ <br> \[ \small L(E,s) = \prod_p \frac{1}{1 - a_p p^{-s} + p^{1-2s}} = \sum_{n \ge 1} \frac{a_n}{n^s}\]
+  	<ul>
+  		<li> $a_p$ encode info about $\#E(\mathbb{F}_p)$, the number of points of $E$ mod $p$ </li>
+  		<li> has analytic continuation to $\mathbb{C}$ </li>
+  		<li> satisfies functional equation relating $\small L(E,s)$ and $\small L(E,2-s)$</li>
+  	</ul>   
+  </p>
+
+  	<p style = "text-align: left;font-size: 60%; margin-top: 3cm;"> $^\ast$ ignoring primes $p$ of bad reduction for simplicity </p>
+  </section>
+
+  <section style = "text-align: left; font-size: 80%;"> 
+  <p> So the $L$-function $L(E,s)$ of an elliptic curve $E/\mathbb{Q}$ packages local information about $E$ into a global object. </p>
+
+  <p style = "margin-top: 2cm;"> The <span style = "color:powderblue;"> Birch and Swinnerton Dyer Conjecture (BSD) </span> predicts that vanishing of $L(E,s)$ at $s=1$ implies $E$ has infinitely many $\mathbb{Q}$-rational points.</p>
+  </section>
+
+  <section style = "text-align: left; font-size: 75%;"> 
+  <h4 style = "color: violet;"> Generalizations: Points over number fields</h4>
+  <p> Given $E/\mathbb{Q}$ and a Dirichlet character $\chi \colon \mathbb{Z} \to \mathbb{C}$, we can form the <span style = "color:yellow;"> twisted $L$-function </span> </p>
+  <p style = "margin-top: -1.5cm"> \[ \small L(E,s,\chi) = \sum_{n \ge 1} \frac{\chi(n) a_n}{ n^{s}} \] </p>
+
+  <p style = "margin-bottom: 3cm"> $L(E,s,\chi)$ also has an analytic continuation to $\mathbb{C}$ and satisfies a functional equation relating $L(E,s,\chi)$ and $L(E,2-s, \overline{\chi})$. </p>
+
+  <p style = "margin-top:2cm; margin-bottom:2cm"> BSD predicts vanishing of $\small L(E,s,\chi)$ at $s=1$ is related to the existence of rational points $E(K)$ over the abelian extension $\small K/\mathbb{Q}$ associated to $\small \chi$. </p>
+	</section>
+
+	<section style = "text-align: left;">
+  <p style =" border-width:3px; border-style:solid; border-color:lightslategray; padding: 0.5em;"> <span> <b><u>Theme</u>: </b> </span> Interesting arithmetic data is encoded in the location of the zeroes (and poles) of L-functions. Since L-functions are analytic objects, one can use analytic tools to study arithmetic. </p>
+  </section>
+
+</section>
 				<section>
 					<section>
 						<h2>Vertical Slides</h2>
@@ -461,6 +508,7 @@ Reveal.on( 'customevent', function() {
 		<script src="plugin/search/search.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		<script src="plugin/math/math.js"></script>
 		<script>
 
 			// Also available as an ES module, see:
