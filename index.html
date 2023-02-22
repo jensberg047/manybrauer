@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/night.css">
+		<link rel="stylesheet" href="dist/theme/beige.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -41,81 +41,32 @@ table, th, td{
 				<section>
 
 					<section> 
-						<h2 style = "font-size: 155%;"> Brauer-Manin obstructions requiring arbitrarily many classes </h2>
-						<h4> Jen Berg </h4>
-						<p> March 2, 2023</p>
+						<h1 style = "margin-bottom: 1cm; font-size: 225%;"> Brauer-Manin obstructions requiring arbitrarily many classes </h1>
+						<h3> Jen Berg </h3>
+						<h5 style = "margin-bottom: 2cm"> March 2, 2023</h5>
 					</section>
 
-					<section>
-					<div>
-					<div style = "float: left; margin-left: 0%; margin-right: 5%; margin-bottom: 2 em;">
-						<img src="jenphoto.jpeg" alt="Jen Berg" style="width: 70%"/>
-						<h4 style = "font-size: 25pt; color: skyblue;"> Jen Berg </h4>
-						<p style = "font-size: 15pt;"> Bucknell University </p>
-					</div>
-					<div style = "float: left; margin-right: 5%; margin-bottom: 2 em;">
-						<img src="nathanphoto.jpeg" alt="Nathan Ryan" style="width:70%"/>
-						<h4 style = "font-size: 25pt"> Nathan Ryan </h4>
-						<p style = "font-size: 15pt;"> Bucknell University </p>
-					</div>
-						<div style = "float:left; margin-right: 0%; margin-bottom: 2 em;">
-						<img src="mattyoung.png" alt="Matt Young" style="width:75%"/>
-						<h4 style = "font-size: 25pt"> Matt Young </h4>
-						<p style = "font-size: 15pt;"> Texas A&M University </p>
-					</div>
-					</div>
+					<section style = "text-align: left">
+					<p style = "margin-bottom: 2cm"> The results in this talk are joint work with Carlo Pagano, Bjorn Poonen, Michael Stoll, Nicholas Triantafillou, Bianca Viray, and Isabel Vogt. </p>
+
+					<p> This project started at the Park City Mathematics Institute (PCMI) 2022 program on Number Theory Informed by Computation</p>
 					</section>
-
-					<section style = "text-align: left"> 
-						<p style = "margin-bottom: 3cm;"> This work was primarily completed in Lewisburg, PA.<br> I would like to respectfully acknowledge and recognize my responsibility to the original and current caretakers of this land, water, and air: the Susquehannock peoples and their ancestors and descendants. 
-						</p>
-
-						<p style = "font-size: 20pt;"> Visit <a href = "https://www.native-land.ca"> native-land.ca </a> to learn more about the native lands on which you live and work 
-						</p>
-				</section>
 
 				</section>
 
-	<section style = "text-align: left; font-size: 80%;">
-		<h3 style = "color:yellow;"> Rethinking Number Theory </h3> 
-		<div class= "fragment semi-fade-out" data-fragment-index="1">
-		<p style="margin-bottom: 1.5cm;"> One of the goals of RNT is to have joyful, affirming research experiences — ones in which people can be their whole selves.
-		</p>
-
-		<p style="margin-bottom: 1.5cm;"> I think about this every time I engage with scholarship. <br>
-		<span style = "color:powderblue;"> <em> Do I belong here? &nbsp Is everyone valued? </em> </span> <br>
-		Outside of RNT, the answers are too often no. We can do better. </p>
-		</div>
-
-	<p class="fragment" data-fragment-index="1"> The work I'll discuss today came from a desire to collaborate with Nathan on a fun, computational project that combined our interests. Along the way, our many questions led us to Matt who provided invaluable insights.
-	</p>
-	</section>
 
 			
 <section>
-  <section> <h2> L-functions: What and why? </h2> </section>
+  <section> <h2> Obstructions to rational points:  </h2>
+  <h3> an overview </h3>
+  </section>
 
-  <section style = "font-size: 75%;"> 
-  <p style = "margin-bottom: 0.5cm; text-align: left;"> Let $E$ be an elliptic curve over $\mathbb{Q}$. </p>
-
-  <p style = "text-align: left;"><span><b><u>Example</u>:  </b> </span> The curve <a href = "https://www.lmfdb.org/EllipticCurve/Q/11/a/1"> 11.a1 </a> has equation <span style = "font-size: 70%;"> $y^2=x^3-10135152x-12419196912$ </span> </p>
-
-  <img src= "11a1.png" style = "width:40%; padding:0cm"/> 
-
-  <p style = "text-align: left"> Often want to study arithmetic of $E$ and, in particular, gain info about $\small E(\mathbb{Q})$ </p>
+  <section style = "text-align: left"> 
+  <p> Starting data: A sufficiently nice variety $Y$ over a global field $k$. (In this talk, you can take $k$ to be a number field, or even $k= \mathbb{Q}$ if you like.)
+  </p>
 	</section>
 
-  <section style = "font-size: 80%;">
-  <p style = "text-align: left"> The <span style = "color:yellow"> L-function </span> associated to $E$ is the Euler product$\small ^\ast$ <br> \[ \small L(E,s) = \prod_p \frac{1}{1 - a_p p^{-s} + p^{1-2s}} = \sum_{n \ge 1} \frac{a_n}{n^s}\]
-  	<ul>
-  		<li> $a_p$ encode info about $\#E(\mathbb{F}_p)$, the number of points of $E$ mod $p$ </li>
-  		<li> has analytic continuation to $\mathbb{C}$ </li>
-  		<li> satisfies functional equation relating $\small L(E,s)$ and $\small L(E,2-s)$</li>
-  	</ul>   
-  </p>
 
-  	<p style = "text-align: left;font-size: 60%; margin-top: 3cm;"> $^\ast$ ignoring primes $p$ of bad reduction for simplicity </p>
-  </section>
 
   <section style = "text-align: left; font-size: 80%;"> 
   <p> So the $L$-function $L(E,s)$ of an elliptic curve $E/\mathbb{Q}$ packages local information about $E$ into a global object. </p>
@@ -137,6 +88,16 @@ table, th, td{
   <p style =" border-width:3px; border-style:solid; border-color:lightslategray; padding: 0.5em;"> <span> <b><u>Theme</u>: </b> </span> Interesting arithmetic data is encoded in the location of the zeroes (and poles) of L-functions. Since L-functions are analytic objects, one can use analytic tools to study arithmetic. </p>
   </section>
 
+</section>
+
+<section>
+		<section> <h2> The Brauer Group: what, why, how? </h2>
+		</section>
+	  <section style = "text-align: left">
+  	<h4 style = "color: purple;"> The Brauer Group</h4>
+  	<p style = "margin-bottom: 2cm; font-size: 80%"> $\textrm{Br}(F) = \{ Y : Y_{\overline{F}} \simeq \mathbb{P}^n_{\overline{F}} \}/\simeq_{\tiny F} \qquad $ ($F$ a field) <p>
+  	<p style = "font-size: 80%"> $\textrm{Br}\,\mathbf{k}(X) = \{ Y : Y_{\overline{\mathbf{k}(X)}} \simeq \mathbb{P}^n_{\overline{\mathbf{k}(X)}} \}/\simeq_{\tiny F} \qquad $ ($X$ smooth variety)</p>
+  </section>
 </section>
 
 <section>
