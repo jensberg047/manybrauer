@@ -61,40 +61,55 @@ table, th, td{
   <h3> an overview </h3>
   </section>
 
-  <section style = "text-align: left"> 
-  <p> Starting data: A sufficiently nice variety $Y$ over a global field $k$. (In this talk, you can take $k$ to be a number field, or even $k= \mathbb{Q}$ if you like.)
+  <section style = "text-align: left; font-size:80%"> 
+  <h3 style = "color:purple"> Obstruction Sets </h3>
+  <p style = "margin-bottom: 2cm;"> Given a nice variety $X$ over a number field $k$, there is no known general method to decide whether $X(k)$ is nonempty.
+  </p>
+
+  <p style = "margin-bottom: 2cm">  But don't despair! Instead, we build an <span style="color: teal;"> <b> obstruction set</b> </span> $S$ that contains $X(k)$ <em> and </em> is computable  (we hope).  
+  </p>
+
+  <p> When $S = \emptyset$, this guarantees $X(k) = \emptyset$ and we say that $S$ obstructs the existence of $k$-rational points on X.
   </p>
 	</section>
 
+	<section style = "text-align: left; font-size:75%"> 
+  <h3 style = "color:purple"> Local obstructions </h3>
+  <p style = "margin-bottom: 1.7cm; font-size:95%"> Given a place $v$ of $k$, a first obstruction set comes from the embedding $k \hookrightarrow k_v. \,$ If $X(k_v) = \emptyset\,$ then this forces $X(k) = \emptyset$. </p>
 
+  <p style = "margin-bottom: 1.7cm"> For proper $X$, can package together all local information into a single set $X(\mathbb{A}_k) = \prod_v X(k_v).$
+  It is a finite computation to determine whether $X(\mathbb{A}_k) \ne \emptyset$.</p>
 
-  <section style = "text-align: left; font-size: 80%;"> 
-  <p> So the $L$-function $L(E,s)$ of an elliptic curve $E/\mathbb{Q}$ packages local information about $E$ into a global object. </p>
-
-  <p style = "margin-top: 2cm;"> The <span style = "color:powderblue;"> Birch and Swinnerton Dyer Conjecture (BSD) </span> predicts that vanishing of $L(E,s)$ at $s=1$ implies $E$ has infinitely many $\mathbb{Q}$-rational points.</p>
-  </section>
-
-  <section style = "text-align: left; font-size: 75%;"> 
-  <h4 style = "color: violet;"> Generalizations: Points over number fields</h4>
-  <p> Given $E/\mathbb{Q}$ and a Dirichlet character $\chi \colon \mathbb{Z} \to \mathbb{C}$, we can form the <span style = "color:yellow;"> twisted $L$-function </span> </p>
-  <p style = "margin-top: -1.5cm"> \[ \small L(E,s,\chi) = \sum_{n \ge 1} \frac{\chi(n) a_n}{ n^{s}} \] </p>
-
-  <p style = "margin-bottom: 3cm"> $L(E,s,\chi)$ also has an analytic continuation to $\mathbb{C}$ and satisfies a functional equation relating $L(E,s,\chi)$ and $L(E,2-s, \overline{\chi})$. </p>
-
-  <p style = "margin-top:2cm; margin-bottom:2cm"> BSD predicts vanishing of $\small L(E,s,\chi)$ at $s=1$ is related to the existence of rational points $E(K)$ over the abelian extension $\small K/\mathbb{Q}$ associated to $\small \chi$. </p>
+  <p class = "fragment semi-fade-in" style =" border-width:2px; border-style:solid; border-color:lightslategray; padding: 0.5em; font-size: 95%"> A class of varieties $\mathcal{C}$ satisfies the <span style="color: teal;"> <b> local-to-global principle </b> </span>if for each $X \in \mathcal{C}$ $$\underbrace{X(\mathbb{A}_k) \ne \emptyset}_{\text{local points exist}} \implies \underbrace{X(k) \ne \emptyset}_{\text{global points do too!}}$$ </p> 
 	</section>
 
-	<section style = "text-align: left;">
-  <p style =" border-width:3px; border-style:solid; border-color:lightslategray; padding: 0.5em;"> <span> <b><u>Theme</u>: </b> </span> Interesting arithmetic data is encoded in the location of the zeroes (and poles) of L-functions. Since L-functions are analytic objects, one can use analytic tools to study arithmetic. </p>
-  </section>
+	<section style = "text-align: left; font-size:75%"> 
+  <h3 style = "color:purple"> Refined obstructions </h3>
+  <p style = "margin-bottom: 2cm;"> While there are classes of variety that do have this property (EXAMPLES), many more do not. </p>
+
+  <p style = "margin-bottom: 2cm"> So we need a refinement of our local obstructions in general, i.e., an obstruction set $S$ such that $$\huge X(k) \subset \, S \subset \, X(\mathbb{A}_k)$$ </p>
+
+  <p> One such obstruction set is called the Brauer-Manin set $X(\mathbb{A}_k)^{\text{Br}}$ and is defined using the Brauer group of $X$. </p> 
+	</section>
 
 </section>
 
 <section>
 		<section> <h2> The Brauer Group: what, why, how? </h2>
 		</section>
+
+		<section style = "text-align: left; font-size: 90%;">
+		<h4 style = "color: purple;"> The Brauer Group (a vibe) </h4>
+		<p style = "margin-bottom: 1cm;"> Let's start with some examples.  </p>
+
+		<p style = "margin-bottom: 2cm;"> $\text{Br}(\mathbb{C}) = 0 \qquad \text{Br}(\mathbb{R}) = \mathbb{Z}/2\mathbb{Z} \qquad \text{Br}(\mathbb{Q}) = \text{infinite}$ </p>
+
+		<p> You can think of the Brauer group of a field $F$ as giving some indication of how complicated the Galois theory of $F$ is or, alternatively, how complicated it is to solve norm equations</p>
+
+		</section>
+
 	  <section style = "text-align: left">
-  	<h4 style = "color: purple;"> The Brauer Group</h4>
+  	<h4 style = "color: purple;"> The Brauer Group definitions</h4>
   	<p style = "margin-bottom: 2cm; font-size: 80%"> $\textrm{Br}(F) = \{ Y : Y_{\overline{F}} \simeq \mathbb{P}^n_{\overline{F}} \}/\simeq_{\tiny F} \qquad $ ($F$ a field) <p>
   	<p style = "font-size: 80%"> $\textrm{Br}\,\mathbf{k}(X) = \{ Y : Y_{\overline{\mathbf{k}(X)}} \simeq \mathbb{P}^n_{\overline{\mathbf{k}(X)}} \}/\simeq_{\tiny F} \qquad $ ($X$ smooth variety)</p>
   </section>
@@ -102,7 +117,7 @@ table, th, td{
 
 <section>
 	<section> 
-			<h2> Dirichlet Characters </h2>
+			<h2> Computing the Brauer-Manin obstruction </h2>
 	</section>
 
 	<section style = "font-size: 80%;"> 
@@ -216,7 +231,7 @@ table, th, td{
 
 
 <section>	
-	<section> <h2> Conjectures and evidence </h2>
+	<section> <h2> Building conic bundles </h2>
 	</section>
 
 	<section style = "text-align: left;font-size: 70%"> 
