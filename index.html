@@ -184,14 +184,20 @@ table, th, td{
 
 	<section style = "font-size:80%; text-align: left;">
 		<h3 style = "color:purple"> Conic bundles </h3>
-		<p style = "margin-bottom: 2cm"> A <span style = "color:teal"> <b> conic bundle</b></span> over $\mathbb{P}^1_k$ is a smooth, projective, geometrically integral surface $X$ over $k$ equipped with a morphism $X \to \mathbb{P}^1_k$ whose generic fiber is a smooth conic over $\mathbf{k}(\mathbb{P}^1_k)$</p>
+		<p style = "margin-bottom: 2cm"> A <span style = "color:teal"> <b> conic bundle</b></span> over $\mathbb{P}^1_k$ is a smooth, projective, geometrically integral surface $X$ over $k$ equipped with a morphism $\pi \colon X \to \mathbb{P}^1_k$ whose generic fiber is a smooth conic over $\mathbf{k}(\mathbb{P}^1_k)$</p>
 
-		<p> Our examples will arise from conic bundles that are smooth, projective models of the surface with affine equation $y^2 - a z^2 = f(x)$, where $a \in k^{\times} \setminus k^{\times 2}$ and $f$ is a separable polynomial of even degree. </p>
+		<!--  MAYBE PUT THIS BACK, JEN Our examples will arise from surfaces $X_{a,f}$ that are smooth, projective models of the surface with affine equation <span style = "color:teal"> $y^2 - a z^2 = f(x)$ </span>, where $a \in k^{\times} \setminus k^{\times 2}$ and $f \in k[x]$ is a separable polynomial. --> 
+
+		<p> Let $a \in k^\times \setminus k^{\times 2}$ and let $f(u_0, u_1) \in k[u_0, u_1]$ be a separable homogenous polynomial of even degree. We will consider conic bundles $X_{a,f}$ which are the Zariski closure of
+		\[ y^2 - a z^2 = f(u_0, 1) x^2 \] 
 	</section>
 
 	<section style = "font-size:80%; text-align: left;">
 		<h3 style = "color:purple"> Brauer groups of conic bundles </h3>
-		<p style = "margin-bottom: 2cm"> words </p>
+		<p> $X = X_{a,f}: y^2 - az^2 = f(x)$ </p>
+		<p style = "margin-bottom: 2cm"> Assume that the splitting field of $f$ is disjoint from $k(\sqrt{a})$ and that $f$ factors into the product of $n+1$ irreducibles, $f = \prod_{j=0}^{n} f_j$, each with even degree. </p>
+
+		<p> Then the quaternion algebras $\alpha_j = \pi^\ast(a, f_j) \in \text{Br}\,\mathbf{k}(X)$ generate $\text{Br}(X)/\text{Br}_0(X)$ </p>
 	</section>
 </section>
 
@@ -240,7 +246,10 @@ table, th, td{
 	</section>
 
 	<section style = "text-align: left; font-size: 80%">
-		<p> MAYBE KEEP THIS. New goal: find $Y/k$ such that $\text{Br} \, Y$ contains a subgroup $B$ isomorphic to $(\mathbb{Z}/2\mathbb{Z})^n$ such that the induced map $B \to \text{Br} Y / \text{Br}_0 Y$ is an isomorphism, and the image of $Y(\mathbb{A}_k)$ in $\hat{B}$ is everything except the $0$ map. </p>
+		<h3 style = "color: purple"> New goal </h3>
+		<p> Find $Y/k$ such that $\text{Br} \, Y$ contains a subgroup $B$ isomorphic to $(\mathbb{Z}/2\mathbb{Z})^n$ such that the induced map $B \to \text{Br}\, Y / \text{Br}_0\, Y$ is an isomorphism, and the image of $Y(\mathbb{A}_k)$ in $\hat{B}$ is everything except the $0$ map. </p>
+
+		<p> Since we can build conic bundles $X := X_{a,f}$ with Brauer groups satisfying the first property, we need only to figure out how to achieve the second.  </p>
 	</section>
 
 	<section style = "text-align: left; font-size: 80%"> 
@@ -275,8 +284,32 @@ table, th, td{
 	</section>
 
 	<section style = "text-align: left; font-size: 80%;"> 
-	<h3 style = "color: purple;"> As explicit as it gets </h3>
-	$$ \begin{tabular}{|c|c|c|} a & b & c \\ d& e & f\end{tabular} $$
+	<h3 style = "color: purple;"> Explicit computations </h3>
+
+		<div style = "font-size: 75%;">
+  <table>
+    <thead>
+      <tr>
+        <td style="text-align:center"> $n$ </td>   <td style="text-align:center;">\( q \)</td> <td style="text-align:left;">\( p \)</td>  
+      </tr>
+    </thead>
+    <tr>
+      <td style="text-align:center;">\( 3\)</td> <td style="text-align:center;">\( 5\)</td> <td style="text-align:left;">\( 193\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 4\)</td> <td style="text-align:center;">\( 5\)</td> <td style="text-align:left;">\( 1873\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 5\)</td> <td style="text-align:center;">\( 7\)</td> <td style="text-align:left;">\( 55201\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 6\)</td> <td style="text-align:center;">\( 7\)</td> <td style="text-align:left;">\( 107449\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 7\)</td> <td style="text-align:center;">\( 11\)</td> <td style="text-align:left;">\( 30431209\)</td>
+    </tr>
+  </table>
+	</div>
 	</section>
 
 </section>
