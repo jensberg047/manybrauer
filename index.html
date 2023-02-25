@@ -63,13 +63,17 @@ table, th, td{
 
   <section style = "text-align: left; font-size:80%"> 
   <h3 style = "color:purple"> Obstruction Sets </h3>
-  <p style = "margin-bottom: 2cm;"> Given a nice variety $X$ over a number field $k$, there is no known general method to decide whether $X(k)$ is nonempty.
+  <p style = "margin-bottom: 1.5cm;"> Given a nice variety $X$ over a number field $k$, there is no known general method to decide whether $X(k)$ is nonempty.
   </p>
 
-  <p style = "margin-bottom: 2cm">  But don't despair! Instead, we build an <span style="color: teal;"> <b> obstruction set</b> </span> $S$ that contains $X(k)$ <em> and </em> is computable  (we hope).  
-  </p>
+  <p style = "margin-bottom: 0.25cm">  But don't despair! Instead, we build an <span style="color: teal;"> <b> obstruction set</b> </span> $S$ such that </p>
+  <ol> 
+  <li style = "margin-left: 1cm; margin-bottom: .7cm;"> $\, X(k) \subset S$</li>
+  <li style = "margin-left: 1cm;"> $\, S$ is computable (hopefully)  </li>
+  </ol>
+  
 
-  <p> When $S = \emptyset$, this guarantees $X(k) = \emptyset$ and we say that $S$ obstructs the existence of $k$-rational points on X.
+  <p style = "margin-top: 1.5cm "> When $S = \emptyset$, this guarantees $X(k) = \emptyset$ and we say that $S$ obstructs the existence of $k$-rational points on X.
   </p>
 	</section>
 
@@ -77,15 +81,15 @@ table, th, td{
   <h3 style = "color:purple"> Local obstructions </h3>
   <p style = "margin-bottom: 1.7cm; font-size:95%"> Given a place $v$ of $k$, a first obstruction set comes from the embedding $k \hookrightarrow k_v. \,$ If $X(k_v) = \emptyset\,$ then this forces $X(k) = \emptyset$. </p>
 
-  <p style = "margin-bottom: 1.7cm"> For proper $X$, can package together all local information into a single set $X(\mathbb{A}_k) = \prod_v X(k_v).$
+  <p style = "margin-bottom: 1.7cm"> For proper $X$, we package together all local information into a single set $X(\mathbb{A}_k) = \prod_v X(k_v).$
   It is a finite computation to determine whether $X(\mathbb{A}_k) \ne \emptyset$.</p>
 
-  <p class = "fragment semi-fade-in" style =" border-width:2px; border-style:solid; border-color:lightslategray; padding: 0.5em; font-size: 95%"> A class of varieties $\mathcal{C}$ satisfies the <span style="color: teal;"> <b> local-to-global principle </b> </span>if for each $X \in \mathcal{C}$ $$\underbrace{X(\mathbb{A}_k) \ne \emptyset}_{\text{local points exist}} \implies \underbrace{X(k) \ne \emptyset}_{\text{global points do too!}}$$ </p> 
+  <p class = "fragment semi-fade-in" style =" border-width:2px; border-style:solid; border-color:lightslategray; padding: 0.45em; font-size: 95%; background-color: lightgray;"> A class of varieties $\mathcal{C}$ satisfies the <span style="color: teal;"> <b> local-to-global principle </b> </span>if for each $X \in \mathcal{C}$ $$\underbrace{X(\mathbb{A}_k) \ne \emptyset}_{\text{local points exist}} \implies \underbrace{X(k) \ne \emptyset}_{\text{global points do too!}}$$ </p> 
 	</section>
 
 	<section style = "text-align: left; font-size:75%"> 
   <h3 style = "color:purple"> Refined obstructions </h3>
-  <p style = "margin-bottom: 2cm;"> While there are classes of varieties that do satisfy the local-to-global principle (e.g. quadric hypersurfaces by Hasse-Minkowski or Severi-Brauer varieites), many more do not. </p>
+  <p style = "margin-bottom: 2cm;"> While there are classes of varieties that do satisfy the local-to-global principle (e.g. quadric hypersurfaces by Hasse-Minkowski or Severi-Brauer varieties), many more do not. </p>
 
   <p style = "margin-bottom: 2cm"> So we need a refinement of our local obstructions in general, i.e., an obstruction set $S$ such that $$\huge X(k) \subset \, S \subset \, X(\mathbb{A}_k)$$ </p>
 
@@ -98,28 +102,25 @@ table, th, td{
 		<section> <h2> The Brauer Group: what, why, how? </h2>
 		</section>
 
-		<section style = "text-align: left; font-size: 90%;">
-		<h4 style = "color: purple;"> The Brauer Group (vibes) </h4>
+		<section style = "text-align: left; font-size: 80%;">
+		<h3 style = "color: purple;"> The Brauer Group (a vibe) </h3>
 		<p style = "margin-bottom: 1cm;"> Let's start with some examples.  </p>
 
 		<p style = "margin-bottom: 2cm;"> $\text{Br}(\mathbb{C}) = 0 \qquad \text{Br}(\mathbb{R}) = \mathbb{Z}/2\mathbb{Z} \qquad \text{Br}(\mathbb{Q}) = \text{infinite}$ </p>
 
-		<p style ="margin-bottom: 1cm"> When $F$ is a field, the Brauer group $\text{Br}(F)$ gives an indication of the complexity of the Galois theory of $F$. </p>
-
-		<p> Alternatively, gives insight into how complicated it is to solve norm equations over $F$ </p>
+		<p style ="margin-bottom: 1cm"> When $F$ is a field, the Brauer group, $\text{Br}(F)$, is related to the complexity of Galois theory over $F$. Alternatively, gives insight into how difficult it is to solve norm equations over $F$. </p>
 
 		</section>
 
-	  <section style = "text-align: left">
-  	<h4 style = "color: purple;"> The Brauer Group (geometric perspective)</h4>
-  	<p style = "margin-bottom: 2cm; font-size: 80%"> $\textrm{Br}(F) = \{ Y : Y_{\overline{F}} \simeq \mathbb{P}^n_{\overline{F}} \}/\simeq_{\tiny F} \qquad $ ($F$ a field) <p>
-  	<p style = "font-size: 80%"> $\textrm{Br}\,\mathbf{k}(X) = \{ Y : Y_{\overline{\mathbf{k}(X)}} \simeq \mathbb{P}^n_{\overline{\mathbf{k}(X)}} \}/\simeq_{\tiny F} \qquad $ ($X$ smooth variety)</p>
+	  <section style = "text-align: left;font-size: 80%">
+  	<h3 style = "color: purple;"> The Brauer Group (geometric perspective)</h3>
+  	<p style = "margin-bottom: 2cm;"> $\textrm{Br}(F) = \{ Y : Y_{\overline{F}} \simeq \mathbb{P}^n_{\overline{F}} \}/\simeq_{\tiny F} \qquad $ ($F$ a field) <p>
+  	<p style = "margin-bottom: 2cm"> $\textrm{Br}\,\mathbf{k}(X) = \{ Y : Y_{\overline{\mathbf{k}(X)}} \simeq \mathbb{P}^n_{\overline{\mathbf{k}(X)}} \}/\simeq_{\tiny F} \qquad $ ($X$ smooth variety)</p>
+  	<p> and $\text{Br}(X) \subset \text{Br}\,\mathbf{k}(X)$ is the subgroup of everywhere unramified elements </p>
   </section>
 
-  <section style = "text-align: left">
-  	<h4 style = "color: purple;"> The Brauer Group (algebraic perspective)</h4>
-  	<p style = "margin-bottom: 2cm; font-size: 80%"> $\textrm{Br}(F) = \{ Y : Y_{\overline{F}} \simeq \mathbb{P}^n_{\overline{F}} \}/\simeq_{\tiny F} \qquad $ ($F$ a field) <p>
-  	<p style = "font-size: 80%"> $\textrm{Br}\,\mathbf{k}(X) = \{ Y : Y_{\overline{\mathbf{k}(X)}} \simeq \mathbb{P}^n_{\overline{\mathbf{k}(X)}} \}/\simeq_{\tiny F} \qquad $ ($X$ smooth variety)</p>
+  <section style = "text-align: left; font-size: 80%">
+  	<h3 style = "color: purple;"> The Brauer Group (algebraic perspective)</h3>
   </section>
 </section>
 
@@ -128,214 +129,154 @@ table, th, td{
 			<h2> Computing the Brauer-Manin obstruction </h2>
 	</section>
 
-	<section style = "font-size: 80%;"> 
-	<p style = "text-align: left;"> A  <span style = "color:yellow"> Dirichlet character </span> is a function $\chi \colon \mathbb{Z} \to \mathbb{C}$ together with a positive integer $d$ called the modulus, such that for all integers $a,b$
-	<div>
-	<ul style = "text-align: left; margin-top:.5cm">
-		<li > $\chi(ab) = \chi(a) \chi(b)$ &nbsp &nbsp<span style = "color:lightskyblue;"> <em> completely multiplicative </em> </span></li>
-		<li> $\chi(a + d) = \chi(a)$ &nbsp &nbsp &nbsp &nbsp <span style = "color:lightskyblue;"> <em> periodic </em> </span></li>
-		<li> $\chi(a) \ne 0$ &nbsp iff &nbsp $\gcd(a,d) = 1$</li>
-	</ul>
-	</div>
-
-	<p style = "text-align: left; margin-top:1cm"> These imply $\chi(a)$ is a root of unity if $\gcd(a,d) = 1$. </p>
-	</section>
-
-	<section>
-		<p style = "text-align: left;"> <span style ="color: violet;"> <a href = "https://www.lmfdb.org/Character/Dirichlet/">LMFDB</a> </span> Dirichlet characters database</p>
-
-		<img src="LMFDBDirichlet.png" width= 70% />
-	</section>
 
 	<section style = "text-align: left; font-size:80%;">
-	<h4 style = "color: violet;"> Example</h4>
-	<p>The character $\chi$ with LMFDB label <a href = "https://www.lmfdb.org/Character/Dirichlet/65/k/8"> 65.k.8</a> has modulus $d = 65$. </p> 
-
-	<p >The first few values on integers $a$ with $\gcd(a,65) = 1$ are </p> 
-	<div style = "font-size: 75%;">
-  <table>
-    <thead>
-      <tr>
-        <td style="text-align:center">\(a\)</td>
-        <td style="text-align:center">\(-1\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(2\)</td><td style="text-align:center">\(3\)</td><td style="text-align:center">\(4\)</td><td style="text-align:center">\(6\)</td><td style="text-align:center">\(7\)</td><td style="text-align:center">\(8\)</td><td style="text-align:center">\(9\)</td><td style="text-align:center">\(11\)</td><td style="text-align:center">\(12\)</td><td style="text-align:center">\(14\)</td>      </tr>
-    </thead>
-    <tr>
-      <td style="text-align:center;">\( \chi(a) \)</td>
-      <td style="text-align:center">\(1\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(i\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(i\)</td><td style="text-align:center">\(-1\)</td><td style="text-align:center">\(1\)</td><td style="text-align:center">\(-1\)</td><td style="text-align:center">\(-i\)</td><td style="text-align:center">\(i\)</td><td style="text-align:center">\(-1\)</td>    </tr>
-  </table>
-	</div>
-
-	<p style = "margin-top: 2cm;"> The <span style ="color:yellow"> order </span> of $\chi$ is $4$ and we say $\chi$ is a <span style ="color:yellow"> quartic</span> character. </p>
-
-	<p class = "fragment semi-fade-in"style = "margin-top: 2cm;"> Moreover, $\chi$ is <span style = "color: yellow"> primitive </span> since there is no character of smaller modulus whose values agree with $\small \chi$ on integers coprime to $\small d$.
-	</p>
+	words
 	</section>
 
 </section>
 
 
 <section>
-	<section> <h2> Vanishing of twisted L-functions </h2> 
-
-	<p style = "margin-top: 2cm; font-size: 85%; text-align: left;"> <span style = "color: violet;"> <b> GOAL:</b> </span> Given an elliptic curve $\small E/\mathbb{Q}$ and a family of twisted $L$-functions by Dirichlet characters $\chi$, describe how likely it is that $\small L(E,1,\chi) = 0$ to gain arithmetic info about $\small E$. </p>
+	<section> <h2> Main Results </h2>
 	</section>
 
-	<section style = "text-align: left; font-size:75%"> 
-	<h4 style = "color: violet;"> The Functional Equation </h4>
-	<p> The functional equation for the twisted L-function by a character $\small \chi$ is 
-	<span style = "margin-top:-0.5cm; margin-bottom: -0.5cm;">
-	\[ \small L(E,s,\chi) = \varepsilon \, L(E,2-s,\overline{\chi}),\]
-	</span>
-	where the <span style = "color:yellow"> sign </span> $\varepsilon$ is a complex number with $\small |\varepsilon|=1$ depending $\small E$ and $\small \chi$ 
+	<section style = "font-size:80%; text-align: left;"> 
+	
+	<div style =" border-width:2px; border-style:solid; border-color:lightslategray; padding: 0.45em; background-color: lightgray;">
+	<h3 style = "color:orangered;"> Theorem (BPPSTVV) </h3>
+
+	<p style = "margin-bottom: .5cm;"> Let $k$ be a global field with $\text{char}\, k \ne 2$ and let $N \in \mathbb{Z}_{>0}$. There exists a smooth projective geometrically integral variety $Y/k\,$ s.t. </p>
+	<p>
+	<ul>
+		<li style = "margin-left: 1cm; margin-bottom: 0.75cm"> $Y(\mathbb{A}_k)^{\text{Br}} = \emptyset$, and </li>
+		<li style = "margin-left: 1cm"> for all subgroups $B \subset \text{Br}\, Y$ with $\#B < N$, we have $Y(\mathbb{A}_k)^{B} \ne \emptyset$ </li>
+	</ul>
 	</p>
+ </div>
 
-	<div class = "fragment semi-fade-in">
-	<p style = "margin-top:3cm"> When $\chi$ is a quadratic character (order 2), $\chi = \overline{\chi}$ and moreover the sign $\varepsilon = \pm{1}$. In that case, $\small \varepsilon \ne 1$ forces $L(E,1,\chi) = 0$.</p>
-	</div>
 
-	<div class = "fragment semi-fade-in">
-	<p style = "margin-top:1.5cm"> When $\chi$ has order $\small \ge 3$, it may be that $\chi \ne \overline{\chi}$. Now, when $\varepsilon \ne 1$ it is not enough to guarantee vanishing of $L(E,1,\chi)$.</p>
-	</div>
+<div>	<p class = "fragment semi-fade-in" style = "margin-top: 3cm;"> Where does one start to find such examples? </p> </div>
 	</section>
 
+	<section style="font-size:78%; text-align: left">
+		<h3 style = "color:purple"> Restricting the scope </h3>
+		<p style = "margin-bottom: 1.5cm;"> When in search of $Y/k$ exhibiting a particular arithmetic property, helpful to focus on a class of varieties with common geometric invariants.</p>
+
+		<p style = "margin-bottom:.75cm;"> Geometrically rational surfaces, i.e. those birational to $\mathbb{P}^2$ over $\overline{k}$, are practical candidates for our task since </p>
+		<ul class = "fragment semi-fade-in">
+			<li style = "margin-bottom: .75cm; margin-left: 1cm;"> They're birational to a <em> del Pezzo surface </em> or a <em> conic bundle surface </em> </li>
+			<li style = "margin-bottom: .755cm; margin-left: 1cm;"> Often straightforward to compute generators for the Brauer group</li>
+			<li style = "margin-bottom: .75cm; margin-left: 1cm;"> Conjecturally, $\, Y(k) = \emptyset \implies Y(\mathbb{A}_k)^{\text{Br}} = \emptyset$ </li>
+		</ul>
+	</section>
+
+	<section style = "text-align: left; font-size: 80%"> 
+  <h3 style = "color:purple"> Key steps </h3>
+  <p> To build our examples with an obstruction requiring subgroups of the Brauer group of size $N$ we will: </p>
+
+  <ul style = "margin-left: 2cm">
+  <li style = "margin-bottom: .7cm"> Focus on minimal conic bundle surfaces whose Brauer groups we can control </li>
+  <li style = "margin-bottom: .7cm"> Give a helpful group theoretic reinterpretation of what it means to have a Brauer-Manin obstruction </li>
+  <li> Describe a base change construction that realizes our group theoretic ideas </li>
+	</ul>
+	</section>
+
+	<section style = "font-size:80%; text-align: left;">
+		<h3 style = "color:purple"> Conic bundles </h3>
+		<p style = "margin-bottom: 2cm"> A <span style = "color:teal"> <b> conic bundle</b></span> over $\mathbb{P}^1_k$ is a smooth, projective, geometrically integral surface $X$ over $k$ equipped with a morphism $X \to \mathbb{P}^1_k$ whose generic fiber is a smooth conic over $\mathbf{k}(\mathbb{P}^1_k)$</p>
+
+		<p> Our examples will arise from conic bundles that are smooth, projective models of the surface with affine equation $y^2 - a z^2 = f(x)$, where $a \in k^{\times} \setminus k^{\times 2}$ and $f$ is a separable polynomial of even degree. </p>
+	</section>
+
+	<section style = "font-size:80%; text-align: left;">
+		<h3 style = "color:purple"> Brauer groups of conic bundles </h3>
+		<p style = "margin-bottom: 2cm"> words </p>
+	</section>
+</section>
+
+<section>
+
+	<section> 
+		<h2> A group theoretic interpretation</h2>
+		<p style = "font-size: 80%; text-align: left; margin-left: 2cm; margin-top: 1cm;"> <span style = "color:purple">  <b> GOAL:  </b></span> Understand group theoretically necessary (and sufficient) conditions to achieve the requirement that a specific number of Brauer classes must all be used for an obstruction </p>
+	</section>
+
+	<section style = "font-size:80%; text-align: left;"> 
+	<h3 style = "color:purple"> Brauer-Manin Pairing Revisited </h3>
+
+	<p> Recall the Brauer-Manin pairing: </p>
+	<p style = "margin-left: -4cm">
+		$$ \begin{align*}Y(\mathbb{A}_k) \times \text{Br}(Y) &\longrightarrow \mathbb{Q}/\mathbb{Z} \\
+		((y_v), \alpha ) &\longmapsto  \sum_{v \in \Omega_k} \text{inv}_v (\underbrace{y_v^\ast \alpha}_{\in \, \text{Br}\,k_v})
+		\end{align*}
+		$$ </p>
+
+	<p style = "margin-top: 1cm"> Let $B$ be a finite subgroup of $\text{Br}(Y)$. There is a map of sets \[ \phi \colon Y(\mathbb{A}_k) \to \hat{B} := \text{Hom}(B, \mathbb{Q}/\mathbb{Z})\]
+ coming from the Brauer-Manin pairing.</p>
+	</section>
+
+	<section style = "font-size:80%; text-align: left;"> 
+	<h3 style = "color:purple"> Obstruction from a subgroup </h3>
+
+	<p> The obstruction set $Y(\mathbb{A}_k)^B$ is <b style = "background-color:lightgreen;"> nonempty </b> precisely when there exists an adelic point $(y_v) \in Y(\mathbb{A}_k)$ such that $(y_v)$ is <b style = "background-color:lightgreen;"> orthogonal to each $\alpha \in B$ </b> under the Brauer-Manin pairing. <p>
+
+	<p style = "margin-top: 2cm">That is, the obstruction set is <b style = "background-color: lightgreen;"> empty</b> precisely when <b style = "background-color: lightgreen;"> $0$ is not in the image </b> of the map $\phi \colon Y(\mathbb{A}_k) \to \hat{B} = \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$ </p>
+	</section>
+
+	<section style = "font-size:80%; text-align: left;"> 
+	<h3 style = "color:purple"> A group theoretic lemma </h3>
+
+	<p style = "margin-bottom: 1cm"> Let $B$ be a finite subgroup of $\text{Br}(Y)$ and consider the image of $\phi \colon Y(\mathbb{A}_k) \to \hat{B} := \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$</p>
+
+ <div style =" border-width:2px; border-style:solid; border-color:lightslategray; padding: 0.45em; background-color: lightgray;">
+
+	<ul>
+		<li style = "margin-left: 1cm; margin-bottom: 0.75cm"> $Y(\mathbb{A}_k)^B = \emptyset\,$ if and only if $0 \not \in \text{im}\,\phi \subset \hat{B}$</li>
+		<li style = "margin-left: 1cm"> Suppose $B \cong (\mathbb{Z}/2\mathbb{Z})^n$ for some $n \ge 1$ and gives a Brauer-Manin obstruction. Then no proper subgroup of $B$ gives an obstruction if and only if $\,\text{im}\,\phi  = \hat B \setminus \{0\}$. </li>
+	</ul>
+	</p>
+ </div>
+	</section>
 
 	<section style = "text-align: left; font-size: 80%">
-		<h4 style = "color: violet;"> Random Matrix Theory</h4>
-
-		<p> One fruitful approach via <a href = "https://web.math.princeton.edu/~nmk/RMFEM.pdf"> Katz and Sarnak </a> is to model such L-functions by a suitable classical (compact) matrix/symmetry group <span style = "color:silver"> <em> (unitary, orthogonal, symplectic,...)</em> </span>  </p>
-
-		<p style = "margin-top:2cm"> In this context, the symmetries of the family of L-functions determine the appropriate group of matrices; the sign $\varepsilon$ of the functional equation is analogous to the determinant of the matrix <br> <span style = "color:silver;"> (unitary: $\small |\det| = 1$, orthogonal: $\small \det = \pm 1$, symplectic: $\small \det = 1$) </span> </p>
-		
+		<p> MAYBE KEEP THIS. New goal: find $Y/k$ such that $\text{Br} \, Y$ contains a subgroup $B$ isomorphic to $(\mathbb{Z}/2\mathbb{Z})^n$ such that the induced map $B \to \text{Br} Y / \text{Br}_0 Y$ is an isomorphism, and the image of $Y(\mathbb{A}_k)$ in $\hat{B}$ is everything except the $0$ map. </p>
 	</section>
 
+	<section style = "text-align: left; font-size: 80%"> 
 
-	<section style = "text-align: left; font-size: 77%">
-	<p> Many properties of twisted L-functions are analogous to those of characteristic polynomials $\small p_A(\lambda) = \det(A - \lambda I)$ of <span style = "color:yellow"> unitary$\small ^\ast$</span> matrices $\small A$. </p>
+		<p> Assume $B$ is fixed and set $\hat{B} = \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$.</p>
 
-	<p style = "margin-top:1.5cm"> <a href = "https://people.maths.bris.ac.uk/~mancs/papers/RMTzeta.pdf"> Keating and Snaith </a> conjectured that the distribution of the values $\small |L(E,1,\chi)|$ is related to the distribution of the values of the characteristic polynomials $\small |p_A(1)|$</p>
+		<p style = "margin-top: 1cm"> For each place $v$ of $k$, there is a map of sets $\phi_v \colon Y(k_v) \to \hat{B}$. The image is the $0$ map except for finitely many places $v$.  By definition, the image of $\phi \colon Y(\mathbb{A}_k) \to \hat{B}$ is the sum of the $\text{im}\, \phi_v$. </p>
 
-	<p class = "fragment semi-fade-in" style = "margin-top: 1.5cm"> Thus to obtain conjectural asymptotics for the vanishing of $\small L(E,1,\chi)$ in families, one can relate the probability distribution of $\small |p_A(1)|$ to that of the values of the twisted L-functions </p>
-
-	<p style = "margin-top: 2.5cm; font-size: 60%"> $^\ast$A matrix $U$ is unitary if $U^{-1}$ is equal to the conjugate transpose of $U$. </p>
+		<p style = "margin-top: 1cm"> To arrange $\text{im} \,\phi = \hat{B}\setminus \{0\}$ one option is to have $\text{im}\, \phi_{v_0} =  \hat{B}\setminus \{0\}$ for a single place $v_0$ and $\text{im}\, \phi_{v} = \{0\}$ for all other places $v$.</p>
 	</section>
 
-	<section style = "font-size:80%">
-	<h4 style = "text-align: left;"> Comparisons</h4>
-		<figure>
-	 <img src = "histogram_e11aquartic_primecond.png" style = "width:12cm; margin-bottom: -0.2cm; padding:.35cm"/> 
-	 <figcaption> <p style = "font-size: 60%;">  Histogram of relative frequencies of $\footnotesize |L(E,1,\chi)|$ <br> for primitive quartic $\footnotesize \chi$ of prime modulus $\footnotesize \le 20000$ <br>
-	 and curve $\footnotesize E$ with label 11.a1 </p> </figcaption>
-	</figure>
-
-	<figure>
-	<img src = "histogram_rmtcharpoly_Nis20.png" style = "width:12cm;margin-bottom: -0.2cm; padding:.35cm"/> 
-	<figcaption> <p style = "font-size: 60%;">  Histogram of relative frequencies of $\footnotesize |p_A(1)|$ for <br> random unitary matrices $A$ of size $\footnotesize 20 \times 20$ <br> $\qquad$ </p> </figcaption>
-	</figure>
-	</section>
+</section>
 
 
-
-</section>	
 
 
 <section>	
-	<section> <h2> Building conic bundles </h2>
-	</section>
-
-	<section style = "text-align: left;font-size: 70%"> 
-	<p> Let $\small E/\mathbb{Q}$ be an elliptic curve. </p>
-	<h4 style = "margin-top:.5cm;font-size:80%"> <span style = "color: orange;"> Conjecture (David, Fearnley, Kisilevsky; 2007) </span> </h4>
-	<p style = "margin-left:1cm;margin-top:-0.4cm"> There are infinitely many primitive Dirichlet characters $\small \chi$ of order $\small 3$ and $\small 5$ (ordered by conductor) such that $\small L(E,1,\chi) = 0$. However, for any fixed prime $\small k \ge 7$, there are only finitely many $\small \chi$ of order $k$ such that $\small L(E,1,\chi) = 0$.</p>
-	<h4 style = "font-size:80%; margin-top:1cm"> <span style = "color: orange;"> Conjecture (Berg, Ryan, Young; 2022) </span> </h4>
-	<p style = "margin-left: 1cm;margin-top:-0.4cm"> There are infinitely many primitive Dirichlet characters $\chi$ of order $\small 4$ and $\small 6$ such that $\small L(E,1,\chi) = 0$.</p>
-
-	<div class="fragment semi-fade-in">
-	<h4 style = "font-size:80%; margin-top:2cm"> <span style = "color: orange;"> Conjecture (Mazur, Rubin; 2019) </span> </h4>
-	<p style = "margin-left: 1cm; margin-top:-0.4cm"> There are only finitely many primitive Dirichlet characters $\small \chi$ with $\small \varphi(\text{ord}(\chi))>4$ such that $\small L(E,1,\chi) = 0$.</p>
-	</div>
-	</section>
-
-	<section style = "text-align: left"> 
-	<p>To provide numerical evidence for the conjecture, we ran a combination of Sage and PARI/GP code on the <a href= "https://osg-htc.org/about/introduction/" > Open Science Grid</a>. </p>
-
-	<p style = "font-size: 60%;"> The combined wall time of all computations was more than 70 years. </p>
-	</section>
-
-	<section> <h4 style = "font-size: 95%"> Quartic case </h4>
-	<p> <img src = "e11aquartic.png" padding=0cm width = 60%/> </p>
-	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of $\small |L(E,1,\chi)|$ by primitive quartic characters $\small \chi$ of modulus $\small \le 700000$ for the curve $\small E$ with label 11.a1</p>
-	</section>
-
-
-	<section> <h4 style = "font-size: 95%"> Sextic case </h4>
-	<p> <img src = "e11asextic.png" padding=0cm width = 60%/> </p>
-	<p style = "font-size:70%; text-align: left"> Ratio of predicted vanishings to emperical vanishings of $\small |L(E,1,\chi)|$ by primitive sextic characters $\small \chi$ of modulus $\small \le 200000$ for the curve $\small E$ with label 11.a1</p>
+	<section> <h2> A general base change construction </h2>
 	</section>
 </section>
 
 <section>
-	<section> <h2> Insights and distinguishing features </h2> </section>
+	<section> <h2> An explicit example over $\mathbb{Q}$ </h2> </section>
 
-	<section style = "text-align: left; font-size: 80%">
-	<p style = "margin-top:0cm"> To apply the random matrix theory model to our family of twisted L-functions, we need to know </p>
-	<ul style = "margin-left:2cm;font-size:90%">
-		<li style = "margin-top:.5cm"> the <span style = "color:lightgreen;">symmetry type  of the family </span>of twisted L-functions, in particular, the distribution of (normalized) Gauss sums 
-	 <div style ="margin-top:-0.5cm; margin-bottom:-1cm"> \[ \footnotesize \tau(\chi) = \sum \limits_{1 \le a \le d} \chi(a) e^{2 \pi i a/d}\] </div>
-	 on the unit circle </li>
-	 <li style = "margin-top:1.2cm"> <span style = "color:lightgreen;">$\small \#$ of primitive characters </span> $\chi$ of order $k$ with modulus $\small \le X$</li>
-	  <li style = "margin-top:1.2cm"> <span style = "color:lightgreen;">a discretization</span> of the values $\small |L(E,1,\chi)|$</li>
-	</ul>
+	<section> theorem
 	</section>
 
- <section style = "font-size:80%;">
- 	<h4 style = "font-size: 95%; text-align:left; color:violet"> Distribution of Gauss sums </h4>
- 	<div>
- 	<p style = "text-align:left"> To confirm a family of twisted L-functions has unitary symmetry, we must study the equidistribution properties of the normalized Gauss sums $\small \frac{\tau(\chi)^2}{\text{cond}(\chi)}$ on the unit circle. </p>
- </div>
-
-	<div class = "fragment"; style = "margin-top:1cm"> <img src = "cubicgausssums.png" style = "width: 30%; float:left"/> 
-	<img src = "quarticgausssums.png" style = "width: 30%"/>
-	<img src = "quinticgausssums.png" style = "width: 30%; float:right"/>
-	<p style ="text-align: left; font-size: 60%; margin-top: -0.3cm"> From left to right: Histograms of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ of cubic, quartic, and quintic characters of modulus $\footnotesize \le 200000$</p>
-	</div>
+	<section> details/insights
 	</section>
 
+	<section> comparison to base change construction
+	</section>
 
-	<section style = "font-size:80%;">
-	<p style = "text-align:left"> Quartic characters differ from those of prime order since they may decompose into a product of characters of strictly smaller order. </p>
-
-	<p style = "margin-top:.8cm;text-align:left"> We say that $\small \chi$ is a <span style = "color:yellow"> totally quartic</span> character if it decomposes into a product of characters of exact order 4.</p>
-
-	<p style= "text-align:left;margin-top:.02cm; font-size:60%; opacity:50%"> <b> Non-example: </b> The primitive quartic character with label <a href = "http://www.lmfdb.org/Character/Dirichlet/65/12" > 65.h.12 </a> decomposes as the product of a quartic character <a href = "http://www.lmfdb.org/Character/Dirichlet/65/27"> 65.i.27 </a>  and a quadratic character <a href = "http://www.lmfdb.org/Character/Dirichlet/65/51"> 65.c.51</a>. </p>
-</section>
-
-<section style = "font-size: 75%;">
-<p style = "text-align: left;"> <span style = "color:orange"> <b> PROPOSITION (BERG, RYAN, YOUNG) </b></span> The normalized Gauss sums of the family of totally quartic and of all quartic Dirichlet characters $\small \chi$ equidistribute on the unit circle. The latter does so <em> slowly</em>; for such characters $\footnotesize \chi$ of modulus $\footnotesize \le X$ the rate of equidistribution is $\footnotesize O(\log(X)^{-1})$.</p>
-
-<div class = "fragment semi-fade-in" style = "margin-top:1cm">
-	<figure>
-		<img src = "totallyquarticgausssums.png" style = "width:10cm; padding:0cm; margin-right:2cm"/>
-		<figcaption> <p style = "font-size: 60%; margin-top: -0.3cm; margin-right:2cm"> Histogram of the argument (angle) of $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$  <br>of <span style = "color:violet;"> <b> totally quartic </b></span> characters of modulus $\footnotesize \le 200000$ </p> </figcaption>
-		</figure>
-		<figure>
-		<img src = "quarticgausssums.png" style = "width:10cm; padding:0cm"/>
-		<figcaption> <p style = "font-size: 60%; margin-top: -0.3cm"> Histogram of the argument (angle) of  $\footnotesize \tau(\chi)^2/\text{cond}(\chi)$ <br> of primitive quartic characters of modulus $\footnotesize \le 200000$ </p> </figcaption>
-		</figure>
-</div>
-</section>
-
-<section style = "font-size:80%"> 
-
-<h4> Totally quartic case </h4>
-
-<p style = "text-align: left; font-size: 73%;"> The family of totally quartic characters has unitary symmetry. Applying the random matrix model, we also conjecture that there are infinitely many totally quartic characters with $\footnotesize |L(E,1,\chi)| = 0$ </p>
-
-
-	<figure> 
-		<img src = "e11atotallyquartic.png" style = "padding:0cm; width:50%"/> 
-		<figcaption> <p style = "font-size:60%;"> Ratio of predicted vanishings to emperical vanishings of $\small L(E,1,\chi)$ by <br> totally quartic characters $\small \chi$ of modulus $\small \le 700000$ for the curve $\small E$ with label 11.a1 </p> </figcaption>
-	</figure>
-	
+	<section style = "text-align: left; font-size: 80%;"> 
+	<h3 style = "color: purple;"> As explicit as it gets </h3>
+	$$ \begin{tabular}{|c|c|c|} a & b & c \\ d& e & f\end{tabular} $$
 	</section>
 
 </section>
