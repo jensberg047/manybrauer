@@ -14,10 +14,11 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 
 <style>
-table, th, td{
+th, td{
   border: 1px solid white;
 }
 </style>
+
 <style>
 	.reveal .slides section .fragment.semi-fade-in{
 	opacity: 0.3;
@@ -32,6 +33,15 @@ table, th, td{
 	figure{
     display: inline-block;
 }
+</style>
+
+<style> 
+	.reveal .slides section .fragment.step-fade-in-then-out {
+	opacity: 0;
+	display: none; }
+.reveal .slides section .fragment.step-fade-in-then-out.current-fragment {
+	opacity: 1;
+	display: inline; }
 </style>
 
 	</head>
@@ -63,17 +73,17 @@ table, th, td{
 
   <section style = "text-align: left; font-size:80%"> 
   <h3 style = "color:purple"> Obstruction Sets </h3>
-  <p style = "margin-bottom: 1.5cm;"> Given a nice variety $X$ over a number field $k$, there is no known general method to decide whether $X(k)$ is nonempty.
+  <p style = "margin-bottom: 1.5cm;"> Given a nice variety $X$ over a number field $k$, there is no known general method to decide whether $X(k)$ is nonempty. But don't despair!
   </p>
 
-  <p style = "margin-bottom: 0.25cm">  But don't despair! Instead, we build an <span style="color: teal;"> <b> obstruction set</b> </span> $S$ such that </p>
-  <ol> 
+  <p style = "margin-bottom: 0.25cm"> Instead, we build an <span style="color: teal;"> <b> obstruction set</b> </span> $S$ such that </p>
+  <ul> 
   <li style = "margin-left: 1cm; margin-bottom: .7cm;"> $\, X(k) \subset S$</li>
   <li style = "margin-left: 1cm;"> $\, S$ is computable (hopefully)  </li>
-  </ol>
+  </ul>
   
 
-  <p style = "margin-top: 1.5cm "> When $S = \emptyset$, this guarantees $X(k) = \emptyset$ and we say that $S$ obstructs the existence of $k$-rational points on X.
+  <p style = "margin-top: 1.5cm "> When $S = \emptyset$, this guarantees $X(k) = \emptyset$ and we say that $S$ obstructs the existence of $k$-rational points on $X$.
   </p>
 	</section>
 
@@ -82,16 +92,16 @@ table, th, td{
   <p style = "margin-bottom: 1.7cm; font-size:95%"> Given a place $v$ of $k$, a first obstruction set comes from the embedding $k \hookrightarrow k_v. \,$ If $X(k_v) = \emptyset\,$ then this forces $X(k) = \emptyset$. </p>
 
   <p style = "margin-bottom: 1.7cm"> For proper $X$, we package together all local information into a single set $X(\mathbb{A}_k) = \prod_v X(k_v).$
-  It is a finite computation to determine whether $X(\mathbb{A}_k) \ne \emptyset$.</p>
+  It is a finite, effective computation to determine whether $X(\mathbb{A}_k) \ne \emptyset$.</p>
 
   <p class = "fragment semi-fade-in" style =" border-width:2px; border-style:solid; border-color:lightslategray; padding: 0.45em; font-size: 95%; background-color: lightgray;"> A class of varieties $\mathcal{C}$ satisfies the <span style="color: teal;"> <b> local-to-global principle </b> </span>if for each $X \in \mathcal{C}$ $$\underbrace{X(\mathbb{A}_k) \ne \emptyset}_{\text{local points exist}} \implies \underbrace{X(k) \ne \emptyset}_{\text{global points do too!}}$$ </p> 
 	</section>
 
 	<section style = "text-align: left; font-size:75%"> 
   <h3 style = "color:purple"> Refined obstructions </h3>
-  <p style = "margin-bottom: 2cm;"> While there are classes of varieties that do satisfy the local-to-global principle (e.g. quadric hypersurfaces by Hasse-Minkowski or Severi-Brauer varieties), many more do not. </p>
+  <p style = "margin-bottom: 1.5cm;"> While there are classes of varieties that do satisfy the local-to-global principle (e.g. quadric hypersurfaces by Hasse-Minkowski or Severi-Brauer varieties), many more do not. </p>
 
-  <p style = "margin-bottom: 2cm"> So we need a refinement of our local obstructions in general, i.e., an obstruction set $S$ such that $$\huge X(k) \subset \, S \subset \, X(\mathbb{A}_k)$$ </p>
+  <p style = "margin-bottom: 1.5cm"> So we need a refinement of our local obstructions in general, i.e., an obstruction set $S$ such that $$\Large X(k) \subset \, S \subset \, X(\mathbb{A}_k)$$ </p>
 
   <p> One such obstruction set is called the Brauer-Manin set $X(\mathbb{A}_k)^{\text{Br}}$ and is defined using the Brauer group of $X$. </p> 
 	</section>
@@ -99,7 +109,7 @@ table, th, td{
 </section>
 
 <section>
-		<section> <h2> The Brauer Group: what, why, how? </h2>
+		<section> <h2> The Brauer Group: many perspectives </h2>
 		</section>
 
 		<section style = "text-align: left; font-size: 80%;">
@@ -108,30 +118,147 @@ table, th, td{
 
 		<p style = "margin-bottom: 2cm;"> $\text{Br}(\mathbb{C}) = 0 \qquad \text{Br}(\mathbb{R}) = \mathbb{Z}/2\mathbb{Z} \qquad \text{Br}(\mathbb{Q}) = \text{infinite}$ </p>
 
-		<p style ="margin-bottom: 1cm"> When $F$ is a field, the Brauer group, $\text{Br}(F)$, is related to the complexity of Galois theory over $F$. Alternatively, gives insight into how difficult it is to solve norm equations over $F$. </p>
+		<p style ="margin-bottom: 1cm"> When $F$ is a field, the Brauer group, $\text{Br}(F)$, gives a rough measure of the complexity of Galois theory of $F$. Alternatively, gives insight into how prevalent norm elements are. </p>
 
+		<p class = "fragment highlight-blue semi-fade-in" > e.g., only Galois extension of $\mathbb{R}$ is $\mathbb{C}$ and $a \in \mathbb{R}$ is a norm iff $a > 0$. </p>
 		</section>
 
 	  <section style = "text-align: left;font-size: 80%">
   	<h3 style = "color: purple;"> The Brauer Group (geometric perspective)</h3>
-  	<p style = "margin-bottom: 2cm;"> $\textrm{Br}(F) = \{ Y : Y_{\overline{F}} \simeq \mathbb{P}^n_{\overline{F}} \}/\simeq_{\tiny F} \qquad $ ($F$ a field) <p>
-  	<p style = "margin-bottom: 2cm"> $\textrm{Br}\,\mathbf{k}(X) = \{ Y : Y_{\overline{\mathbf{k}(X)}} \simeq \mathbb{P}^n_{\overline{\mathbf{k}(X)}} \}/\simeq_{\tiny F} \qquad $ ($X$ smooth variety)</p>
-  	<p> and $\text{Br}(X) \subset \text{Br}\,\mathbf{k}(X)$ is the subgroup of everywhere unramified elements </p>
+  	<p style > $\textrm{Br}(F) = \{ Y : Y_{\overline{F}} \simeq \mathbb{P}^n_{\overline{F}} \}/\simeq_{\tiny F} \qquad $ ($F$ a field) <p>
+  	<p style = "margin-bottom: 2cm;"> The $2$-torsion is generated by classes of conics in $\mathbb{P}^2_F$. </p>
+  	<div class = "fragment">	
+  	<p style = "margin-bottom: 1cm"> $\textrm{Br}\,\mathbf{k}(X) = \{ Y : Y_{\overline{\mathbf{k}(X)}} \simeq \mathbb{P}^n_{\overline{\mathbf{k}(X)}} \}/\simeq_{\tiny F} \qquad $ ($X$ smooth variety)</p>
+  		<hr/>
+  		</div>
+
+  	<p class = "fragment" style = "margin-top: 1cm"> <b style = "font-family: league gothic; font-size: 115%">  GOOD NEWS: </b> When $X$ is smooth, $\,\text{Br}(X) \subset \text{Br}\,\mathbf{k}(X)$ is a subgroup and there is a concrete way to detect exactly which elements in $\text{Br}\,\mathbf{k}(X)$ belong to $\text{Br}\,X$ (so called <em> everywhere unramified</em> elements) </p>
+  
+  </section>
+
+  <section style = "text-align: left; font-size: 75%">
+  	<h3 style = "color: purple;"> The Brauer Group (algebraic perspective)</h3>
+  	<p> For $F$ a field, $\text{Br} \, F$ is also defined in terms of <em> central simple algebras. </em> Forms a torsion abelian group under tensor product, where the identity element is the class of $M_n(F)$. </p>
+
+  	<div class = "fragment semi-fade-in">
+  	<p style = "margin-top:2cm">  <b style = "font-family: league gothic; font-size: 120%; color:purple"> EXAMPLE: </b>Let $a, b \in F^\times$. The <b style = "color:teal;"> quaternion algebra</b> $(a,b)_F$ is  element of order dividing $2$ in $\text{Br}\, F$ defined by the $4$ dimensional $F$-algebra \[ F \oplus F\, i \oplus F \, j \oplus F \, ij, \quad i^2 = a, \, j^2 = b, \, ij = - ji, \]
+  	 </p>
+
+  	 <p style = "margin-top: 1.5cm" class = "fragment semi-fade-in"> The algebra $(a,b)_F$ is trivial in $\text{Br}\, F$ $\iff$ the conic $ax^2 + by^2 = z^2$ has an $F$-rational point $\iff$ $a \in N(F(\sqrt{b})^\times)$ </p> 
+  	</div>
+  	</section>
+
+    <section style = "text-align: left; font-size: 75%">
+  	<h3 style = "color: purple;"> The Brauer Group (cohomological perspective)</h3>
+  	<p>  When $F$ is a field, $\text{Br}\, F \cong H^2(\text{Gal}(F^\text{sep}/F), (F^\text{sep})^\times)$. </p>
+
+  	<p style= "margin-top: 1cm"> The Brauer group of a scheme $X$ is defined in terms of étale cohomology, $\text{Br}\,X := H^2_{\text{\'et}}(X, \mathbb{G}_m)$.  We recover $\text{Br}\, F = \text{Br}\, \text{Spec} \, F$. </p>
+
+  	<p style= "margin-top: 2cm"> The Brauer group is <em> functorial: </em> if there is a morphism of varieties $f \colon X \to Y$ then there is a homomorphism $f^\ast \colon \text{Br}\, Y \to \text{Br}\, X$.</p>
   </section>
 
   <section style = "text-align: left; font-size: 80%">
-  	<h3 style = "color: purple;"> The Brauer Group (algebraic perspective)</h3>
+  <h3 style = "color:purple"> Deep breaths</h3> 
+  <p>  The Brauer group is a multi-faceted object that encapsulates useful arithmetic and geometric information. </p>
+
+  <p style = "margin-top: 1.5cm"> However, the point is not to overwhelm you, but instead to show that there are many ways to think about it! Depending on context, one may be more helpful than another. </p>
+
+  <p style = "margin-top: 1.5cm;"> We still need the Brauer group to define an obstruction set (that was our goal!!) </p>
   </section>
 </section>
 
 <section>
 	<section> 
-			<h2> Computing the Brauer-Manin obstruction </h2>
+			<h2> Defining the Brauer-Manin obstruction </h2>
 	</section>
 
 
+	<section style = "text-align: left; font-size:77%;">
+	<h3 style = "color: purple;"> Fundamental exact sequence</h3>
+	<p> Let $k$ be a number field. For each place $v$ of $k$, there is an injective homomorphism 
+	$$ \text{inv}_v \colon \text{Br}\, k_v \to \mathbb{Q}/\mathbb{Z}, $$ that is an isomorphism for non-archimedean $v$. &nbsp Furthermore, these isomorphisms fit together into a short exact sequence </p>
+
+	<p style = "margin-top:2cm"> $$\begin{CD}
+     0 @>> > \text{Br}\, k  @>> >  \bigoplus_v\, \text{Br} \, k_v  @>\sum_v \text{inv}_v >>  \mathbb{Q}/\mathbb{Z}  @>> >  0  
+\end{CD} $$</p>
+	</section>
+
+<!--
+	<section style = "text-align: left; font-size:77%;">
+	
+	<h3 style = "color: purple;"> The Brauer-Manin pairing </h3>
+	<p> For any extension $F/k$ the functoriality of the Brauer group gives a pairing 
+	$$ \begin{align*} \text{Br}\, X \times X(F) &\to \text{Br}\, F \\ (\alpha, x) \quad &\mapsto \alpha^\ast x \end{align*}$$  where we view a point $x \in X(F)$ as a map $\, x \colon \text{Spec}\, F \to X$</p>
+
+ 	<p style = "margin-top: 2cm"> Since $X$ is proper, we have $X(\mathbb{A}_k) = \prod_v X(k_v)$, so we can apply the pairings componentwise to get a pairing 
+ 	$$\text{Br}\, X \times X(\mathbb{A}_k) \to \prod_v \text{Br}\, k_v$$
+ </p>
+	 <p> $$\begin{CD}
+     1 @<<< 2 @= 3\\
+     @. @| @VVV\\
+     @. 4 @= 5
+\end{CD}$$</p> 
+	</section>
+-->
+
+
+	<section style = "text-align: left; font-size:75%">
+		<h3 style = "color: purple;"> The Brauer-Manin pairing </h3>
+		<p class="fragment step-fade-in-then-out">
+			For each extension $F/k$ the functoriality of the Brauer group gives a pairing 
+	$$ \begin{align*} \text{Br}\, X \times X(F) &\to \text{Br}\, F \\ (\alpha, x) \quad &\mapsto \alpha^\ast x \end{align*}$$  where we view a point $x \in X(F)$ as a map $\, x \colon \text{Spec}\, F \to X$</p>
+		<p class="fragment">For each extension $k_v/k$ the functoriality of the Brauer group gives a pairing
+	$$ \begin{align*} \text{Br}\, X \times X(k_v) &\to \text{Br}\, k_v \\ (\alpha, x) \quad &\mapsto \alpha^\ast x \end{align*}$$  where we view a point $x \in X(k_v)$ as a map $\, x \colon \text{Spec}\, k_v \to X$</p>
+
+	<div style = "margin-bottom: 2cm;">
+		<p class= "fragment" style = "margin-top: 2cm"> Since $X$ is proper, we have $X(\mathbb{A}_k) = \prod_v X(k_v)$, so we can apply the pairings componentwise to get a pairing  </p>
+ 		<div class = "fragment step-fade-in-then-out"> $$\text{Br}\, X \times X(\mathbb{A}_k) \to \prod_v \text{Br}\, k_v$$ </div>
+ 		<div class = "fragment step-fade-in-then-out"> $$\text{Br}\, X \times X(\mathbb{A}_k) \to \bigoplus_v \text{Br}\, k_v$$ </div>
+ </div>
+	</section>
+
 	<section style = "text-align: left; font-size:80%;">
-	words
+ <h3 style = "color: purple;"> Putting it all together </h3>
+ <p> So, we get a commutative diagram </p>
+ <p style = "font-size: 83%" class = "fragment step-fade-in-then-out"> $$\begin{CD}
+     @. X(k) \times \text{Br}\, X @>>>  X(\mathbb{A}_k) \times \text{Br}\, X @.\\
+     @. @VVV @VVV\\
+     @. \text{Br}\,k @>>> \oplus_v \text{Br}\,k_v @. @. @.
+\end{CD}$$</p> 
+
+ <p style = "font-size: 83%" class = "fragment"> $$\begin{CD}
+     @. X(k) \times \text{Br}\, X @>>>  X(\mathbb{A}_k) \times \text{Br}\, X @.\\
+     @. @VVV @VVV\\
+     0 @>>> \text{Br}\,k @>>> \oplus_v \text{Br}\,k_v @>{\sum_v \text{inv}_v}>> \mathbb{Q}/\mathbb{Z} @>>>0
+\end{CD}$$</p> 
+
+<div class = "fragment">
+	<p style = "margin-top:2cm; font-size: 95%">  Since the bottom row is a complex, the induced map $\small \text{Br}\, X \times X(k) \to \mathbb{Q}/\mathbb{Z}$ is identically 0.&nbsp So, for all $\small \alpha \in \text{Br}\, X$, we have </p>
+<p style = "background-color: lightgray; padding: .1cm">
+$$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textstyle \sum_v \text{inv}_v\, x_v^\ast \alpha = 0\}.$$
+</p>
+</div>
+	</section>
+
+<section style = "text-align: left; font-size:77%;">
+	<h3 style = "color:purple"> FINALLY </h3>
+	<p> Taking the intersection of $\small X(\mathbb{A})^\alpha$ for all $\small \alpha$, we obtain the <b style = "color:teal"> Brauer-Manin set </b> </p>
+	<p> $$\begin{align*} X(\mathbb{A}_k)^{\text{Br}} &:= \bigcap_{\alpha} X(\mathbb{A}_k)^{\alpha}\\ &= \left\{(x_v) \in X(\mathbb{A}_k) : \textstyle \sum_v \text{inv}_v\, x_v^\ast \alpha = 0 \, \, \text{for all $\alpha \in \text{Br}\, X$} \right\} 
+	\end{align*} $$ </p>
+</section>
+
+
+	<section style = "text-align: left; font-size:80%;">
+	<p> need to mention constant algebras somewhere </p>
+	<p> should also say that in general, no effective method for computing Brauer-Manin set. The situation for surfaces is a bit better, and if we specialize to specific classes such as conic bundles, then it gets a lot better. </p>
+	</section>
+
+	<section style = "text-align: left; font-size:80%;">
+	<h3 style = "color:purple"> Takeaways</h3>
+	<p> The Brauer group is an algebro-geometric object that encapsulates arithmetic information about $X$</p>
+	<p> When we can get our hands on quaternion algebras, life is better. </p>
+	<p> The Brauer-Manin set is a type of obstruction set we'll focus on situations where we can actually detect whether it's empty </p>
+	<p> We want to start to have some understanding of what information we really need to do this </p>
 	</section>
 
 </section>
@@ -165,15 +292,15 @@ table, th, td{
 
 		<p style = "margin-bottom:.75cm;"> Geometrically rational surfaces, i.e. those birational to $\mathbb{P}^2$ over $\overline{k}$, are practical candidates for our task since </p>
 		<ul class = "fragment semi-fade-in">
-			<li style = "margin-bottom: .75cm; margin-left: 1cm;"> They're birational to a <em> del Pezzo surface </em> or a <em> conic bundle surface </em> </li>
+			<li style = "margin-bottom: .75cm; margin-left: 1cm;"> They're birational to a <em> del Pezzo surface </em> or a <em> conic bundle </em> over $\mathbb{P}^1$ </li>
 			<li style = "margin-bottom: .755cm; margin-left: 1cm;"> Often straightforward to compute generators for the Brauer group</li>
 			<li style = "margin-bottom: .75cm; margin-left: 1cm;"> Conjecturally, $\, Y(k) = \emptyset \implies Y(\mathbb{A}_k)^{\text{Br}} = \emptyset$ </li>
 		</ul>
 	</section>
 
-	<section style = "text-align: left; font-size: 80%"> 
+	<section style = "text-align: left; font-size: 75%"> 
   <h3 style = "color:purple"> Key steps </h3>
-  <p> To build our examples with an obstruction requiring subgroups of the Brauer group of size $N$ we will: </p>
+  <p> To build our examples with an obstruction requiring subgroups of the Brauer group of a fixed size we will: </p>
 
   <ul style = "margin-left: 2cm">
   <li style = "margin-bottom: .7cm"> Focus on minimal conic bundle surfaces whose Brauer groups we can control </li>
@@ -188,8 +315,8 @@ table, th, td{
 
 		<!--  MAYBE PUT THIS BACK, JEN Our examples will arise from surfaces $X_{a,f}$ that are smooth, projective models of the surface with affine equation <span style = "color:teal"> $y^2 - a z^2 = f(x)$ </span>, where $a \in k^{\times} \setminus k^{\times 2}$ and $f \in k[x]$ is a separable polynomial. --> 
 
-		<p> Let $a \in k^\times \setminus k^{\times 2}$ and let $f(u_0, u_1) \in k[u_0, u_1]$ be a separable homogenous polynomial of even degree. We will consider conic bundles $X_{a,f}$ which are the Zariski closure of
-		\[ y^2 - a z^2 = f(u_0, 1) x^2 \] 
+		<p> Let $a \in k^\times \setminus k^{\times 2}$ and let $f(x_0, x_1) \in k[x_0, x_1]$ be a separable homogenous polynomial of even degree. We will consider a conic bundle $X_{a,f}$ which is the smooth, projective model of the affine surface
+		\[ y^2 - a z^2 = f(x_0, 1) \] 
 	</section>
 
 	<section style = "font-size:80%; text-align: left;">
@@ -205,7 +332,7 @@ table, th, td{
 
 	<section> 
 		<h2> A group theoretic interpretation</h2>
-		<p style = "font-size: 80%; text-align: left; margin-left: 2cm; margin-top: 1cm;"> <span style = "color:purple">  <b> GOAL:  </b></span> Understand group theoretically necessary (and sufficient) conditions to achieve the requirement that a specific number of Brauer classes must all be used for an obstruction </p>
+		<p style = "font-size: 80%; text-align: left; margin-left: 2cm; margin-top: 1cm;"> <span style = "color:purple">  <b style = "font-family:league gothic; font-size: 130% ;"> GOAL :  </b></span> Understand group theoretically necessary (and sufficient) conditions to achieve the requirement that a specific number of Brauer classes must all be used for an obstruction </p>
 	</section>
 
 	<section style = "font-size:80%; text-align: left;"> 
@@ -225,9 +352,9 @@ table, th, td{
 	<section style = "font-size:80%; text-align: left;"> 
 	<h3 style = "color:purple"> Obstruction from a subgroup </h3>
 
-	<p> The obstruction set $Y(\mathbb{A}_k)^B$ is <b style = "background-color:lightgreen;"> nonempty </b> precisely when there exists an adelic point $(y_v) \in Y(\mathbb{A}_k)$ such that $(y_v)$ is <b style = "background-color:lightgreen;"> orthogonal to each $\alpha \in B$ </b> under the Brauer-Manin pairing. <p>
+	<p> The obstruction set $Y(\mathbb{A}_k)^B$ is <b class = "fragment highlight-red" data-fragment-index="1"> nonempty </b> precisely when there exists an adelic point $(y_v) \in Y(\mathbb{A}_k)$ such that $(y_v)$ is <b class = "fragment highlight-red" data-fragment-index="1"> orthogonal to each $\alpha \in B$ </b> under the Brauer-Manin pairing. <p>
 
-	<p style = "margin-top: 2cm">That is, the obstruction set is <b style = "background-color: lightgreen;"> empty</b> precisely when <b style = "background-color: lightgreen;"> $0$ is not in the image </b> of the map $\phi \colon Y(\mathbb{A}_k) \to \hat{B} = \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$ </p>
+	<p style = "margin-top: 2cm">That is, the obstruction set is <b class = "fragment highlight-red" data-fragment-index="2"> empty</b> precisely when <b class = "fragment highlight-red" data-fragment-index="2"> $0$ is not in the image </b> of the map $\phi \colon Y(\mathbb{A}_k) \to \hat{B} = \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$ </p>
 	</section>
 
 	<section style = "font-size:80%; text-align: left;"> 
@@ -249,7 +376,43 @@ table, th, td{
 		<h3 style = "color: purple"> New goal </h3>
 		<p> Find $Y/k$ such that $\text{Br} \, Y$ contains a subgroup $B$ isomorphic to $(\mathbb{Z}/2\mathbb{Z})^n$ such that the induced map $B \to \text{Br}\, Y / \text{Br}_0\, Y$ is an isomorphism, and the image of $Y(\mathbb{A}_k)$ in $\hat{B}$ is everything except the $0$ map. </p>
 
-		<p> Since we can build conic bundles $X := X_{a,f}$ with Brauer groups satisfying the first property, we need only to figure out how to achieve the second.  </p>
+		<p style = "margin-top: 1.5cm;"> Since we can build conic bundles $X := X_{a,f}$ with Brauer groups satisfying the first property, we need only to figure out how to achieve the second.  </p>
+	</section>
+
+		<section style = "text-align: left; font-size: 80%"> 
+	<h3> Illustrating the idea</h3>
+	<p> Suppose $n=3$, so that $B = \langle \alpha_1, \alpha_2, \alpha_3 \rangle \cong (\mathbb{Z}/2\mathbb{Z})^3$. Want points in $X(\mathbb{A}_k)$ so that we get all of the following outcomes from the Brauer-Manin pairing with the $\alpha_i$ (each row is the image of an adelic point) </p>
+
+			<div style = "font-size: 70%;">
+  <table>
+    <thead>
+      <tr>
+        <td style="text-align:center"> $\alpha_1$ </td>   <td style="text-align:center;">\( \alpha_2 \)</td> <td style="text-align:center;">\( \alpha_3 \)</td>  
+      </tr>
+    </thead>
+    <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2} \)</td>
+    </tr>
+      <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td>
+        <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2} \)</td>
+    </tr>
+    </tr>
+  </table>
+	</div>
 	</section>
 
 	<section style = "text-align: left; font-size: 80%"> 
@@ -261,6 +424,119 @@ table, th, td{
 		<p style = "margin-top: 1cm"> To arrange $\text{im} \,\phi = \hat{B}\setminus \{0\}$ one option is to have $\text{im}\, \phi_{v_0} =  \hat{B}\setminus \{0\}$ for a single place $v_0$ and $\text{im}\, \phi_{v} = \{0\}$ for all other places $v$.</p>
 	</section>
 
+
+
+		<section style = "text-align: left; font-size: 80%"> 
+	<h3> Illustrating the idea</h3>
+	<p> As noted earlier, one way to achieve this is with a single place $v_0$ </p>
+
+			<div style = "font-size: 90%;">
+  <table style = "display: inline-block; padding-left:2cm">
+  	<thead>
+  	<tr >  <th colspan="3">  The place $v_0$ </th> </tr>
+    </thead>
+      <tr>
+        <td style="text-align:center"> $\alpha_1$ </td>   <td style="text-align:center;">\( \alpha_2 \)</td> <td style="text-align:center;">\( \alpha_3 \)</td>  
+      </tr>
+    <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2} \)</td>
+    </tr>
+      <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td>
+        <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2} \)</td>
+    </tr>
+    </tr>
+  </table>
+
+  	<table style = "display: inline-block; padding-left: 2cm; padding-bottom: 9cm;">
+	   <thead>
+      <tr>  <th colspan="3">  All other places $v \ne v_0$ </th> </tr>
+    </thead>
+      <tr>
+        <td style="text-align:center"> $\alpha_1$ </td>   <td style="text-align:center;">\( \alpha_2 \)</td> <td style="text-align:center;">\( \alpha_3 \)</td>  
+      </tr>
+    <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td>
+    </tr>
+     </table>
+	</div>
+	</section>
+
+	<section style = "font-size: 80%; text-align: left;"> 
+		<h3> Illustrating the idea </h3>
+		<p> But, we can also use multiple places </p>
+
+		<div>
+		  	<table style = "display: inline-block; padding-left: 2cm; padding-bottom: 3cm;">
+	   <thead>
+      <tr>  <th colspan="3"> The place $v_0$ </th> </tr>
+    </thead>
+      <tr>
+        <td style="text-align:center"> $\alpha_1$ </td>   <td style="text-align:center;">\( \alpha_2 \)</td> <td style="text-align:center;">\( \alpha_3 \)</td>  
+      </tr>
+    <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td>
+    </tr>
+        <tr>
+      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td>
+    </tr>
+     </table>
+
+     		  	<table style = "display: inline-block; padding-left: 2cm; padding-bottom: 3cm;">
+	   <thead>
+      <tr>  <th colspan="3"> The place $v_1$ </th> </tr>
+    </thead>
+      <tr>
+        <td style="text-align:center"> $\alpha_1$ </td>   <td style="text-align:center;">\( \alpha_2 \)</td> <td style="text-align:center;">\( \alpha_3 \)</td>  
+      </tr>
+    <tr>
+      <td style="text-align:center;">\( \frac{1}{2} \)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2} \)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( 0 \)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td>
+    </tr>
+     <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td>
+    </tr>
+        <tr>
+      <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td>
+    </tr>
+     </table>
+
+     <table style = "display: inline-block; padding-left: 2cm; padding-bottom: 8cm;">
+	   <thead>
+      <tr>  <th colspan="3"> All other places  </th> </tr>
+    </thead>
+      <tr>
+        <td style="text-align:center"> $\alpha_1$ </td>   <td style="text-align:center;">\( \alpha_2 \)</td> <td style="text-align:center;">\( \alpha_3 \)</td>  
+      </tr>
+    <tr>
+      <td style="text-align:center;">\( 0 \)</td> <td style="text-align:center;">\( 0 \)</td> <td style="text-align:center;">\( 0 \)</td>
+    </tr>
+     </table>
+   </div>
+
+	</section>
+
 </section>
 
 
@@ -269,19 +545,64 @@ table, th, td{
 <section>	
 	<section> <h2> A general base change construction </h2>
 	</section>
+
+	<section style = "text-align: left; font-size: 75%;">
+	 <h3 style = "color: purple;"> Tension </h3> 
+
+	 <p> We want to construct a conic bundle $X = X_{a,f}$ over $k$ with  </p>
+	 	<ul> 
+	 		<li style = "margin-bottom:.5cm"> $\text{Br} \, X / \text{Br}_0 \, X$ generated by $n$ quaternion algebras,  $B = \langle \alpha_1, \dots, \alpha_n \rangle$, </li>
+	 		<li style = "margin-bottom:.5cm"> $X(\mathbb{A}_k) \ne \emptyset$, </li>
+	 		<li> $X(k) = \emptyset$, and in particular $X$ has a Brauer-Manin obstruction <span class = "fragment fade-in-then-semi-out"> that cannot be achieved without all $n$ quaternion algebras, </span>  <span class = "fragment"> so that image of $X(\mathbb{A}_k)$ in $\text{Hom}(B,\mathbb{Q}/\mathbb{Z})$ is everything but the $0$ map. </span></li>
+	 	</ul>
+
+	 	<p style = "margin-top: 1.5cm;" class = "fragment"> The number of irreducible factors of $f$ (and their degrees controls) $n$. Getting the other properties simultaneously is like playing Whac-A-Mole. </p>
+	</section>
+
+	<section style = "text-align: left; font-size: 80%;">
+	 <h3 style = "color: purple;"> Starting conic bundle </h3>  
+	 <p> Instead we start with a conic bundle which gives us finer control at several distinguished non-archimedean places, at the cost of having a rational point on the fiber over $\infty$ in $\mathbb{P}^1$. </p>
+
+	 <p style = "margin-top:1.5cm"> The starting conic bundle $\widetilde{X} = \widetilde{X}_{a,f}$ has $n$ linearly independent Brauer classes which generate $B$ and a finite set of non-archimedean places at which the local evaluation map $\widetilde{X}(k_v) \to \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$ is surjective. </p>
+	</section>
+
+		<section style = "text-align: left; font-size: 80%;">
+	 <h3 style = "color: purple;"> Starting conic bundle </h3>  
+	 <p> To do this, we start with $n+1$ monic irreducible polynomial $\tilde{f}_j$ of even degree and let $\tilde{f} = \prod_{j=0}^n \tilde{f}_j$. </p>
+
+	 <p> Take a collection of non-archimedean places $v_1, \dots, v_r$ not dividing $2$ so that each $\tilde{f_j}$ has coefficients in $\mathcal{O}_{v_i}$, $\tilde{f}_j$ is separable mod $v_i$, and the residue fields $\mathbb{F}_{v_i}$ are large enough. </p>
+
+	 <p> Choose $a$ so that $k(\sqrt{a})$ is not contained in the splitting fields of the $\tilde{f}_j$ </p>
+	</section>
+
+	<section style = "text-align: left; font-size: 80%;">
+	 <h3 style = "color: purple;"> Base change </h3>  </section>
 </section>
 
 <section>
 	<section> <h2> An explicit example over $\mathbb{Q}$ </h2> </section>
 
-	<section> theorem
-	</section>
+	<section style = "text-align: left; font-size: 80%;">
+	<h3 style = "color: purple;"> A related base change approach </h3> 
+	<p style = "margin-bottom: 1cm"> To construct an explicit example over $\mathbb{Q}$, we build a conic bundle $X_{p,f}$ arising as a base change of a conic bundle $\widetilde{X}_{p, \tilde{f}}$ by a map $g \colon \mathbb{P}^1 \to \mathbb{P}^1$. </p>
 
-	<section> details/insights
-	</section>
+	<p style = "margin-bottom:2cm"> Will not perfectly fit into the previous framework, but does have several desirable properties and similarities.</p>
 
-	<section> comparison to base change construction
-	</section>
+	<div class = "fragment semi-fade-in">
+	<h4 style = "margin-bottom: -.4cm;"> Starting data </h4>
+  <p> Two primes $p$ and $q$. We'll require $p \equiv 1 \bmod{8}, \,$ $p \not \equiv \square \bmod q$, but $p$ is a square modulo small primes (determined by $n$ and $q$). </p>
+	</div>
+</section>
+
+<section style = "text-align: left; font-size: 80%;"> 
+	<h4> Features </h4>
+	<ul>
+	<li style = "margin-bottom: .5cm"> Leading coefficient of $f$ is the prime $q$; ensures $X_{\infty}(\mathbb{Q}) = \emptyset$. </li>
+	<li style = "margin-bottom: .5cm"> Irreducible factors $\tilde{f}_i$ of $\tilde{f}$ are linear (odd degree). Now $\text{Br}\,\widetilde{X}/ \text{Br}_0 \,\widetilde{X}$ has a more complicated description and $2$-rank $< n$</li> 
+	<li> $g$ is constructed so that $\text{im} \, \phi_p = \hat{B}\setminus \{0\}$ while  $\text{im} \, \phi_v = \{0 \} $ for all other primes $v$. </li>
+	</ul> 
+</section>
+
 
 	<section style = "text-align: left; font-size: 80%;"> 
 	<h3 style = "color: purple;"> Explicit computations </h3>
