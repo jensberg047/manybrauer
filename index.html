@@ -59,7 +59,9 @@ th, td{
 					<section style = "text-align: left">
 					<p style = "margin-bottom: 2cm"> The results in this talk are joint work with Carlo Pagano, Bjorn Poonen, Michael Stoll, Nicholas Triantafillou, Bianca Viray, and Isabel Vogt. </p>
 
-					<p> This project started at the Park City Mathematics Institute (PCMI) 2022 program on Number Theory Informed by Computation</p>
+					<p style = "margin-bottom: 2cm"> This project started at the Park City Mathematics Institute (PCMI) 2022 program on Number Theory Informed by Computation</p>
+
+					<p style = "font-size: 70%;" class = "fragment"> To read up on some of the background on obstructions to rational points relevant to this work, a fantastic resource is Bianca's <a href = "https://www.ias.edu/pcmi/pcmi-2022-gss-lecture-notes-and-problem-sets" > notes from her PCMI lectures. </a> </p>
 					</section>
 
 				</section>
@@ -67,7 +69,7 @@ th, td{
 
 			
 <section>
-  <section> <h2> Obstructions to rational points:  </h2>
+  <section> <h2> Obstructions to rational points  </h2>
   <h3> an overview </h3>
   </section>
 
@@ -109,19 +111,42 @@ th, td{
 </section>
 
 <section>
-		<section> <h2> The Brauer Group: many perspectives </h2>
+		<section> <h2> The Brauer Group </h2>
+			<h3> Many perspectives</h3>
 		</section>
 
 		<section style = "text-align: left; font-size: 80%;">
-		<h3 style = "color: purple;"> The Brauer Group (a vibe) </h3>
+		<h3 style = "color: purple;"> The Brauer Group (via examples) </h3>
 		<p style = "margin-bottom: 1cm;"> Let's start with some examples.  </p>
 
-		<p style = "margin-bottom: 2cm;"> $\text{Br}(\mathbb{C}) = 0 \qquad \text{Br}(\mathbb{R}) = \mathbb{Z}/2\mathbb{Z} \qquad \text{Br}(\mathbb{Q}) = \text{infinite}$ </p>
+		<p style = "margin-bottom: 2cm;"> $\text{Br}(\mathbb{C}) = 0 \qquad \text{Br}(\mathbb{R}) = \mathbb{Z}/2\mathbb{Z} \qquad \text{Br}(\mathbb{F_q}) = 0$ </p>
 
 		<p style ="margin-bottom: 1cm"> When $F$ is a field, the Brauer group, $\text{Br}(F)$, gives a rough measure of the complexity of Galois theory of $F$. Alternatively, gives insight into how prevalent norm elements are. </p>
 
 		<p class = "fragment highlight-blue semi-fade-in" > e.g., only Galois extension of $\mathbb{R}$ is $\mathbb{C}$ and $a \in \mathbb{R}$ is a norm iff $a > 0$. </p>
 		</section>
+
+
+<section style = "text-align: left; font-size: 75%">
+  	<h3 style = "color: purple;"> The Brauer Group (cohomological perspective)</h3>
+  	<p>  When $F$ is a field, $\text{Br}\, F \cong H^2(\text{Gal}(F^\text{sep}/F), (F^\text{sep})^\times)$. </p>
+
+  	<p style= "margin-top: 1cm"> The Brauer group of a scheme $X$ is defined in terms of étale cohomology, $\text{Br}\,X := H^2_{\text{\'et}}(X, \mathbb{G}_m)$.  We recover $\text{Br}\, F = \text{Br}\, \text{Spec} \, F$. </p>
+
+  	<p style= "margin-top: 2cm"> The Brauer group is <em> functorial: </em> if there is a morphism of varieties $f \colon X \to Y$ then there is a homomorphism $f^\ast \colon \text{Br}\, Y \to \text{Br}\, X$.</p>
+  </section>
+
+  <section style = "text-align: left; font-size: 75%">
+  	<h3 style = "color: purple;"> The Brauer Group (algebraic perspective)</h3>
+  	<p> For $F$ a field, $\text{Br} \, F$ is also defined in terms of <em> central simple algebras. </em> It is a torsion abelian group under tensor product, where the identity element is the class of $M_n(F)$. </p>
+
+  	<div class = "fragment semi-fade-in">
+  	<p style = "margin-top:2cm">  <b style = "font-family: league gothic; font-size: 120%; color:purple"> EXAMPLE: </b>Let $a, b \in F^\times$. The <b style = "color:teal;"> quaternion algebra</b> $(a,b)_F$ is  element of order dividing $2$ in $\text{Br}\, F$ defined by the $4$ dimensional $F$-algebra \[ F \oplus F\, i \oplus F \, j \oplus F \, ij, \quad i^2 = a, \, j^2 = b, \, ij = - ji, \]
+  	 </p>
+
+  	 <p style = "margin-top: 1.5cm" class = "fragment semi-fade-in"> The algebra $(a,b)_F$ is trivial in $\text{Br}\, F$ $\iff$ the conic $ax^2 + by^2 = z^2$ has an $F$-rational point $\iff$ $a \in N(F(\sqrt{b})^\times)$ </p> 
+  	</div>
+  	</section>
 
 	  <section style = "text-align: left;font-size: 80%">
   	<h3 style = "color: purple;"> The Brauer Group (geometric perspective)</h3>
@@ -136,30 +161,13 @@ th, td{
   
   </section>
 
-  <section style = "text-align: left; font-size: 75%">
-  	<h3 style = "color: purple;"> The Brauer Group (algebraic perspective)</h3>
-  	<p> For $F$ a field, $\text{Br} \, F$ is also defined in terms of <em> central simple algebras. </em> Forms a torsion abelian group under tensor product, where the identity element is the class of $M_n(F)$. </p>
 
-  	<div class = "fragment semi-fade-in">
-  	<p style = "margin-top:2cm">  <b style = "font-family: league gothic; font-size: 120%; color:purple"> EXAMPLE: </b>Let $a, b \in F^\times$. The <b style = "color:teal;"> quaternion algebra</b> $(a,b)_F$ is  element of order dividing $2$ in $\text{Br}\, F$ defined by the $4$ dimensional $F$-algebra \[ F \oplus F\, i \oplus F \, j \oplus F \, ij, \quad i^2 = a, \, j^2 = b, \, ij = - ji, \]
-  	 </p>
 
-  	 <p style = "margin-top: 1.5cm" class = "fragment semi-fade-in"> The algebra $(a,b)_F$ is trivial in $\text{Br}\, F$ $\iff$ the conic $ax^2 + by^2 = z^2$ has an $F$-rational point $\iff$ $a \in N(F(\sqrt{b})^\times)$ </p> 
-  	</div>
-  	</section>
-
-    <section style = "text-align: left; font-size: 75%">
-  	<h3 style = "color: purple;"> The Brauer Group (cohomological perspective)</h3>
-  	<p>  When $F$ is a field, $\text{Br}\, F \cong H^2(\text{Gal}(F^\text{sep}/F), (F^\text{sep})^\times)$. </p>
-
-  	<p style= "margin-top: 1cm"> The Brauer group of a scheme $X$ is defined in terms of étale cohomology, $\text{Br}\,X := H^2_{\text{\'et}}(X, \mathbb{G}_m)$.  We recover $\text{Br}\, F = \text{Br}\, \text{Spec} \, F$. </p>
-
-  	<p style= "margin-top: 2cm"> The Brauer group is <em> functorial: </em> if there is a morphism of varieties $f \colon X \to Y$ then there is a homomorphism $f^\ast \colon \text{Br}\, Y \to \text{Br}\, X$.</p>
-  </section>
+    
 
   <section style = "text-align: left; font-size: 80%">
   <h3 style = "color:purple"> Deep breaths</h3> 
-  <p>  The Brauer group is a multi-faceted object that encapsulates useful arithmetic and geometric information. </p>
+  <p>  The Brauer group is a multi-faceted object that captures useful arithmetic and geometric information. </p>
 
   <p style = "margin-top: 1.5cm"> However, the point is not to overwhelm you, but instead to show that there are many ways to think about it! Depending on context, one may be more helpful than another. </p>
 
@@ -206,9 +214,10 @@ th, td{
 		<h3 style = "color: purple;"> The Brauer-Manin pairing </h3>
 		<p class="fragment step-fade-in-then-out">
 			For each extension $F/k$ the functoriality of the Brauer group gives a pairing 
-	$$ \begin{align*} \text{Br}\, X \times X(F) &\to \text{Br}\, F \\ (\alpha, x) \quad &\mapsto \alpha^\ast x \end{align*}$$  where we view a point $x \in X(F)$ as a map $\, x \colon \text{Spec}\, F \to X$</p>
+	$$ \begin{align*} \text{Br}\, X \times X(F) &\to \text{Br}\, F \\ (\alpha, x) \quad &\mapsto \langle \alpha, x \rangle := \alpha^\ast x \end{align*}$$  where we view a point $x \in X(F)$ as a map $\, x \colon \text{Spec}\, F \to X$</p>
 		<p class="fragment">For each extension $k_v/k$ the functoriality of the Brauer group gives a pairing
-	$$ \begin{align*} \text{Br}\, X \times X(k_v) &\to \text{Br}\, k_v \\ (\alpha, x) \quad &\mapsto \alpha^\ast x \end{align*}$$  where we view a point $x \in X(k_v)$ as a map $\, x \colon \text{Spec}\, k_v \to X$</p>
+	$$ \begin{align*} \text{Br}\, X \times X(k_v) &\to \text{Br}\, k_v \\ (\alpha, x) \quad &\mapsto 
+\langle \alpha, x \rangle := \alpha^\ast x \end{align*}$$  where we view a point $x \in X(k_v)$ as a map $\, x \colon \text{Spec}\, k_v \to X$</p>
 
 	<div style = "margin-bottom: 2cm;">
 		<p class= "fragment" style = "margin-top: 2cm"> Since $X$ is proper, we have $X(\mathbb{A}_k) = \prod_v X(k_v)$, so we can apply the pairings componentwise to get a pairing  </p>
@@ -233,36 +242,117 @@ th, td{
 \end{CD}$$</p> 
 
 <div class = "fragment">
-	<p style = "margin-top:2cm; font-size: 95%">  Since the bottom row is a complex, the induced map $\small \text{Br}\, X \times X(k) \to \mathbb{Q}/\mathbb{Z}$ is identically 0.&nbsp So, for all $\small \alpha \in \text{Br}\, X$, we have </p>
+	<p style = "margin-top:2cm; font-size: 95%">  Since the bottom row is a complex, the induced map $\small X(k) \times \text{Br}\, X \to \mathbb{Q}/\mathbb{Z}$ is identically 0.&nbsp So, for all $\small \alpha \in \text{Br}\, X$, we have </p>
 <p style = "background-color: lightgray; padding: .1cm">
-$$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textstyle \sum_v \text{inv}_v\, x_v^\ast \alpha = 0\}.$$
+$$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textstyle \langle \alpha, (x_v) \rangle = 0\}.$$
 </p>
 </div>
 	</section>
 
 <section style = "text-align: left; font-size:77%;">
-	<h3 style = "color:purple"> FINALLY </h3>
+	<h3 style = "color:purple"> Finally an obstruction set </h3>
 	<p> Taking the intersection of $\small X(\mathbb{A})^\alpha$ for all $\small \alpha$, we obtain the <b style = "color:teal"> Brauer-Manin set </b> </p>
-	<p> $$\begin{align*} X(\mathbb{A}_k)^{\text{Br}} &:= \bigcap_{\alpha} X(\mathbb{A}_k)^{\alpha}\\ &= \left\{(x_v) \in X(\mathbb{A}_k) : \textstyle \sum_v \text{inv}_v\, x_v^\ast \alpha = 0 \, \, \text{for all $\alpha \in \text{Br}\, X$} \right\} 
-	\end{align*} $$ </p>
+	<p> $$ X(\mathbb{A}_k)^{\text{Br}} := \left\{(x_v) \in X(\mathbb{A}_k) : \langle \alpha, (x_v) \rangle = 0 \, \, \text{for all $\alpha \in \text{Br}\, X$} \right\} 
+	 $$ </p>
+
+	<p style = "margin-top: 3cm"> When $X(\mathbb{A}_k) \ne \emptyset$ but $X(\mathbb{A}_k)^{\text{Br}} = \emptyset$, we say $X$ has a Brauer-Manin obstruction to the local-to-global principle. </p>
+</section>
+
+<section style = "text-align: left; font-size:70%;"> 
+	<h3 style = "color:purple"> Useful properties</h3>
+<p style = "margin-bottom: 1cm;"> The <b style = "color:teal"> constant classes</b> in $\small \text{Br}\, X$ are the subgroup $\small \text{Br}_0\,X := \text{im}(\pi^\ast \colon \text{Br}\,k \to \text{Br}\, X)$, where $X \xrightarrow{\pi} \text{Spec} \, k$ is the structure morphism.</p> 
+
+<p style = "margin-bottom: 1cm;margin-top: 1cm; font-size: 120%"> <b> The Brauer-Manin set depends only on the quotient $\text{Br}\,X/ \text{Br}_0\,X$. </b> </p>
+
+<ul style = "margin-left:1.7cm" class = "fragment semi-fade-in">
+<li style = "margin-bottom: 1cm;"> <em>Constant algebras give no obstruction</em>:  &nbsp For any $\alpha_0 \in \text{Br}_0 \, X$, we have $X(\mathbb{A_k})^{\alpha_0} = X(\mathbb{A}_k)$. </li>
+
+<li> <em> Obstruction from a subgroup determined by the generators: </em> &nbsp If $\alpha, \beta \in \text{Br}\, X$, then $X(\mathbb{A}_k)^\alpha \cap X(\mathbb{A}_k)^\beta = X(\mathbb{A}_k)^{\langle \alpha, \beta \rangle}$ </li>
+</ul>
 </section>
 
 
-	<section style = "text-align: left; font-size:80%;">
-	<p> need to mention constant algebras somewhere </p>
-	<p> should also say that in general, no effective method for computing Brauer-Manin set. The situation for surfaces is a bit better, and if we specialize to specific classes such as conic bundles, then it gets a lot better. </p>
-	</section>
-
+<!--
 	<section style = "text-align: left; font-size:80%;">
 	<h3 style = "color:purple"> Takeaways</h3>
-	<p> The Brauer group is an algebro-geometric object that encapsulates arithmetic information about $X$</p>
-	<p> When we can get our hands on quaternion algebras, life is better. </p>
-	<p> The Brauer-Manin set is a type of obstruction set we'll focus on situations where we can actually detect whether it's empty </p>
-	<p> We want to start to have some understanding of what information we really need to do this </p>
+	<p> The Brauer group of $X$ can be used to define an obstruction set.
+	$$ X(k) \subset X(\mathbb{A}_k)^{\text{Br}} \subset X(\mathbb{A}_k)$$ </p>
+	<p style = "margin-top: 1.5cm"> It suffices to look at the Brauer group modulo constant algebras (those coming from $\text{Br}\,k$)</p>
+	<p style = "margin-top: 1.5cm"> When there is an obstruction, it comes from only finitely many classes. </p>
 	</section>
+-->
 
 </section>
 
+<section> 
+	<section> <h2 style = "font-size: 180%;"> So you've defined an obstruction, now what? </h2> 
+
+		<p style = "font-size: 70%; text-align:left; margin-left: 1cm; margin-top: 2cm"> Using the Brauer group, we defined the Brauer-Manin set $$X(k) \subset X(\mathbb{A}_k)^{\text{Br}} \subset X(\mathbb{A}_k).$$ But how useful is this in practice for detecting information about $X(k)$?</p></section>
+
+	<section style = "text-align: left; font-size:75%;">
+	<h3 style = "color:purple"> Practicalities </h3>
+	<p> We set out to construct an obstruction set that's actually computable. </p>
+
+	<p style = "margin-top: 1.5cm;"> <b style = "font-family: league gothic"> BAD NEWS: </b> There's no general effectivity result for computing the Brauer-Manin set nor is there an approach known to work in full generality.  </p>
+
+<p style = "margin-top: 1.5cm;"> <b style = "font-family: league gothic"> GOOD NEWS: </b> There are still many examples where we can compute whether there is a Brauer-Manin obstruction! </p>
+
+<p style = "font-size: 90%" class = "fragment"> Provided we have a good enough understanding of the geometry of $X$ (e.g., the structure of $\small \text{Pic}(\overline{X})$ as a Galois-module), we can often compute the structure of $\small \text{Br}\, X/ \text{Br}_0 \, X$. </p>
+	</section>
+
+	<section style = "text-align: left; font-size:74%;">
+	<h3 style = "color:purple"> Computing the Brauer-Manin set </h3> 
+	<p> Today we'll focus on examples where we can determine $\small \text{Br}\, X/ \text{Br}_0 \, X$. But even with this, we still have to compute the obstruction set it cuts out. </p> 
+
+	<p style = "margin-top: 1.5cm;"> Thankfully, given $\small \alpha \in \text{Br}\, X$ there are theoretical results that make life easier. </p>
+
+	<p style = "margin-top: 1.5cm;"> <b> The evaluation maps are locally constant: </b>  $
+\small \langle \alpha, - \rangle \colon X(k_v) \to \mathbb{Q}/\mathbb{Z}$ is locally constant. For many nice varieties, the evaluation maps are in fact constant for all but finitely many places. </p>
+
+	<!--
+	<ul style = "margin-top: 1cm; margin-left: 1.5cm;">
+		<li> Evaluation maps are locally constant</li>
+		<li> Most evaluation maps are constant </li>
+	</ul> -->
+</section>
+
+<section style = "text-align: left; font-size:74%;">
+<h3 style = "color:purple"> The past can be misleading </h3>
+<p> In nearly all examples in the literature where we have $X(\mathbb{A}_k)^{\{ \alpha_i \}} = \emptyset$, in fact $
+\small \langle \alpha_i, - \rangle \colon X(k_v) \to \mathbb{Q}/\mathbb{Z}$ is constant for all $i$ and for all $v$. But these examples were specifically built to have these properties in order to get an obstruction! </p>
+
+<p style = "margin-top: 1.5cm;"> However, in nature we really should expect to have places $v$ for which the evaluation maps are not constant. (Work of Harari and later Bright, among others, can make this statement more precise.)</p>
+
+<p style = "margin-top: 1.5cm;" class = "fragment"> <b> Consequences:</b> If there exists a place $v$ for which the evaluation $\small \langle \alpha, - \rangle \colon X(k_v) \to \mathbb{Q}/\mathbb{Z}$ is not constant, then $\small X(\mathbb{A}_k)^\alpha \subsetneq X(\mathbb{A}_k)$ and if the image is as large as possible then $\small X(\mathbb{A}_k)^{\alpha} \ne \emptyset.$</p>
+</section>
+
+<section style = "text-align: left; font-size:80%;"> 
+	<h3 style = "color:purple"> Can we predict anything in advance? </h3>
+	<p> Thankfully, one can show that <em> if $X$ has a Brauer-Manin obstruction</em>, then it was caused by a finite collection of Brauer classes. </p>
+
+	<p style = "margin-top: 1.5cm;" class = "fragment"> Creutz and Viray introduced the following definition: Let $X$ be a nice $k$-variety. We say that $\small \mathcal{B} \subset \text{Br}\,X$ <b style = "color:teal"> captures the Brauer-Manin obstruction</b> if $\small X(\mathbb{A}_k)^{\text{Br}} = \emptyset \implies X(\mathbb{A}_k)^{\mathcal{B}} = \emptyset$. </p>
+
+	<p style = "margin-top: 1.5cm;" class = "fragment"> So one can ask, given a class of varieties, can we describe $\mathcal{B} \subset \text{Br}\,X$ that captures the Brauer-Manin obstruction and is more easily computable?  </p>
+</section>
+
+
+<section style = "text-align: left; font-size:70%;"> 
+	<h3 style = "color:purple"> It's complicated... </h3>
+
+	<p> Given a class of varieties, can we describe $\mathcal{B} \subset \text{Br}\,X$ that captures the Brauer-Manin obstruction and is more easily computable?  </p>
+
+	<p style = "margin-top: 1.5cm; font-size: 90%;"> <b style = "font-family: league gothic; font-size:120%"> YES: &nbsp </b> For varieties closely related to abelian varieties by work of Skorobogatov–Zarhin (2017), Creutz–Viray (2018), and Nakahara (2019) </p>
+
+	<p style = "font-size: 90%;"> For cubic and quartic del Pezzo surfaces, there is always a single Brauer class that captures the Brauer-Manin obstruction (Poonen, Colliot-Thélène 2000)</p>
+
+	<div class = "fragment">
+	<p style = "margin-top: 1.5cm; font-size: 90%;"> <b style = "font-family: league gothic; font-size:120%"> UNCLEAR:  &nbsp </b> The situation is murkier for curves (Creutz–Viray–Voloch, 2019); in particular, their results suggest any such subgroup $\mathcal{B}$ likely depends on more than the genus and the degree. </p>
+
+	<p style = "font-size: 90%"> The 2-primary subgroup does not capture the Brauer-Manin obstruction for K3 surfaces (B. and Várilly-Alvarado; Gvirtz, Loughran, Nakahara). </p>
+	</div>
+</section>
+
+</section>
 
 <section>
 	<section> <h2> Main Results </h2>
@@ -303,7 +393,7 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
   <p> To build our examples with an obstruction requiring subgroups of the Brauer group of a fixed size we will: </p>
 
   <ul style = "margin-left: 2cm">
-  <li style = "margin-bottom: .7cm"> Focus on minimal conic bundle surfaces whose Brauer groups we can control </li>
+  <li style = "margin-bottom: .7cm"> Focus on conic bundle surfaces whose Brauer quotients we can control </li>
   <li style = "margin-bottom: .7cm"> Give a helpful group theoretic reinterpretation of what it means to have a Brauer-Manin obstruction </li>
   <li> Describe a base change construction that realizes our group theoretic ideas </li>
 	</ul>
@@ -320,9 +410,9 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 	</section>
 
 	<section style = "font-size:80%; text-align: left;">
-		<h3 style = "color:purple"> Brauer groups of conic bundles </h3>
-		<p> $X = X_{a,f}: y^2 - az^2 = f(x)$ </p>
-		<p style = "margin-bottom: 2cm"> Assume that the splitting field of $f$ is disjoint from $k(\sqrt{a})$ and that $f$ factors into the product of $n+1$ irreducibles, $f = \prod_{j=0}^{n} f_j$, each with even degree. </p>
+		<h3 style = "color:purple"> Brauer groups of our conic bundles </h3>
+		<p> $X = X_{a,f} \xrightarrow{\pi} \mathbb{P^1}$ with affine equation $y^2 - az^2 = f(x)$ </p>
+		<p style = "margin-bottom: 2cm"> Assume that the splitting field of $f$ does not contain $k(\sqrt{a})$ and that $f$ factors into the product of $n+1$ irreducibles, $f = \prod_{j=0}^{n} f_j$, each with even degree. </p>
 
 		<p> Then the quaternion algebras $\alpha_j = \pi^\ast(a, f_j) \in \text{Br}\,\mathbf{k}(X)$ generate $\text{Br}(X)/\text{Br}_0(X)$ </p>
 	</section>
@@ -335,24 +425,25 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 		<p style = "font-size: 80%; text-align: left; margin-left: 2cm; margin-top: 1cm;"> <span style = "color:purple">  <b style = "font-family:league gothic; font-size: 130% ;"> GOAL :  </b></span> Understand group theoretically necessary (and sufficient) conditions to achieve the requirement that a specific number of Brauer classes must all be used for an obstruction </p>
 	</section>
 
-	<section style = "font-size:80%; text-align: left;"> 
+	<section style = "font-size:74%; text-align: left;"> 
 	<h3 style = "color:purple"> Brauer-Manin Pairing Revisited </h3>
 
 	<p> Recall the Brauer-Manin pairing: </p>
 	<p style = "margin-left: -4cm">
-		$$ \begin{align*}Y(\mathbb{A}_k) \times \text{Br}(Y) &\longrightarrow \mathbb{Q}/\mathbb{Z} \\
-		((y_v), \alpha ) &\longmapsto  \sum_{v \in \Omega_k} \text{inv}_v (\underbrace{y_v^\ast \alpha}_{\in \, \text{Br}\,k_v})
+		$$ \begin{align*} \text{Br}(Y) \times Y(\mathbb{A}_k) &\longrightarrow \mathbb{Q}/\mathbb{Z} \\
+		( \alpha,(y_v) ) &\longmapsto \langle \alpha, (y_v) \rangle := \textstyle \sum \limits_{v} \text{inv}_v (\underbrace{y_v^\ast \alpha}_{\in \, \text{Br}\,k_v})
 		\end{align*}
 		$$ </p>
 
-	<p style = "margin-top: 1cm"> Let $B$ be a finite subgroup of $\text{Br}(Y)$. There is a map of sets \[ \phi \colon Y(\mathbb{A}_k) \to \hat{B} := \text{Hom}(B, \mathbb{Q}/\mathbb{Z})\]
- coming from the Brauer-Manin pairing.</p>
+	<p style = "margin-top: 1.5cm;"> Let $B$ be a finite subgroup of $\text{Br}(Y)$. There is a map of sets </p>
+	<p style = "margin-top:-.2cm; margin-bottom:-.2cm"> \[ \phi \colon Y(\mathbb{A}_k) \to \hat{B} := \text{Hom}(B, \mathbb{Q}/\mathbb{Z})\] </p>
+ <p> coming from the Brauer-Manin pairing: given $\small (y_v) \in Y(\mathbb{A}_k)$, keep track of $\small \langle \alpha, (y_v) \rangle \in \mathbb{Q}/\mathbb{Z}$ for each $\alpha \in B$.</p>
 	</section>
 
-	<section style = "font-size:80%; text-align: left;"> 
+	<section style = "font-size:77%; text-align: left;"> 
 	<h3 style = "color:purple"> Obstruction from a subgroup </h3>
 
-	<p> The obstruction set $Y(\mathbb{A}_k)^B$ is <b class = "fragment highlight-red" data-fragment-index="1"> nonempty </b> precisely when there exists an adelic point $(y_v) \in Y(\mathbb{A}_k)$ such that $(y_v)$ is <b class = "fragment highlight-red" data-fragment-index="1"> orthogonal to each $\alpha \in B$ </b> under the Brauer-Manin pairing. <p>
+	<p> The obstruction set $Y(\mathbb{A}_k)^B$ is <b class = "fragment highlight-red" data-fragment-index="1"> nonempty </b> precisely when there exists an adelic point $(y_v) \in Y(\mathbb{A}_k)$ such that $(y_v)$ is <b class = "fragment highlight-red" data-fragment-index="1"> orthogonal to each $\alpha \in B$ </b> under the Brauer-Manin pairing, i.e. <b class = "fragment highlight-red" data-fragment-index="1"> $\small \langle \alpha, (y_v) \rangle = 0$ for all $\alpha \in B$ </b><p>
 
 	<p style = "margin-top: 2cm">That is, the obstruction set is <b class = "fragment highlight-red" data-fragment-index="2"> empty</b> precisely when <b class = "fragment highlight-red" data-fragment-index="2"> $0$ is not in the image </b> of the map $\phi \colon Y(\mathbb{A}_k) \to \hat{B} = \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$ </p>
 	</section>
@@ -374,14 +465,14 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 
 	<section style = "text-align: left; font-size: 80%">
 		<h3 style = "color: purple"> New goal </h3>
-		<p> Find $Y/k$ such that $\text{Br} \, Y$ contains a subgroup $B$ isomorphic to $(\mathbb{Z}/2\mathbb{Z})^n$ such that the induced map $B \to \text{Br}\, Y / \text{Br}_0\, Y$ is an isomorphism, and the image of $Y(\mathbb{A}_k)$ in $\hat{B}$ is everything except the $0$ map. </p>
+		<p> Find $Y/k$ where $\text{Br} \, Y$ contains a subgroup $B$ isomorphic to $(\mathbb{Z}/2\mathbb{Z})^n$ such that the induced map $B \to \text{Br}\, Y / \text{Br}_0\, Y$ is an isomorphism, and the image of $Y(\mathbb{A}_k)$ in $\hat{B}$ is everything except the $0$ map. </p>
 
 		<p style = "margin-top: 1.5cm;"> Since we can build conic bundles $X := X_{a,f}$ with Brauer groups satisfying the first property, we need only to figure out how to achieve the second.  </p>
 	</section>
 
-		<section style = "text-align: left; font-size: 80%"> 
+		<section style = "text-align: left; font-size: 77%"> 
 	<h3> Illustrating the idea</h3>
-	<p> Suppose $n=3$, so that $B = \langle \alpha_1, \alpha_2, \alpha_3 \rangle \cong (\mathbb{Z}/2\mathbb{Z})^3$. Want points in $X(\mathbb{A}_k)$ so that we get all of the following outcomes from the Brauer-Manin pairing with the $\alpha_i$ (each row is the image of an adelic point) </p>
+	<p> Suppose $n=3$, so that $B = \langle \alpha_1, \alpha_2, \alpha_3 \rangle \cong (\mathbb{Z}/2\mathbb{Z})^3$. Want points in $X(\mathbb{A}_k)$ so that we get the $\small 2^3-1$ nonzero outcomes from the Brauer-Manin pairing with the $\alpha_i$ (each row is the image of an adelic point) </p>
 
 			<div style = "font-size: 70%;">
   <table>
@@ -415,13 +506,16 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 	</div>
 	</section>
 
-	<section style = "text-align: left; font-size: 80%"> 
+	<section style = "text-align: left; font-size: 74%"> 
+		<h3> Sum of local evaluations</h3>
 
 		<p> Assume $B$ is fixed and set $\hat{B} = \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$.</p>
 
-		<p style = "margin-top: 1cm"> For each place $v$ of $k$, there is a map of sets $\phi_v \colon Y(k_v) \to \hat{B}$. The image is the $0$ map except for finitely many places $v$.  By definition, the image of $\phi \colon Y(\mathbb{A}_k) \to \hat{B}$ is the sum of the $\text{im}\, \phi_v$. </p>
+		<p style = "margin-top: 1.5cm"> For each place $v$ of $k$, there is a map of sets $\phi_v \colon Y(k_v) \to \hat{B}$ <br> (Take $\small y_v \in Y(k_v)$ and keep track of $\small \langle \alpha, y_v \rangle \in \mathbb{Q}/\mathbb{Z}$&nbsp for each $\alpha \in B$.) </p>
 
-		<p style = "margin-top: 1cm"> To arrange $\text{im} \,\phi = \hat{B}\setminus \{0\}$ one option is to have $\text{im}\, \phi_{v_0} =  \hat{B}\setminus \{0\}$ for a single place $v_0$ and $\text{im}\, \phi_{v} = \{0\}$ for all other places $v$.</p>
+		<p> The image is the $0$ map except for finitely many places $v$.  By definition, the image of $\phi \colon Y(\mathbb{A}_k) \to \hat{B}$ is the sum of the $\text{im}\, \phi_v$. </p>
+
+		<p style = "margin-top: 2cm"> To arrange $\text{im} \,\phi = \hat{B}\setminus \{0\}$ one option is to have $\text{im}\, \phi_{v_0} =  \hat{B}\setminus \{0\}$ for a single place $v_0$ and $\text{im}\, \phi_{v} = \{0\}$ for all other places $v$.</p>
 	</section>
 
 
@@ -537,6 +631,17 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 
 	</section>
 
+	<section style = "font-size: 80%; text-align: left;"> 
+	<h3 style = "color:purple"> An upper bound </h3>
+	<p style = "margin-bottom:1cm"> You might be worried that we could need to check MANY places, relative to $n$. Thankfully, that's not the case.</p>
+
+	<div> 
+		<h4> Theorem (BPPSTVV) </h4>
+		<p> Let $B \cong (\mathbb{Z}/2\mathbb{Z})^n$ and let $T_{v_0}, \dots, T_{v_t} \subset \hat{B} = \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$ be subsets of cardinality at least $2$ such that $\sum_i T_{v_i} = \hat{B}\setminus \{ 0\}$. Then $t < n-1$ and moreover the bound is sharp. </p>
+	</div>
+
+	</section>
+
 </section>
 
 
@@ -544,6 +649,7 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 
 <section>	
 	<section> <h2> A general base change construction </h2>
+		<p style = "margin-left: 1cm; text-align:left; font-size: 70%;"> We need a way to cook up examples that require no fewer than $n$ Brauer classes to witness an obstruction. We'll accomplish this by first building a conic bundle $\small \tilde{X} \xrightarrow{\tilde{\pi}} \mathbb{P}^1$ that has some desirable properties and then pulling back by a carefully constructed $\small g \colon \mathbb{P^1} \to \mathbb{P^1}$</p>
 	</section>
 
 	<section style = "text-align: left; font-size: 75%;">
@@ -553,7 +659,7 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 	 	<ul> 
 	 		<li style = "margin-bottom:.5cm"> $\text{Br} \, X / \text{Br}_0 \, X$ generated by $n$ quaternion algebras,  $B = \langle \alpha_1, \dots, \alpha_n \rangle$, </li>
 	 		<li style = "margin-bottom:.5cm"> $X(\mathbb{A}_k) \ne \emptyset$, </li>
-	 		<li> $X(k) = \emptyset$, and in particular $X$ has a Brauer-Manin obstruction <span class = "fragment fade-in-then-semi-out"> that cannot be achieved without all $n$ quaternion algebras, </span>  <span class = "fragment"> so that image of $X(\mathbb{A}_k)$ in $\text{Hom}(B,\mathbb{Q}/\mathbb{Z})$ is everything but the $0$ map. </span></li>
+	 		<li> $X(k) = \emptyset$, and in particular $X$ has a Brauer-Manin obstruction <span class = "fragment semi-fade-out"> that cannot be achieved without all $n$ quaternion algebras, </span>  <span class = "fragment" > so that image of $X(\mathbb{A}_k)$ in $\text{Hom}(B,\mathbb{Q}/\mathbb{Z})$ is everything but the $0$ map. </span></li>
 	 	</ul>
 
 	 	<p style = "margin-top: 1.5cm;" class = "fragment"> The number of irreducible factors of $f$ (and their degrees controls) $n$. Getting the other properties simultaneously is like playing Whac-A-Mole. </p>
@@ -561,22 +667,159 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 
 	<section style = "text-align: left; font-size: 80%;">
 	 <h3 style = "color: purple;"> Starting conic bundle </h3>  
-	 <p> Instead we start with a conic bundle which gives us finer control at several distinguished non-archimedean places, at the cost of having a rational point on the fiber over $\infty$ in $\mathbb{P}^1$. </p>
+	 <p> To accomplish our goals, we start with a conic bundle $\widetilde{X} = \widetilde{X}_{a,\tilde{f}}$ where we force finer control at a finite set of non-archimedean places at the cost of having a rational point on the fiber over $\infty$ in $\mathbb{P}^1$. </p>
 
-	 <p style = "margin-top:1.5cm"> The starting conic bundle $\widetilde{X} = \widetilde{X}_{a,f}$ has $n$ linearly independent Brauer classes which generate $B$ and a finite set of non-archimedean places at which the local evaluation map $\widetilde{X}(k_v) \to \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$ is surjective. </p>
+	 <div class = "fragment semi-fade-in">
+	 <p style = "margin-top:1cm; margin-bottom: 1cm"> We'll ensure $\widetilde{X}$ has $n$ linearly independent Brauer classes which generate $B$ and a finite set of non-archimedean places at which the map $\widetilde{X}(k_v) \to \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$ is surjective. </p>
+
+		<h4 style = "margin-bottom: -.4cm;"> Starting data </h4>
+	 <p style = "font-size: 85%"> Take $\small n+1$ monic irreducible polynomials $\small \tilde{f}_j$ of even degree and let $\small \tilde{f} = \prod_{j=0}^n \tilde{f}_j$. Both the choice of $a \in k^\times\! \setminus\! k^{\times 2}$ and the finitely many places depend on $\tilde{f}$.</p>
+	 <div>
+</section>
+
+	<section style = "text-align: left; font-size: 75%;"> 
+		<h3 style = "color: purple;"> Theorem (BPPSTVV)</h3>
+		<div style =" border-width:2px; border-style:solid; border-color:lightslategray; padding: 0.25em; background-color: lightgray;">
+		<p> Given $\small n,r \in \mathbb{Z}_{>0}$, there is a collection of nonarchimedean places $\small v_0, \dots, v_r$ of $k$ not lying over $2$, a minimal conic bundle $\small \tilde{\pi} \colon \widetilde{X} \to \mathbb{P}^1$, and a collection of Brauer classes $\small \alpha_1, \dots, \alpha_n \in (\text{Br}\, \widetilde{X})[2]$ such that </p>
+			<ul> 
+				<li style = "margin-left: 1cm"> The subgroup $\tilde{B} = \langle \alpha_1, \dots, \alpha_n \rangle$ generates $\text{Br}\, \widetilde{X}/ \text{Br}_0 \, \widetilde{X}$</li>
+					<li style = "margin-top: .5cm; margin-left: 1cm"> For each $\tilde{v}_i$, the map $\phi_{v_i} \colon \widetilde{X}(k_{v_i}) \to \text{Hom}(\tilde{B}, \mathbb{Q}/\mathbb{Z})$ is surjective </li>
+				 <li style = "margin-top: .5cm; margin-left: 1cm"> For all places $w$, the image of $\phi_w$ contains $0$</li>
+			</ul>
+		</div>
+
+		<p style = "margin-top:2cm" class = "fragment"> To build the conic bundle $X$ that actually has an obstruction, we'll need to keep track of $\small v_0, \dots, v_r$ and the finitely many additional places $v$ where $\phi_v$ is not constant.</p>
 	</section>
 
-		<section style = "text-align: left; font-size: 80%;">
-	 <h3 style = "color: purple;"> Starting conic bundle </h3>  
-	 <p> To do this, we start with $n+1$ monic irreducible polynomial $\tilde{f}_j$ of even degree and let $\tilde{f} = \prod_{j=0}^n \tilde{f}_j$. </p>
+	<section style = "text-align: left; font-size: 75%;">
+		<h3> Towards a base change </h3>
+	<p> We want to construct a $g \colon \mathbb{P}^1 \to \mathbb{P}^1$ so that the base change $X$ has a Brauer-Manin obstruction. </p> 
+	<p style = "font-size: 85%; margin-top: -.75cm;"> $$ \begin{CD} X @> >> \widetilde{X} \\ 
+			@V{\pi}VV  @VV{\tilde{\pi}}V \\
+	\mathbb{P}^1 @>{g}>> \mathbb{P}^1
+ \end{CD} $$ </p>
 
-	 <p> Take a collection of non-archimedean places $v_1, \dots, v_r$ not dividing $2$ so that each $\tilde{f_j}$ has coefficients in $\mathcal{O}_{v_i}$, $\tilde{f}_j$ is separable mod $v_i$, and the residue fields $\mathbb{F}_{v_i}$ are large enough. </p>
+ <p> Combinatorial requirements: must have subgroup $B \subset \text{Br}\, X$ with $B \cong (\mathbb{Z}/2\mathbb{Z})^n$ where the image of $X(\mathbb{A}_k) \to \text{Hom}(B,\mathbb{Q}/\mathbb{Z})$ is everything but the $0$ map. </p>
 
-	 <p> Choose $a$ so that $k(\sqrt{a})$ is not contained in the splitting fields of the $\tilde{f}_j$ </p>
+ <p> We'll use to our advantage this distinguished finite set of non-archimedean places $v_0, \dots, v_r$ where we had control over the local evaluation $\phi_{v_i} \colon X(k_{v_i}) \to \text{Hom}(\tilde{B},\mathbb{Q}/\mathbb{Z})$.</p>
+ <!--To achieve this, we'll use our distinguished finite set of non-archimedean places $v_1, \dots, v_r$ we got from $\tilde{X}$.-->
 	</section>
+
+<section style = "font-size: 80%; text-align: left">
+	<h3> Use the surjectivity </h3>
+	<p> Find subsets $\small T _0, \dots, T_r \subset \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z})$ such that $\small 0 \in T_i$ for all $i >0 $ and $\small \sum_i T_i = \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z}) \setminus\{0 \}$. </p>
+
+	<p style = "margin-top: 2cm"> Fix an isomorphism $\tilde{B} \to (\mathbb{Z}/2\mathbb{Z})^n.$ Since we have places $\small v_0, \dots, v_r$ where the image of $\phi_{v_i} \colon \small \widetilde{X}(k_v) \to \text{Hom}(\tilde{B}, \mathbb{Q}/\mathbb{Z})$ is either surjective or has size at least $2$ and contains $0$, identify $T_i$ as subsets of $\text{im}\, \phi_{v_i}$. </p>
+</section>
+
+<section style = "font-size: 80%; text-align: left">
+	<h3> Use the surjectivity </h3>
+	<div style = "margin-left: 2cm;">
+	<img src ="toyexample.jpeg" width = "650"/>
+	</div>
+</section>
+
+
+
+<section style = "font-size: 70%; text-align: left">
+	<h3> Impose local conditions </h3>
+	<p> First, for each of $\small v_0, \dots, v_r$ control the image of $\small g(\mathbb{P}^1(k_{v_i}))$. </p>
+		<div style = "margin-left: 2cm;">
+	<img src = "localcondition1.jpeg" width = "650"/>
+	</div>
+
+	<p> This will help ensure the image of $\phi_{v_i} \colon X(k_{v_i}) \to \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z})$ is $T_i$. </p>
+
+</section>
+
+<section style = "font-size: 70%; text-align: left">
+	<h3> Impose local conditions </h3>
+	<p> For each $w$ so that $\widetilde{X}_\infty(k_w) = \emptyset$ impose a condition on $g$. This will allow us to ensure the image of $\small \phi_w  \colon X(k_w) \to \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z})$ is only the $0$ map.  </p>
+	<div style = "margin-left: 2cm;">
+	<img src = "localcondition2.jpeg" style="width: 70%"/>
+	</div>
+</section>
+
+<section style = "font-size: 70%; text-align: left">
+	<h3> Impose local conditions </h3>
+<p> We also need to ensure that when we base change, we preserve the Brauer group. That is, the Brauer group of our starting conic bundle $\widetilde{X}$ was generated by quaternion algebras $\tilde{B} = \langle \alpha_1, \dots, \alpha_n \rangle$ with $\tilde{B} \cong \text{Br}\, \widetilde{X}/ \text{Br}_0 \, \widetilde{X}$.</p>
+
+<p style = "margin-top: 1cm"> We want the pullback of this subgroup to $\text{Br}\ X$ to be isomorphic to $\text{Br}\,X /\text{Br}_0\,X.$ </p>
+
+<p> We do this by imposing local conditions on $g$ for finitely many places (disjoint from those previously mentioned) related to the degeneracy locus of $\tilde{\pi}$. </p>
+</section>
+
+<section style = "font-size: 70%; text-align: left">
+	<p> We imposed local conditions at finite sets of primes that are pairwise disjoint. By weak approximation, a global polynomial $g$ with all of our properties exists.  </p>
+</section>
+
+		<section style = "text-align: left; font-size: 72%;">
+	 <h3 style = "color: purple;"> Theorem (BPPSTVV) </h3> 
+	 <p> Let $\small n \ge 1$ and $\small r \ge 0$ be integers. Suppose there exists subsets $\small T_0, \dots, T_r$ of $\small \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z})$ such that $\small 0 \in T_i$ for all $i>0$ and with <br> $\small \sum_i T_i = \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z}) \setminus\{0 \}$.</p>
+
+	 <p> Then there exist places $\small v_0, \dots, v_r$ of $k$, a conic bundle $X = X_{a,f}$ over $k$, and $B \subset \text{Br}\,X$ with $B \cong(\mathbb{Z}/2\mathbb{Z})^n$ such that </p>
+	 <ul style = "margin-left: 2cm;">
+	 	<li> $B \cong \text{Br}\,X/\text{Br}_0\,X$. </li>
+	 	<li> For each place $v_i$, the image of $X(k_{v_i}) \to \text{Hom}( B, \mathbb{Q}/\mathbb{Z})$ is $T_i$</li>
+	 	<li> For all places $v \ne v_i$ the map $X(k_v) \to \text{Hom}(B,\mathbb{Q}/\mathbb{Z})$ is identically $0$. </li>
+	</ul>
+
+	<p style = "margin-top: 1.5cm"> In particular $X(\mathbb{A}_k)^B = \emptyset$ and no proper subgroup of $B$ gives an obstruction. </p>
+	  </section>
+
+</section>
+
+	<section>
+		<section> <h2> The starting conic bundle </h2>
+		<h3> Time permitting</h3> </section>
 
 	<section style = "text-align: left; font-size: 80%;">
-	 <h3 style = "color: purple;"> Base change </h3>  </section>
+	 <h3 style = "color: purple;"> Starting conic bundle </h3>  
+	 <p> To accomplish our goals, we started with a conic bundle $\widetilde{X} = \widetilde{X}_{a,f}$ where we forced finer control at a finite set of non-archimedean places at the cost of having a rational point on the fiber over $\infty$ in $\mathbb{P}^1$. </p>
+
+	 <div class = "fragment semi-fade-in">
+	 <p style = "margin-top:1cm; margin-bottom: 1cm"> We claimed $\widetilde{X}$ has $n$ linearly independent Brauer classes which generate $B$ and a finite set of non-archimedean places at which the map $\widetilde{X}(k_v) \to \text{Hom}(B, \mathbb{Q}/\mathbb{Z})$ is surjective. </p>
+
+	 <h4 style = "margin-bottom: -.4cm;"> Starting data </h4>
+	 <p style = "font-size: 85%"> Take $\small n+1$ monic irreducible polynomials $\small \tilde{f}_j$ of even degree and let $\small \tilde{f} = \prod_{j=0}^n \tilde{f}_j$ </p>
+	 <div>
+	</section>
+
+	<section style = "text-align: left; font-size: 75%;">
+	<h3 style = "color: purple;"> Forcing surjectivity </h3> 
+	<p> We pick the non-archimedean places $\small v_0, \dots, v_r$ and $\small a \in k^\times \!\setminus\! k^{\times 2}$ based on $\small \tilde{f}$, and pick $a$ so that $v_i(a) = 1$ for all $i$. We have the quaternion algebras $\small \alpha_j = (a, \tilde{f}_j)$ for $1 \le j \le n$. </p> 
+<p style = "margin-top:1.5cm"> Given $\small x_{v_i} \in X(k_{v_i})$, detecting whether $
+\small \langle \alpha_j, x_{v_i} \rangle = 0 \text{ or } \frac{1}{2}$ in $\small \mathbb{Q}/\mathbb{Z}\,$ essentially amounts to knowing whether the image of $f_j(\pi(x_v))$ in the residue field $\mathbb{F}_{v_i}$ is a square or not. So this is what we control. </p>
+	</section>
+
+
+	<section style = "text-align: left; font-size: 75%;">
+	<h3 style = "color: purple;"> It's hip to be a square (A proposition) </h3> 
+
+	<p> Let $\small \mathbb{F}$ be a finite field. Let $\small f_0, \dots, f_n \in \mathbb{F}(x)$ and $\small d := \sum \text{deg} f_j$.&nbsp Assume the $f_j$ are independent in $\small \mathbb{F}(x)^\times/\mathbb{F}(x)^{\times 2}$. </p> 
+<p> If $\small \#\mathbb{F}$ is sufficiently large relative to $n$ and $d$, then for any choice of $\small \varepsilon_0, \dots, \varepsilon_n \in \mathbb{F}^\times$, there exists $c \in \mathbb{F}$ such that $f_j(c) \varepsilon_j \in \mathbb{F}^{\times 2}$ for all $i$. </p>
+
+	<!--<p> Let $x_{v_i} \in X(k_{v_i})$. Detecting whether $x_{v_i}^\ast(\alpha_j) \in \text{Br}(k_{v_i})$ is trivial amounts to knowing the valuation $v_i(a)$ and whether $f_j(\pi(x_v))$ is a square in the residue field $\mathbb{F}_{v_i}$. So this is what we control. </p> -->
+	</section>
+
+	<section style = "text-align: left; font-size: 74%;"> 
+		<h3> The idea</h3>
+		<p> For the place $v_i$, surjectivity of $\phi_{v_i}$ means realizing all $2^n$ tuples of values from the Brauer-Manin pairing from points $x_{v_i} \in X(k_{v_i})$  with the $\alpha_j = (a, \tilde{f}_j)$ . </p>
+		 <p style = "margin-top: 1cm"> Choose any $\small \varepsilon_1, \dots, \varepsilon_n \in \mathbb{F}_{v_i}^\times/\mathbb{F}_{v_i}^{\times 2}$ and set $\small \varepsilon_0 = \varepsilon_1 \varepsilon_2 \cdots \varepsilon_n.\,$ Apply our proposition to get a $\small c \in \mathbb{F}_{v_i}^\times$ such that $\small \tilde{f}_j(c) \varepsilon_j \in \mathbb{F}_{v_i}^{\times 2}.$ &nbsp Now, whether $\tilde{f_j}(c)$ is a square is determined by whether $\varepsilon_j$ is a square!</p>
+
+
+
+		 <!--<p style = "margin-top: 1cm"> Since we can lift $c$ to some $\tilde{c} \in \mathcal{O}_{v_i}$, the choice of $\varepsilon_0$ gives $f(\tilde{c}) \in k_{v_i}^{\times 2}$ and so there is $x_{v_i} \in X(k_{v_i})$ that maps to $\tilde{c} \in \mathbb{P}^1(k_{v_i})$. </p>
+
+		 <p style = "margin-top: 1cm"> The condition on $\varepsilon_0$ is enough to guarantee that there is an $x_{v_i} \in k_{v_i}$ that maps to a lift of $c$ in $\mathbb{P}^1(k_{v_i})$</p> -->
+
+	</section>
+
+	</section>
+
+
+
+
 </section>
 
 <section>
@@ -594,12 +837,12 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 	</div>
 </section>
 
-<section style = "text-align: left; font-size: 80%;"> 
-	<h4> Features </h4>
+<section style = "text-align: left; font-size: 75%;"> 
+	<h3> Features </h3>
 	<ul>
 	<li style = "margin-bottom: .5cm"> Leading coefficient of $f$ is the prime $q$; ensures $X_{\infty}(\mathbb{Q}) = \emptyset$. </li>
-	<li style = "margin-bottom: .5cm"> Irreducible factors $\tilde{f}_i$ of $\tilde{f}$ are linear (odd degree). Now $\text{Br}\,\widetilde{X}/ \text{Br}_0 \,\widetilde{X}$ has a more complicated description and $2$-rank $< n$</li> 
-	<li> $g$ is constructed so that $\text{im} \, \phi_p = \hat{B}\setminus \{0\}$ while  $\text{im} \, \phi_v = \{0 \} $ for all other primes $v$. </li>
+	<li style = "margin-bottom: .5cm"> Irreducible factors $\tilde{f}_i$ of $\tilde{f}$ are linear (odd degree). This comes at a cost: now $\text{Br}\,\widetilde{X}/ \text{Br}_0 \,\widetilde{X}$ has a more complicated description and $2$-rank $< n$</li> 
+	<li> $g$ is constructed as a polynomial of degree $p+1$ and so that the image of $X(\mathbb{Q}_p) \xrightarrow{\phi_p} \text{Hom}(B,\mathbb{Q}/\mathbb{Z})$ is everything but the $0$ map, while  $\text{im} \, \phi_v = \{0 \} $ for all other primes $v$. </li>
 	</ul> 
 </section>
 
@@ -631,6 +874,8 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
     </tr>
   </table>
 	</div>
+
+	<p style = "font-size: 90%"> This means, when $n=4$ our conic bundle $X_{p,f}$ has $\deg(f) = 1873^5 = 23050953088040593$. </p>
 	</section>
 
 </section>
