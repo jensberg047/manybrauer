@@ -230,13 +230,13 @@ th, td{
  <h3 style = "color: purple;"> Putting it all together </h3>
  <p> So, we get a commutative diagram </p>
  <p style = "font-size: 83%" class = "fragment step-fade-in-then-out"> $$\begin{CD}
-     @. X(k) \times \text{Br}\, X @>>>  X(\mathbb{A}_k) \times \text{Br}\, X @.\\
+     @. \text{Br}\, X \times X(k)@>>>  \text{Br}\, X \times X(\mathbb{A}_k)@.\\
      @. @VVV @VVV\\
      @. \text{Br}\,k @>>> \oplus_v \text{Br}\,k_v @. @. @.
 \end{CD}$$</p> 
 
  <p style = "font-size: 83%" class = "fragment"> $$\begin{CD}
-     @. X(k) \times \text{Br}\, X @>>>  X(\mathbb{A}_k) \times \text{Br}\, X @.\\
+     @.  \text{Br}\, X \times X(k) @>>>  \text{Br}\, X \times X(\mathbb{A}_k) @.\\
      @. @VVV @VVV\\
      0 @>>> \text{Br}\,k @>>> \oplus_v \text{Br}\,k_v @>{\sum_v \text{inv}_v}>> \mathbb{Q}/\mathbb{Z} @>>>0
 \end{CD}$$</p> 
@@ -267,7 +267,7 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 <ul style = "margin-left:1.7cm" class = "fragment semi-fade-in">
 <li style = "margin-bottom: 1cm;"> <em>Constant algebras give no obstruction</em>:  &nbsp For any $\alpha_0 \in \text{Br}_0 \, X$, we have $X(\mathbb{A_k})^{\alpha_0} = X(\mathbb{A}_k)$. </li>
 
-<li> <em> Obstruction from a subgroup determined by the generators: </em> &nbsp If $\alpha, \beta \in \text{Br}\, X$, then $X(\mathbb{A}_k)^\alpha \cap X(\mathbb{A}_k)^\beta = X(\mathbb{A}_k)^{\langle \alpha, \beta \rangle}$ </li>
+<li> <em> Obstruction from a subgroup determined by the generators: </em> &nbsp If $\alpha, \beta \in \text{Br}\, X$, then $X(\mathbb{A}_k)^\alpha \cap X(\mathbb{A}_k)^\beta = \bigcap_{\gamma \in \{ \alpha^i \beta^j \mid i,j \in \mathbb{Z}\}} X(\mathbb{A}_k)^{\gamma}$ </li>
 </ul>
 </section>
 
