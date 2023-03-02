@@ -561,6 +561,7 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
     </tr>
   </table>
 
+
   	<table style = "display: inline-block; padding-left: 2cm; padding-bottom: 9cm;">
 	   <thead>
       <tr>  <th colspan="3">  All other places $v \ne v_0$ </th> </tr>
@@ -575,16 +576,19 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 	</div>
 	</section>
 
-	<section style = "font-size: 80%; text-align: left;"> 
+	<section style = "font-size: 70%; text-align: left;"> 
 		<h3> Illustrating the idea (multiple places) </h3>
 
+		<!--
 		<div style = "margin-left: 2cm;">
 			<img src ="illustratingtheidea2.jpeg" width="750" />
 		</div>
-
-<!--
+	-->
 		<div>
-		  	<table style = "display: inline-block; padding-left: 2cm; padding-bottom: 3cm;">
+			<table style = "display: inline-block; padding-left: -3cm; padding-bottom: 6cm;">
+      <tr>  <th colspan="3"> 	$ \substack{\normalsize X(k_{v_0}) \\ \textcolor{blue}{x_{v_0}}} \xrightarrow{\phi_{v_0}}$</th> </tr>
+			</table>
+		  	<table style = "display: inline-block; padding-left: -1cm; padding-bottom: 1cm; padding-right: 1cm;">
 	   <thead>
       <tr>  <th colspan="3"> The place $v_0$ </th> </tr>
     </thead>
@@ -597,23 +601,26 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
      <tr>
       <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td>
     </tr>
-     <tr>
-      <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td>
+     <tr style = "color:blue;">
+      <td style="text-align:center;"> $\mathbf{0}$ </td> <td style="text-align:center;">\( \mathbf{\frac{1}{2}}\)</td> <td style="text-align:center;">\( \mathbf{0}\)</td>
     </tr>
         <tr>
       <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( 0\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td>
     </tr>
+    <table style = "display: inline-block; padding-left: 1cm; padding-right: 0cm; padding-bottom: 6cm;">
+      <tr>  <th colspan="3"> 	$ \substack{\normalsize X(k_{v_1}) \\ \textcolor{blue}{x_{v_1}}} \xrightarrow{\phi_{v_1}}$</th> </tr>
+			</table>
      </table>
 
-     		  	<table style = "display: inline-block; padding-left: 2cm; padding-bottom: 3cm;">
+     		  	<table style = "display: inline-block; ; padding-bottom: 1cm;">
 	   <thead>
       <tr>  <th colspan="3"> The place $v_1$ </th> </tr>
     </thead>
       <tr>
         <td style="text-align:center"> $\alpha_1$ </td>   <td style="text-align:center;">\( \alpha_2 \)</td> <td style="text-align:center;">\( \alpha_3 \)</td>  
       </tr>
-    <tr>
-      <td style="text-align:center;">\( \frac{1}{2} \)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2} \)</td>
+    <tr style = "color:blue;">
+      <td style="text-align:center;">\( \mathbf{\frac{1}{2}} \)</td> <td style="text-align:center;">\( \mathbf{\frac{1}{2}}\)</td> <td style="text-align:center;">\( \mathbf{\frac{1}{2}} \)</td>
     </tr>
      <tr>
       <td style="text-align:center;">\( 0 \)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td>
@@ -625,8 +632,8 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
       <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( \frac{1}{2}\)</td> <td style="text-align:center;">\( 0\)</td>
     </tr>
      </table>
-
-     <table style = "display: inline-block; padding-left: 2cm; padding-bottom: 8cm;">
+<!--
+     <table style = "display: inline-block; padding-left: 0cm; padding-bottom: 6cm;">
 	   <thead>
       <tr>  <th colspan="3"> All other places  </th> </tr>
     </thead>
@@ -636,9 +643,14 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
     <tr>
       <td style="text-align:center;">\( 0 \)</td> <td style="text-align:center;">\( 0 \)</td> <td style="text-align:center;">\( 0 \)</td>
     </tr>
-     </table>
+     </table> -->
    </div>
--->
+
+   <p style = "font-size: 90%; margin-left: 1cm"> If, e.g., we construct $(P_v)$ so that $P_{v_0} = x_{v_0}$ and $P_{v_1} := x_{v_1}$ then <br> $\langle \alpha_1, (P_v) \rangle = \textcolor{blue}{0 + \frac{1}{2}} + 0 = \frac{1}{2}$
+   	<br>$\langle \alpha_2, (P_v) \rangle = \textcolor{blue}{\frac{1}{2} + \frac{1}{2}} + 0 = 0$ 
+   	<br>
+   $\langle \alpha_3, (P_v) \rangle = \textcolor{blue}{0 + \frac{1}{2}} + 0 = \frac{1}{2}$</p>
+
 	</section>
 
 	<section style = "font-size: 80%; text-align: left;"> 
