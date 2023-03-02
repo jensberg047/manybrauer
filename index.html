@@ -217,7 +217,7 @@ th, td{
 	$$ \begin{align*} \text{Br}\, X \times X(F) &\to \text{Br}\, F \\ (\alpha, x) \quad &\mapsto \langle \alpha, x \rangle := x^\ast \alpha \end{align*}$$  where we view a point $x \in X(F)$ as a map $\, x \colon \text{Spec}\, F \to X$</p>
 		<p class="fragment">For each extension $k_v/k$ the functoriality of the Brauer group gives a pairing
 	$$ \begin{align*} \text{Br}\, X \times X(k_v) &\to \text{Br}\, k_v \\ (\alpha, x) \quad &\mapsto 
-\langle \alpha, x \rangle := \alpha^\ast x \end{align*}$$  where we view a point $x \in X(k_v)$ as a map $\, x \colon \text{Spec}\, k_v \to X$</p>
+\langle \alpha, x \rangle := x^\ast \alpha \end{align*}$$  where we view a point $x \in X(k_v)$ as a map $\, x \colon \text{Spec}\, k_v \to X$</p>
 
 	<div style = "margin-bottom: 2cm;">
 		<p class= "fragment" style = "margin-top: 2cm"> Since $X$ is proper, we have $X(\mathbb{A}_k) = \prod_v X(k_v)$, so we can apply the pairings componentwise to get a pairing  </p>
@@ -321,7 +321,7 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 <p> In nearly all examples in the literature where we have $X(\mathbb{A}_k)^{\{ \alpha_i \}} = \emptyset$, in fact $
 \small \langle \alpha_i, - \rangle \colon X(k_v) \to \mathbb{Q}/\mathbb{Z}$ is constant for all $i$ and for all $v$. But these examples were specifically built to have these properties in order to get an obstruction! </p>
 
-<p style = "margin-top: 1.5cm;"> However, in nature we really should expect to have places $v$ for which the evaluation maps are not constant. (Work of Harari and later Bright, among others, can make this statement more precise.)</p>
+<p style = "margin-top: 1.5cm;"> However, we really should expect to have places $v$ for which the evaluation maps are not constant. (Work of Harari and later Bright, among others, can make this statement more precise.)</p>
 
 <p style = "margin-top: 1.5cm;" class = "fragment"> <b> Consequences:</b> If there exists a place $v$ for which the evaluation $\small \langle \alpha, - \rangle \colon X(k_v) \to \mathbb{Q}/\mathbb{Z}$ is not constant, then $\small X(\mathbb{A}_k)^\alpha \subsetneq X(\mathbb{A}_k)$ and if the image is as large as possible then $\small X(\mathbb{A}_k)^{\alpha} \ne \emptyset.$</p>
 </section>
@@ -736,7 +736,7 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
  To achieve this, we'll use our distinguished finite set of non-archimedean places $v_1, \dots, v_r$ we got from $\tilde{X}$.-->
 
 
-		<section style = "text-align: left; font-size: 72%;">
+		<section style = "text-align: left; font-size: 70%;">
 	 <h3 style = "color: purple;"> Theorem (BPPSTVV) </h3> 
 	 <p> Let $\small n \ge 1$ and $\small r \ge 0$ be integers. <span style = "color:blue"> <b> Suppose we can abstractly solve our combinatoral problem </b></span>, i.e. suppose there exists subsets $\small T_0, \dots, T_r$ of $\small \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z})$ such that $\small 0 \in T_i$ for all $i>0$ and with <br> $\small \sum_i T_i = \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z}) \setminus\{0 \}$. </p>
 
@@ -750,6 +750,13 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 	<p style = "margin-top: 1.5cm"> In particular $X(\mathbb{A}_k)^B = \emptyset$ and no proper subgroup of $B$ gives an obstruction. </p>
 	  </section>
 
+<section style = "font-size: 80%; text-align: left">
+	<h3> Use the surjectivity </h3>
+	<p> Find subsets $\small T _0, \dots, T_r \subset \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z})$ such that $\small 0 \in T_i$ for all $i >0 $ and $\small \sum_i T_i = \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z}) \setminus\{0 \}$. </p>
+
+	<p style = "margin-top: 2cm"> Fix an isomorphism $\tilde{B} \to (\mathbb{Z}/2\mathbb{Z})^n.$ Since we have places $\small v_0, \dots, v_r$ where the image of $\phi_{v_i} \colon \small \widetilde{X}(k_v) \to \text{Hom}(\tilde{B}, \mathbb{Q}/\mathbb{Z})$ is either surjective or has size at least $2$ and contains $0$, identify $T_i$ as subsets of $\text{im}\, \phi_{v_i}$. </p>
+</section>
+
 	<section style = "font-size: 80%; text-align: left">
 	<h3> Use the surjectivity </h3>
 	<div style = "margin-left: 2cm;">
@@ -757,12 +764,6 @@ $$ X(k) \subset X(\mathbb{A}_k)^\alpha := \{(x_v) \in X(\mathbb{A}_k) : \textsty
 	</div>
 </section>
 
-<section style = "font-size: 80%; text-align: left">
-	<h3> Use the surjectivity </h3>
-	<p> Find subsets $\small T _0, \dots, T_r \subset \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z})$ such that $\small 0 \in T_i$ for all $i >0 $ and $\small \sum_i T_i = \text{Hom}((\mathbb{Z}/2\mathbb{Z})^n, \mathbb{Q}/\mathbb{Z}) \setminus\{0 \}$. </p>
-
-	<p style = "margin-top: 2cm"> Fix an isomorphism $\tilde{B} \to (\mathbb{Z}/2\mathbb{Z})^n.$ Since we have places $\small v_0, \dots, v_r$ where the image of $\phi_{v_i} \colon \small \widetilde{X}(k_v) \to \text{Hom}(\tilde{B}, \mathbb{Q}/\mathbb{Z})$ is either surjective or has size at least $2$ and contains $0$, identify $T_i$ as subsets of $\text{im}\, \phi_{v_i}$. </p>
-</section>
 
 
 
